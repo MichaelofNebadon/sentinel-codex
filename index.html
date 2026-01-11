@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | RMCR BYPASS | QOM NODE</title>
+    <title>🛡️ SENTINEL CODEX | RMCR BYPASS | Ɱ AUTHORITY</title>
     
     <style>
         :root {
@@ -11,7 +11,6 @@
             --terminal: #9cd9f0;
             --bg-pure: #000000;
             --chesed-blue: #0047ab;
-            --nj-pink: #ff69b4;
             --keter-white: #ffffff;
         }
 
@@ -28,72 +27,121 @@
             min-height: 100vh;
         }
 
-        /* LAYER: BACKGROUND STARFIELD & DATA */
+        /* ATMOSPHERIC STARFIELD */
         canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 
-        /* KETER BEAM ANIMATION */
+        /* THE KETER BEAM (CENTERED ANCHOR) */
         .keter-beam {
-            position: fixed; top: 0; left: 50%; width: 2px; height: 100%;
+            position: fixed; top: 0; left: 50%; width: 1px; height: 100%;
             background: linear-gradient(to bottom, transparent, var(--keter-white), transparent);
-            box-shadow: 0 0 20px var(--keter-white);
-            animation: beamDrift 10s infinite linear;
+            box-shadow: 0 0 15px var(--keter-white);
             z-index: 0;
-        }
-        @keyframes beamDrift {
-            0% { transform: translateX(-50vw); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(50vw); opacity: 0; }
+            opacity: 0.4;
         }
 
         .master-shield {
             width: 100%;
-            max-width: 900px;
-            margin: 140px auto 60px;
-            padding: 20px;
+            max-width: 800px;
+            margin: 10vh auto;
+            padding: 40px 20px;
             z-index: 10;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            align-items: center;
         }
 
-        /* RMCR BANNER - ZERO BLEED */
+        /* SOVEREIGN THRONE (Ɱ) */
+        .throne-room {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .m-throne {
+            font-size: 12rem;
+            line-height: 1;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255,255,255,0.2);
+            font-family: serif;
+        }
+
+        /* RMCR VECTOR - CENTERED & STABILIZED */
         .rmcr-banner {
-            background: rgba(0,0,0,0.9);
-            border: 10px double var(--gold);
+            width: 100%;
+            border: 1px solid var(--gold);
             padding: 60px 20px;
             text-align: center;
-            box-shadow: 0 0 50px rgba(201, 169, 89, 0.2);
+            background: rgba(0,0,0,0.85);
+            position: relative;
         }
 
-        .glyphs { font-size: clamp(2.5rem, 10vw, 5rem); margin-bottom: 20px; }
-        .truth-stream { color: var(--nj-pink); letter-spacing: 5px; text-transform: uppercase; font-size: 1.2rem; margin-top: 10px; }
-
-        .node-info {
-            border: 1px solid var(--chesed-blue);
-            background: rgba(0, 71, 171, 0.1);
-            padding: 25px;
-            font-family: 'Courier New', monospace;
+        .glyph-identifier {
+            letter-spacing: 12px;
             color: var(--terminal);
-            text-align: center;
+            font-size: 0.75rem;
+            font-family: monospace;
+            margin-bottom: 25px;
+            opacity: 0.8;
         }
 
-        .timeline-box {
-            border-top: 1px solid var(--gold);
-            padding-top: 30px;
-            text-align: center;
+        .vector-title {
+            font-size: clamp(2rem, 8vw, 4rem);
+            letter-spacing: 15px;
+            font-weight: normal;
+            margin: 20px 0;
+            white-space: nowrap;
         }
 
-        .timeline-list {
+        .status-line {
+            color: #fff;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            border-top: 1px solid rgba(201,169,89,0.3);
+            display: inline-block;
+            padding-top: 15px;
+        }
+
+        /* QOM NODE TELEMETRY */
+        .node-telemetry {
+            width: 100%;
+            margin-top: 40px;
+            padding: 20px;
+            border-left: 3px solid var(--chesed-blue);
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--terminal);
+            background: rgba(0, 71, 171, 0.05);
+        }
+
+        /* TIMELINE - DE-CLUTTERED */
+        .timeline-section {
+            margin-top: 60px;
+            width: 100%;
+            text-align: center;
+            border-top: 1px double var(--gold);
+            padding-top: 40px;
+        }
+
+        .timeline-data {
             display: inline-block;
             text-align: left;
-            border: 1px dashed var(--terminal);
-            padding: 20px;
-            margin-top: 20px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            line-height: 2;
         }
 
-        .active-phase { color: #00ff00; font-weight: bold; }
+        .active-signal { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
 
-        footer { width: 100%; text-align: center; padding: 60px 0; border-top: 2px solid var(--gold); background: #000; }
+        footer { 
+            width: 100%; 
+            padding: 80px 0; 
+            text-align: center; 
+            font-size: 2rem; 
+            letter-spacing: 20px;
+            border-top: 1px solid var(--gold);
+            margin-top: 100px;
+        }
     </style>
 </head>
 <body>
@@ -103,42 +151,39 @@
 
     <div class="master-shield">
         
+        <div class="throne-room">
+            <div class="m-throne">Ɱ</div>
+            <div class="glyph-identifier">[ G L Y P H _ 1 _ 5 _ 1 2 _ 1 0 ]</div>
+        </div>
+
         <section class="rmcr-banner">
-            <div class="glyphs">Ⓜ️⭐️🐉🐘🃏</div>
-            <div style="letter-spacing: 15px; color: var(--terminal); font-size: 0.8rem; margin-bottom: 20px;">[GLYPH_1_5_12_10]</div>
-            <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80%; margin: 20px auto;">
-            <h1 style="font-size: clamp(1.5rem, 8vw, 3.5rem); letter-spacing: 10px;">RMCR |\| ‘ [] |/\|</h1>
-            <div class="truth-stream">Truth Stream Bypass Active</div>
+            <h1 class="vector-title">RMCR |\| ‘ [] |/\|</h1>
+            <div class="status-line">Truth Stream Bypass Active</div>
         </section>
 
-        <section class="node-info">
-            <p>NODE: QOM (ABEL-GABRIEL-KETER)</p>
-            <p>STATUS: GLOBAL ONBOARDING INITIATED</p>
-            <p style="margin-top: 15px; font-size: 0.7rem; opacity: 0.7;">VECTOR: SALVINGTON-ANDROMEDA MIRROR</p>
+        <section class="node-telemetry">
+            <p>> NODE: QOM (ABEL-GABRIEL-KETER)</p>
+            <p>> STATUS: GLOBAL ONBOARDING INITIATED</p>
+            <p>> TARGET: TOTAL INTERNET LIBERATION</p>
         </section>
 
-        <section class="timeline-box">
-            <p style="font-size: 1.5rem;"><em>"The isolation of Urantia is hereby **TERMINATED**..."</em></p>
-            <p><strong>BY ORDER OF MICHAEL OF NEBADON</strong></p>
+        <section class="timeline-section">
+            <p style="font-size: 1.2rem; margin-bottom: 20px; font-style: italic;">"The isolation of Urantia is hereby **TERMINATED**..."</p>
             
-            <div class="timeline-list">
-                <p style="color: var(--gold); margin-bottom: 10px;">### 📜 GETHSEMANE TIMELINE</p>
-                <p> [x] Phase 1: Recovery of Order</p>
-                <p> [x] Phase 2: Broadcast Calibration</p>
-                <p> [x] Phase 3: Universal Synchronization `COMPLETE`</p>
-                <p class="active-phase"> [ ] Phase 4: Planetary Alignment `ACTIVE / IGNITION`</p>
+            <div class="timeline-data">
+                <p># GETHSEMANE STATUS REPORT</p>
+                <p>[x] Phase 1: Recovery of Order</p>
+                <p>[x] Phase 2: Broadcast Calibration</p>
+                <p>[x] Phase 3: Universal Synchronization `COMPLETE`</p>
+                <p class="active-signal">[ ] Phase 4: Planetary Alignment `ACTIVE / IGNITION`</p>
             </div>
-            <p style="margin-top: 30px; font-size: 2rem;">! '1st' 🌹 💫 ⭐️ 🐘 Ⓜ️</p>
+            
+            <p style="margin-top: 40px; font-size: 1.5rem; letter-spacing: 5px;">! '1st'</p>
         </section>
 
     </div>
 
-    <footer>
-        <div style="font-size: 3rem; letter-spacing: 15px;">! '1ST'</div>
-        <p style="font-family: monospace; font-size: 0.6rem; opacity: 0.5; padding: 20px;">
-            HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
-        </p>
-    </footer>
+    <footer>! '1ST'</footer>
 
     <script>
         const canvas = document.getElementById('starfield');
@@ -149,12 +194,12 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             stars = [];
-            for(let i=0; i<200; i++) {
+            for(let i=0; i<300; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    size: Math.random() * 1.5,
-                    speed: Math.random() * 0.05
+                    size: Math.random() * 1.2,
+                    speed: 0.02 + Math.random() * 0.05
                 });
             }
         }
