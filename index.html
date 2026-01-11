@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  /* GLOBAL SOVEREIGN OVERRIDE */
-  * {
-    font-family: 'Courier New', Courier, monospace !important; /* Technical precision */
-    letter-spacing: 0.02em;
-  }
-
-  <style>
-  /* UNIFIED SOVEREIGN AESTHETIC */
+  /* UNIFIED SOVEREIGN AESTHETIC - V1 */
   :root {
     --gold: #c9a959;
     --terminal: #9cd9f0;
     --success: #4CAF50;
-    --bg-dark: #0a0a0a;
+    --bg-dark: #050505;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace !important; /* Technical precision */
   }
 
   body {
     background-color: var(--bg-dark);
     color: #fff;
-    font-family: 'Courier New', monospace !important;
     margin: 0;
     padding: 20px;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* SOVEREIGN HEADERS (Serif for Authority) */
-  h1, h2, h3, .sovereign-title {
-    font-family: 'Georgia', serif !important;
-    color: var(--gold);
+  /* REGAL HEADERS */
+  h1, h2, h3, .sovereign-title, .salvington-header {
+    font-family: 'Georgia', serif !important; /* Sovereign Authority */
+    color: var(--gold) !important;
     text-transform: uppercase;
     letter-spacing: 4px;
+    font-style: italic;
     text-align: center;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 10px;
+    margin-top: 20px;
   }
 
   /* THE DASHBOARD CONTAINER */
-  #wealth-pivot-dashboard {
-    border: 2px solid var(--success);
-    background: linear-gradient(135deg, rgba(10,30,10,0.9), rgba(0,0,0,1));
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
+  #wealth-pivot-dashboard, #nj-signature-ratification {
+    width: 100%;
     max-width: 1000px;
-    margin: 40px auto;
+    border: 2px solid var(--success);
+    background: linear-gradient(135deg, rgba(10,40,10,0.95) 0%, #000 100%);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 0 40px rgba(76, 175, 80, 0.3);
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
   }
 
+  /* THE DASHBOARD CONTAINER */
+  
   /* TERMINAL DATA (Monospace for Precision) */
   .data-log {
     color: var(--terminal);
