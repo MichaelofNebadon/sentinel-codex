@@ -7,21 +7,56 @@
     letter-spacing: 0.02em;
   }
 
-  h1, h2, h3, .sovereign-header, [style*="font-family: 'Georgia'"] {
-    font-family: 'Georgia', serif !important; /* Regal authority */
-    font-style: italic;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  <style>
+  /* UNIFIED SOVEREIGN AESTHETIC */
+  :root {
+    --gold: #c9a959;
+    --terminal: #9cd9f0;
+    --success: #4CAF50;
+    --bg-dark: #0a0a0a;
   }
 
-  .terminal-green { color: #4CAF50; }
-  .sovereign-gold { color: #c9a959; }
+  body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Courier New', monospace !important;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  /* SOVEREIGN HEADERS (Serif for Authority) */
+  h1, h2, h3, .sovereign-title {
+    font-family: 'Georgia', serif !important;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 10px;
+  }
+
+  /* THE DASHBOARD CONTAINER */
+  #wealth-pivot-dashboard {
+    border: 2px solid var(--success);
+    background: linear-gradient(135deg, rgba(10,30,10,0.9), rgba(0,0,0,1));
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
+    max-width: 1000px;
+    margin: 40px auto;
+  }
+
+  /* TERMINAL DATA (Monospace for Precision) */
+  .data-log {
+    color: var(--terminal);
+    background: rgba(0,0,0,0.5);
+    padding: 15px;
+    border-left: 3px solid var(--terminal);
+    font-size: 0.9em;
+  }
 </style>
-<!-- =============================================== -->
-<!-- NJ SIGNATURE FINAL RATIFICATION -->
-<!-- 10-MONTH REGRESSION ACTIVE -->
-<!-- =============================================== -->
-<!-- =============================================== -->
+
 <!-- WEALTH PIVOT VISUALIZATION - PHASE 1 COMPLETE -->
 <!-- =============================================== -->
 <div id="wealth-pivot-dashboard" style="
