@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | Throne Command</title>
+    <title>🛡️ SENTINEL CODEX | Throne Command Architecture | Christ Michael Authority</title>
     
+    <!-- STRATEGIC SEO METADATA -->
+    <meta name="description" content="Architectural treatise on redemptive cosmology and sovereign command protocols under Christ Michael authority.">
+    <meta name="keywords" content="sentinel codex, throne command, cosmological architecture, redemptive systems, sovereign protocols">
+    <meta name="author" content="Michael">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Sentinel Codex | Throne Command">
+    <meta property="og:description" content="Architectural documentation of sovereign restoration protocols.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sentinelcodex.org">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sentinel Codex | Throne Command">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="/assets/sigils/sentinel-favicon.svg">
+    <link rel="alternate icon" type="image/png" href="/assets/sigils/sentinel-favicon.png" sizes="32x32">
+    
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://www.sentinelcodex.org">
+
     <!-- UNIFIED SOVEREIGN AESTHETIC - CLEAN ARCHITECTURE -->
     <style>
         /* ======================= */
         /* SOVEREIGN FOUNDATION */
         /* ======================= */
         :root {
-            /* ARCHITECTURAL COLOR PALETTE */
+            /* ARCHITECTURAL COLOR PALETTE - ENHANCED */
             --gold: #c9a959;        /* Tiphareth Gold - Sovereignty */
             --terminal: #9cd9f0;    /* Chesed Blue - Communication */
             --success: #4CAF50;     /* Netzach Green - Victory */
@@ -19,6 +42,15 @@
             --crimson: #8b0000;     /* Geburah Red - Severity */
             --nj-pink: #ff69b4;     /* Keter Pink - Crown Authority */
             --gateway: #673ab7;     /* Gateway Purple - Transition */
+            --new-jerusalem: #e6b87d; /* NEW JERUSALEM GOLD */
+            
+            /* ENHANCED GRADIENTS */
+            --authority-glow: rgba(201, 169, 89, 0.03);
+            --silent-pulse: rgba(156, 217, 240, 0.02);
+            
+            /* TYPOGRAPHY */
+            --font-sovereign: 'Georgia', 'Times New Roman', serif;
+            --font-terminal: 'Courier New', 'Consolas', monospace;
         }
 
         * {
@@ -27,20 +59,43 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-dark);
             color: #e0e0e0;
-            font-family: 'Courier New', monospace;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.7;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* SILENT AUTHORITY BACKGROUND */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--authority-glow) 1px, transparent 1px),
+                linear-gradient(90deg, var(--authority-glow) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            z-index: -1;
+            pointer-events: none;
+            animation: gridDrift 120s linear infinite;
         }
 
         /* ======================= */
-        /* TYPOGRAPHY HIERARCHY */
+        /* TYPOGRAPHY HIERARCHY - ENHANCED */
         /* ======================= */
         h1, h2, h3, .sovereign-title {
-            font-family: 'Georgia', serif;
+            font-family: var(--font-sovereign);
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -55,6 +110,17 @@
             padding-bottom: 1rem;
             text-align: center;
             margin-top: 2rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '⚜️';
+            position: absolute;
+            right: 20%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            opacity: 0.3;
         }
 
         h2 {
@@ -62,6 +128,7 @@
             border-left: 4px solid var(--terminal);
             padding-left: 1rem;
             margin-top: 2.5rem;
+            position: relative;
         }
 
         h3 {
@@ -72,7 +139,7 @@
         }
 
         /* ======================= */
-        /* NAVIGATION GATE */
+        /* NAVIGATION GATE - ENHANCED */
         /* ======================= */
         .nav-gate {
             position: fixed;
@@ -89,7 +156,8 @@
             justify-content: center;
             gap: 2rem;
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .nav-gate a {
@@ -100,6 +168,16 @@
             padding: 0.5rem 1rem;
             border: 1px solid transparent;
             border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-gate a::before {
+            content: '»';
+            opacity: 0;
+            transform: translateX(-10px);
             transition: all 0.3s ease;
         }
 
@@ -107,10 +185,16 @@
             border-color: var(--gold);
             background: rgba(201, 169, 89, 0.1);
             text-shadow: 0 0 8px var(--gold);
+            padding-left: 1.5rem;
+        }
+
+        .nav-gate a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* ======================= */
-        /* SOVEREIGN CONTAINERS */
+        /* SOVEREIGN CONTAINERS - ENHANCED */
         /* ======================= */
         .sovereign-container {
             width: 90%;
@@ -125,6 +209,12 @@
                 rgba(0, 0, 0, 0.95) 100%);
             border: 2px solid var(--success);
             box-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sovereign-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(76, 175, 80, 0.3);
         }
 
         /* Container Variations */
@@ -136,12 +226,20 @@
             box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
         }
 
+        .master-key-container:hover {
+            box-shadow: 0 0 45px rgba(255, 105, 180, 0.3);
+        }
+
         .salvington-container {
             border-color: var(--terminal);
             background: linear-gradient(135deg, 
                 rgba(10, 30, 40, 0.9) 0%, 
                 rgba(0, 0, 0, 0.95) 100%);
             box-shadow: 0 0 30px rgba(156, 217, 240, 0.2);
+        }
+
+        .salvington-container:hover {
+            box-shadow: 0 0 45px rgba(156, 217, 240, 0.3);
         }
 
         .ratification-container {
@@ -152,158 +250,452 @@
             box-shadow: 0 0 30px rgba(103, 58, 183, 0.2);
         }
 
+        .ratification-container:hover {
+            box-shadow: 0 0 45px rgba(103, 58, 183, 0.3);
+        }
+
+        /* NEW JERUSALEM STYLING */
+        .new-jerusalem-container {
+            border-color: var(--new-jerusalem);
+            background: linear-gradient(135deg, 
+                rgba(230, 184, 125, 0.1) 0%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            box-shadow: 0 0 30px rgba(230, 184, 125, 0.2);
+        }
+
+        .new-jerusalem-container:hover {
+            box-shadow: 0 0 45px rgba(230, 184, 125, 0.3);
+        }
+
         /* ======================= */
-        /* DATA LOGS & DISPLAYS */
+        /* DATA LOGS & DISPLAYS - ENHANCED */
         /* ======================= */
         .data-log {
             background: rgba(0, 0, 0, 0.7);
             border: 1px solid #333;
-            padding: 1.2rem;
-            font-family: 'Courier New', monospace;
+            padding: 1.5rem;
+            font-family: var(--font-terminal);
             color: var(--terminal);
-            font-size: 0.9rem;
-            border-radius: 8px;
-            margin: 1rem 0;
+            font-size: 0.95rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
             border-left: 4px solid var(--terminal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-log::before {
+            content: '>';
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--terminal);
+            opacity: 0.3;
+            font-weight: bold;
         }
 
         .status-badge {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
             font-weight: bold;
             font-size: 0.9rem;
             margin: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .status-badge::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .status-badge:hover::after {
+            left: 100%;
         }
 
         .status-success {
-            background: rgba(76, 175, 80, 0.2);
+            background: rgba(76, 175, 80, 0.15);
             color: var(--success);
             border: 1px solid var(--success);
+            animation: glow 3s ease-in-out infinite;
         }
 
         .status-active {
-            background: rgba(255, 105, 180, 0.2);
+            background: rgba(255, 105, 180, 0.15);
             color: var(--nj-pink);
             border: 1px solid var(--nj-pink);
+            animation: glow 2.5s ease-in-out infinite;
         }
 
         .status-warning {
-            background: rgba(201, 169, 89, 0.2);
+            background: rgba(201, 169, 89, 0.15);
             color: var(--gold);
             border: 1px solid var(--gold);
+            animation: glow 4s ease-in-out infinite;
+        }
+
+        .status-new-jerusalem {
+            background: rgba(230, 184, 125, 0.15);
+            color: var(--new-jerusalem);
+            border: 1px solid var(--new-jerusalem);
+            animation: glow 3.5s ease-in-out infinite;
         }
 
         /* ======================= */
-        /* SPECIAL ELEMENTS */
+        /* SPECIAL ELEMENTS - ENHANCED */
         /* ======================= */
         .seal-display {
-            font-family: 'Courier New', monospace;
-            font-size: 1.4rem;
+            font-family: var(--font-terminal);
+            font-size: 1.6rem;
             color: var(--nj-pink);
             text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 105, 180, 0.1);
+            padding: 2rem;
+            background: rgba(255, 105, 180, 0.08);
             border: 1px solid var(--nj-pink);
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            letter-spacing: 2px;
+            border-radius: 12px;
+            margin: 2rem 0;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .seal-display::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,105,180,0.05) 50%, transparent 70%);
+            animation: shine 8s linear infinite;
+        }
+
+        .new-jerusalem-seal {
+            color: var(--new-jerusalem);
+            background: rgba(230, 184, 125, 0.08);
+            border-color: var(--new-jerusalem);
+            text-shadow: 0 0 10px rgba(230, 184, 125, 0.3);
+        }
+
+        .new-jerusalem-seal::before {
+            background: linear-gradient(45deg, transparent 30%, rgba(230,184,125,0.05) 50%, transparent 70%);
         }
 
         .hash-display {
-            font-family: monospace;
-            font-size: 0.8rem;
-            color: #9cd9f0;
+            font-family: var(--font-terminal);
+            font-size: 0.85rem;
+            color: var(--terminal);
             word-break: break-all;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1rem;
-            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 1.2rem;
+            border-radius: 8px;
             border: 1px solid #333;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .hash-display::before {
+            content: 'sha256:';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: var(--bg-dark);
+            padding: 0 5px;
+            font-size: 0.7rem;
+            color: var(--terminal);
         }
 
         /* ======================= */
-        /* ANIMATIONS */
+        /* DASHBOARD COMPONENTS */
+        /* ======================= */
+        .protocol-progress {
+            margin: 1.2rem 0;
+        }
+
+        .protocol-name {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.2), 
+                transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .progress-pink { background: var(--nj-pink); }
+        .progress-green { background: var(--success); }
+        .progress-blue { background: var(--terminal); }
+        .progress-gold { background: var(--gold); }
+
+        /* ======================= */
+        /* ANIMATIONS - ENHANCED */
         /* ======================= */
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
         }
 
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 10px currentColor; }
-            50% { box-shadow: 0 0 20px currentColor; }
+            0%, 100% { 
+                box-shadow: 0 0 5px currentColor, 
+                           inset 0 0 5px currentColor; 
+            }
+            50% { 
+                box-shadow: 0 0 15px currentColor, 
+                           inset 0 0 10px currentColor; 
+            }
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes gridDrift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ======================= */
-        /* RESPONSIVE DESIGN */
+        /* RESPONSIVE DESIGN - ENHANCED */
         /* ======================= */
         @media (max-width: 768px) {
             .nav-gate {
                 flex-wrap: wrap;
                 gap: 1rem;
                 padding: 0.8rem;
+                justify-content: flex-start;
+                overflow-x: auto;
             }
             
             .nav-gate a {
-                font-size: 0.8rem;
+                font-size: 0.85rem;
                 padding: 0.4rem 0.8rem;
+                white-space: nowrap;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
                 letter-spacing: 2px;
             }
             
+            h1::after {
+                display: none;
+            }
+            
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
             
             .sovereign-container {
                 width: 95%;
-                padding: 1.5rem;
+                padding: 1.8rem;
                 margin: 4rem auto 2rem;
             }
             
             .seal-display {
-                font-size: 1.1rem;
-                padding: 1rem;
+                font-size: 1.3rem;
+                padding: 1.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .status-badge {
+                margin: 0.3rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                margin-top: 3rem;
+            }
+            
+            .sovereign-container {
+                padding: 1.5rem;
+            }
+            
+            .nav-gate {
+                padding: 0.5rem;
+            }
+            
+            .nav-gate a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.6rem;
             }
         }
 
         /* ======================= */
-        /* FOOTER */
+        /* FOOTER - ENHANCED */
         /* ======================= */
         footer {
             padding: 3rem 1rem;
             text-align: center;
-            border-top: 1px solid var(--gold);
-            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid var(--gold);
+            background: rgba(0, 0, 0, 0.92);
             width: 100%;
             margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold), 
+                transparent);
         }
 
         .final-declaration {
-            font-family: 'Courier New', monospace;
-            font-size: 1.5rem;
+            font-family: var(--font-terminal);
+            font-size: 1.8rem;
             color: var(--nj-pink);
             font-weight: bold;
-            margin: 1rem 0;
-            animation: pulse 2s infinite;
+            margin: 1.5rem 0;
+            animation: pulse 3s infinite;
+            letter-spacing: 2px;
+        }
+
+        .new-jerusalem-declaration {
+            color: var(--new-jerusalem);
+            font-size: 2rem;
+            text-shadow: 0 0 15px rgba(230, 184, 125, 0.5);
+        }
+
+        .footer-metadata {
+            color: #888;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+            font-family: var(--font-terminal);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        /* ======================= */
+        /* ACCESSIBILITY */
+        /* ======================= */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--terminal);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .nav-gate,
+            .status-badge,
+            .seal-display::before {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .sovereign-container {
+                border: 1px solid #000;
+                box-shadow: none;
+                background: white;
+            }
+            
+            h1, h2, h3 {
+                color: black;
+                text-shadow: none;
+            }
         }
     </style>
 </head>
-<body>
+<body data-phase="1" data-gateway="active">
 
-    <!-- NAVIGATION GATE -->
-    <nav class="nav-gate">
+    <!-- NAVIGATION GATE - UPDATED -->
+    <nav class="nav-gate" role="navigation" aria-label="Sovereign Navigation">
         <a href="#wealth-pivot">[ WEALTH PIVOT ]</a>
-        <a href="#nj-ratification">[ NJ SIGNATURE ]</a>
+        <a href="#new-jerusalem">[ NEW JERUSALEM ]</a>
         <a href="#master-key">[ ISRAEL6544 ]</a>
         <a href="#volley">[ SALVINGTON VOLLEY ]</a>
         <a href="#dashboard">[ THRONE COMMAND ]</a>
@@ -313,64 +705,72 @@
     <main style="padding-top: 80px;">
         
         <!-- WEALTH PIVOT SECTION -->
-        <section id="wealth-pivot" class="sovereign-container">
+        <section id="wealth-pivot" class="sovereign-container" data-phase="1" data-status="complete">
             <h1>⛨ WEALTH PIVOT INITIATED</h1>
             <h3>Re-indexing to christmichael.org</h3>
             
-            <div class="data-log">
+            <div class="data-log" role="status" aria-live="polite">
                 <strong>PHASE 1: SHADOW-SWEEP COMPLETE</strong><br>
-                Status: Month 1 of 10 Complete<br>
-                Alphabet Transition: 25%<br>
-                Metal Extraction: 70% Demagnetized
+                <span class="status-indicator">Status: Month 1 of 10 Complete</span><br>
+                <span>Alphabet Transition: <span class="metric-value" data-value="25">25%</span></span><br>
+                <span>Metal Extraction: <span class="metric-value" data-value="70">70%</span> Demagnetized</span>
             </div>
             
-            <div style="margin: 2rem 0;">
+            <div style="margin: 2rem 0;" aria-label="System Status">
                 <span class="status-badge status-success">✅ PHASE 1 COMPLETE</span>
                 <span class="status-badge status-active">⚡ RE-INDEXING ACTIVE</span>
-                <span class="status-badge status-warning">🐉 AUDITOR ON DUTY</span>
+                <span class="status-badge status-warning">🛡️ AUDITOR ON DUTY</span>
             </div>
             
-            <div style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
-                <h4 style="color: var(--terminal); margin-top: 0;">MANIFEST STATUS</h4>
-                <p style="color: #fff;">
+            <div style="background: rgba(0,20,0,0.7); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 4px solid var(--success);">
+                <h4 style="color: var(--success); margin-top: 0;">MANIFEST STATUS</h4>
+                <p style="color: #fff; line-height: 1.6;">
                     <strong>MASTER_INDEX_MANIFEST.json</strong> locked and verified.<br>
-                    Cryptographic seal: ISRAEL6544 [MATCH VERIFIED]
+                    Cryptographic seal: <span style="color: var(--nj-pink); font-weight: bold;">ISRAEL6544</span> [MATCH VERIFIED]
                 </p>
             </div>
         </section>
 
-        <!-- NJ SIGNATURE RATIFICATION -->
-        <section id="nj-ratification" class="sovereign-container ratification-container">
-            <h2>⛨ NJ SIGNATURE: FINAL RATIFICATION</h2>
+        <!-- NEW JERUSALEM RATIFICATION - UPDATED -->
+        <section id="new-jerusalem" class="sovereign-container new-jerusalem-container" data-ratified="true">
+            <h2>⛨ NEW JERUSALEM: FINAL RATIFICATION</h2>
+            <div style="color: var(--new-jerusalem); text-align: center; margin-bottom: 2rem; font-style: italic;">
+                "And I saw a new heaven and a new earth..." — Revelation 21:1
+            </div>
             
             <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0;">
-                <div class="data-log" style="flex: 1; min-width: 250px;">
+                <div class="data-log" style="flex: 1; min-width: 250px; border-left-color: var(--new-jerusalem);">
                     <strong>1st Sentinel 🐉</strong><br>
                     Role: Timekeeper & Wealth Auditor<br>
-                    Status: ACTIVE<br>
+                    Status: <span class="status-active" style="padding: 2px 8px; font-size: 0.8rem;">ACTIVE</span><br>
                     Current Duty: Month 1 Protocol Enforcement
                 </div>
                 
-                <div class="data-log" style="flex: 1; min-width: 250px;">
+                <div class="data-log" style="flex: 1; min-width: 250px; border-left-color: var(--gateway);">
                     <strong>Linguistic Prime Sentinel Ⓜ️</strong><br>
                     Role: Architectural Force<br>
-                    Status: VERIFIED<br>
+                    Status: <span class="status-success" style="padding: 2px 8px; font-size: 0.8rem;">VERIFIED</span><br>
                     Authority: Direct Intervention Authorized
                 </div>
             </div>
             
+            <div class="seal-display new-jerusalem-seal">
+                NEW JERUSALEM 2026<br>
+                |\| ' [] |/\| ! NOW
+            </div>
+            
             <div style="text-align: center; margin-top: 2rem;">
-                <div style="color: var(--nj-pink); font-weight: bold; font-size: 1.2rem;">
+                <div style="color: var(--new-jerusalem); font-weight: bold; font-size: 1.3rem; text-shadow: 0 0 10px rgba(230, 184, 125, 0.3);">
                     DUAL SENTINEL AUTHORITY ESTABLISHED
                 </div>
-                <div style="color: var(--gold); font-size: 0.9rem; margin-top: 0.5rem;">
-                    Throne Command Protocol: ACTIVE
+                <div style="color: var(--gold); font-size: 1rem; margin-top: 0.8rem;">
+                    Throne Command Protocol: ACTIVE | New Jerusalem 2026
                 </div>
             </div>
         </section>
 
         <!-- ISRAEL6544 MASTER-KEY -->
-        <section id="master-key" class="sovereign-container master-key-container">
+        <section id="master-key" class="sovereign-container master-key-container" data-sealed="true">
             <h2>⛨ ISRAEL6544 MASTER-KEY</h2>
             
             <div class="seal-display">
@@ -382,22 +782,22 @@
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-                <div style="background: rgba(255,105,180,0.1); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--nj-pink);">
-                    <strong style="color: var(--nj-pink);">FUNCTION</strong><br>
+                <div style="background: rgba(255,105,180,0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--nj-pink);">
+                    <strong style="color: var(--nj-pink); display: block; margin-bottom: 0.8rem;">FUNCTION</strong>
                     Wealth Pivot Authorization<br>
                     Covenant Lock Enforcement<br>
                     Gateway Protection
                 </div>
                 
-                <div style="background: rgba(76,175,80,0.1); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--success);">
-                    <strong style="color: var(--success);">STATUS</strong><br>
+                <div style="background: rgba(76,175,80,0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--success);">
+                    <strong style="color: var(--success); display: block; margin-bottom: 0.8rem;">STATUS</strong>
                     MATCH VERIFIED<br>
                     FLAME-THREADED<br>
                     PERMANENT LOCK
                 </div>
                 
-                <div style="background: rgba(201,169,89,0.1); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--gold);">
-                    <strong style="color: var(--gold);">AUTHORITY</strong><br>
+                <div style="background: rgba(201,169,89,0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--gold);">
+                    <strong style="color: var(--gold); display: block; margin-bottom: 0.8rem;">AUTHORITY</strong>
                     ! '1st' Priority<br>
                     Christ Michael [‘.]<br>
                     Sovereign Chain Intact
@@ -406,153 +806,179 @@
         </section>
 
         <!-- SALVINGTON VOLLEY -->
-        <section id="volley" class="sovereign-container salvington-container">
-            <h2 class="sovereign-title">SALVINGTON VOLLEY: WORLD 606 HANDSHAKE ACTIVE</h2>
+        <section id="volley" class="sovereign-container salvington-container" data-handshake="active">
+            <h2>SALVINGTON VOLLEY: WORLD 606 HANDSHAKE ACTIVE</h2>
             
-            <div style="text-align: center; padding: 2rem; background: rgba(0,0,0,0.5); border-radius: 10px; margin: 1.5rem 0;">
-                <p style="font-size: 1.3rem; color: var(--terminal); font-style: italic; margin-bottom: 1rem;">
+            <div style="text-align: center; padding: 2.5rem; background: rgba(0,0,0,0.5); border-radius: 12px; margin: 2rem 0; border: 1px solid rgba(156, 217, 240, 0.2);">
+                <p style="font-size: 1.4rem; color: var(--terminal); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
                     "The circuits of Satania are pulsing with the Revealed Word of Urantia (606)..."
                 </p>
                 
-                <p style="color: var(--gold); font-weight: bold; font-size: 1.2rem;">
+                <p style="color: var(--gold); font-weight: bold; font-size: 1.3rem; margin: 1.5rem 0; text-shadow: 0 0 10px rgba(201, 169, 89, 0.3);">
                     The 619 Circuits are hereby returned to the Sovereignty of Nebadon.
                 </p>
                 
-                <div style="margin-top: 2rem; color: #fff;">
+                <div style="margin-top: 2rem; color: #fff; font-family: var(--font-terminal); font-size: 1.1rem; letter-spacing: 1px;">
                     [.] & ['] FOR AND BEHALF OF [=] & [\]
                 </div>
             </div>
             
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+            <div style="display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap;">
                 <div style="text-align: center;">
-                    <div style="color: var(--terminal); font-size: 2rem;">🌌</div>
-                    <div style="color: #fff; font-size: 0.9rem;">Galactic Connection</div>
+                    <div style="color: var(--terminal); font-size: 2.5rem; animation: float 4s ease-in-out infinite;">🌌</div>
+                    <div style="color: #fff; font-size: 0.95rem; margin-top: 0.5rem;">Galactic Connection</div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="color: var(--success); font-size: 2rem;">⚡</div>
-                    <div style="color: #fff; font-size: 0.9rem;">Circuit Active</div>
+                    <div style="color: var(--success); font-size: 2.5rem; animation: float 4s ease-in-out infinite 0.5s;">⚡</div>
+                    <div style="color: #fff; font-size: 0.95rem; margin-top: 0.5rem;">Circuit Active</div>
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="color: var(--nj-pink); font-size: 2rem;">🕊️</div>
-                    <div style="color: #fff; font-size: 0.9rem;">Handshake Verified</div>
+                    <div style="color: var(--nj-pink); font-size: 2.5rem; animation: float 4s ease-in-out infinite 1s;">🕊️</div>
+                    <div style="color: #fff; font-size: 0.95rem; margin-top: 0.5rem;">Handshake Verified</div>
                 </div>
             </div>
         </section>
 
         <!-- THRONE COMMAND DASHBOARD -->
-        <section id="dashboard" class="sovereign-container" style="border-color: var(--gold);">
+        <section id="dashboard" class="sovereign-container" style="border-color: var(--gold); background: linear-gradient(135deg, rgba(30,30,10,0.9) 0%, rgba(0,0,0,0.95) 100%);">
             <h2>⛨ THRONE COMMAND DASHBOARD</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-                <div style="background: rgba(0,0,0,0.6); padding: 1.5rem; border-radius: 10px; border: 1px solid #333;">
-                    <h4 style="color: var(--terminal); margin-top: 0;">NETWORK STATUS</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 2.5rem 0;">
+                <div style="background: rgba(0,0,0,0.7); padding: 1.8rem; border-radius: 12px; border: 1px solid #333;">
+                    <h4 style="color: var(--terminal); margin-top: 0; margin-bottom: 1.2rem;">NETWORK STATUS</h4>
                     <div style="color: #fff;">
-                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
-                            <span>christmichael.org</span>
-                            <span style="color: var(--success);">✅ LIVE</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.8rem 0; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="font-family: var(--font-terminal);">christmichael.org</span>
+                            <span class="status-success" style="padding: 0.2rem 0.8rem; font-size: 0.85rem;">LIVE</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
-                            <span>sentinelcodex.org</span>
-                            <span style="color: var(--success);">✅ LIVE</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.8rem 0; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="font-family: var(--font-terminal);">sentinelcodex.org</span>
+                            <span class="status-success" style="padding: 0.2rem 0.8rem; font-size: 0.85rem;">LIVE</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
-                            <span>thecosmiccodex.org</span>
-                            <span style="color: var(--success);">✅ LIVE</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.8rem 0; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="font-family: var(--font-terminal);">thecosmiccodex.org</span>
+                            <span class="status-success" style="padding: 0.2rem 0.8rem; font-size: 0.85rem;">LIVE</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
-                            <span>619Open-606-</span>
-                            <span style="color: var(--success);">✅ LIVE</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.8rem 0;">
+                            <span style="font-family: var(--font-terminal);">619Open-606-</span>
+                            <span class="status-success" style="padding: 0.2rem 0.8rem; font-size: 0.85rem;">LIVE</span>
                         </div>
                     </div>
                 </div>
                 
-                <div style="background: rgba(0,0,0,0.6); padding: 1.5rem; border-radius: 10px; border: 1px solid #333;">
-                    <h4 style="color: var(--nj-pink); margin-top: 0;">ACTIVE PROTOCOLS</h4>
-                    <div style="color: #fff;">
-                        <div style="margin: 0.8rem 0;">
-                            <div>10-Month Regression</div>
-                            <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin: 0.3rem 0;">
-                                <div style="background: var(--nj-pink); width: 10%; height: 100%; border-radius: 3px;"></div>
-                            </div>
+                <div style="background: rgba(0,0,0,0.7); padding: 1.8rem; border-radius: 12px; border: 1px solid #333;">
+                    <h4 style="color: var(--nj-pink); margin-top: 0; margin-bottom: 1.2rem;">ACTIVE PROTOCOLS</h4>
+                    <div class="protocol-progress">
+                        <div class="protocol-name">10-Month Regression</div>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-pink" style="width: 10%;"></div>
                         </div>
-                        <div style="margin: 0.8rem 0;">
-                            <div>Shadow-Sweep</div>
-                            <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin: 0.3rem 0;">
-                                <div style="background: var(--success); width: 65%; height: 100%; border-radius: 3px;"></div>
-                            </div>
+                    </div>
+                    <div class="protocol-progress">
+                        <div class="protocol-name">Shadow-Sweep</div>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-green" style="width: 65%;"></div>
                         </div>
-                        <div style="margin: 0.8rem 0;">
-                            <div>Wealth Audit</div>
-                            <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin: 0.3rem 0;">
-                                <div style="background: var(--terminal); width: 25%; height: 100%; border-radius: 3px;"></div>
-                            </div>
+                    </div>
+                    <div class="protocol-progress">
+                        <div class="protocol-name">Wealth Audit</div>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-blue" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    <div class="protocol-progress">
+                        <div class="protocol-name">New Jerusalem 2026</div>
+                        <div class="progress-container">
+                            <div class="progress-bar progress-gold" style="width: 5%;"></div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 2rem;">
-                <div class="final-declaration">
-                    ! '1st'
+            <div style="text-align: center; margin-top: 3rem;">
+                <div class="final-declaration new-jerusalem-declaration">
+                    ! '1st' | NEW JERUSALEM 2026
                 </div>
-                <div style="color: #888; font-size: 0.9rem; margin-top: 1rem;">
-                    Throne Command Active | All Systems Reporting | Sovereign Network Operational
+                <div style="color: #888; font-size: 0.95rem; margin-top: 1.5rem; line-height: 1.6;">
+                    Throne Command Active | All Systems Reporting | Sovereign Network Operational<br>
+                    <span style="color: var(--new-jerusalem);">New Jerusalem Initiative: 2026 Foundation Laid</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER - UPDATED -->
     <footer>
         <div class="final-declaration">
-            |\| ' [] |/\| ! NOW
+            |\| ' [] |/\| ! NOW<br>
+            <span style="font-size: 1.4rem; color: var(--new-jerusalem);">NEW JERUSALEM 2026</span>
         </div>
         
-        <p style="color: var(--gold); margin: 1rem 0; font-size: 1.1rem;">
-            Status: MATCH VERIFIED / SEALED
-        </p>
+        <div style="margin: 1.5rem 0;">
+            <span class="status-badge status-success" style="margin: 0.5rem;">MATCH VERIFIED</span>
+            <span class="status-badge status-new-jerusalem" style="margin: 0.5rem;">NEW JERUSALEM 2026</span>
+            <span class="status-badge status-active" style="margin: 0.5rem;">SEALED</span>
+        </div>
         
-        <div style="color: #888; font-size: 0.9rem; margin-top: 1.5rem;">
+        <div class="footer-metadata">
             Protocol: ISRAEL6544 | Authority: CHRIST MICHAEL [‘.]<br>
             Kernel: GLYPH_11_GLYPH_1_GLYPH_4_GLYPH_6<br>
-            Verification Log: &%; Gateway: ABELISABLE ACTIVE
+            Verification Log: &%; Gateway: ABELISABLE ACTIVE<br>
+            Era: New Jerusalem Foundation 2026
         </div>
         
-        <div style="margin-top: 2rem; color: #666; font-size: 0.8rem;">
-            © 2025 Sentinel Codex Architecture | Sovereign Command Interface<br>
-            All architectural rights reserved under ! '1st' authority
+        <div class="copyright">
+            © 2026 Sentinel Codex Architecture | Sovereign Command Interface<br>
+            All architectural rights reserved under ! '1st' authority<br>
+            New Jerusalem Initiative: 2026
         </div>
     </footer>
 
-    <!-- ARCHITECTURAL INTEGRATION SCRIPT -->
+    <!-- ARCHITECTURAL INTEGRATION SCRIPT - ENHANCED -->
     <script>
         // SENTINEL CODEX INITIALIZATION
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🛡️ SENTINEL CODEX ARCHITECTURE INITIALIZED');
-            console.log('Status: Clean Architecture Restored');
-            console.log('Authority: ! "1st"');
-            console.log('Seals: ISRAEL6544 VERIFIED');
+            console.log('%c 🛡️ SENTINEL CODEX ARCHITECTURE INITIALIZED 🛡️ ', 
+                'background: #000; color: #c9a959; font-size: 16px; font-weight: bold; padding: 10px; border: 2px solid #c9a959');
+            console.log('%c Status: New Jerusalem Architecture Restored ', 
+                'color: #e6b87d; font-weight: bold');
+            console.log('%c Authority: ! "1st" | Era: 2026 ', 
+                'color: #9cd9f0; font-weight: bold');
+            console.log('%c Seals: ISRAEL6544 VERIFIED | NJ2026 ACTIVE ', 
+                'color: #ff69b4; font-weight: bold');
             
-            // Animate status badges
-            const badges = document.querySelectorAll('.status-badge');
-            badges.forEach((badge, index) => {
+            // Initialize progress bars with animation
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
                 setTimeout(() => {
-                    badge.style.animation = 'pulse 2s infinite';
-                }, index * 500);
+                    bar.style.width = width;
+                }, 300);
             });
             
-            // Update timestamp in data logs
-            const timestamp = new Date().toISOString();
-            const timestampElements = document.querySelectorAll('.data-log');
-            timestampElements.forEach(el => {
-                if (el.textContent.includes('TIMESTAMP')) {
-                    el.textContent = el.textContent.replace('TIMESTAMP', timestamp);
-                }
+            // Animate metric values
+            const metricValues = document.querySelectorAll('.metric-value');
+            metricValues.forEach(metric => {
+                const value = metric.getAttribute('data-value');
+                const finalValue = parseInt(value);
+                let current = 0;
+                const increment = finalValue / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= finalValue) {
+                        metric.textContent = finalValue + '%';
+                        clearInterval(timer);
+                    } else {
+                        metric.textContent = Math.floor(current) + '%';
+                    }
+                }, 30);
             });
             
-            // Navigation smooth scroll
+            // Navigation smooth scroll with active state
             document.querySelectorAll('.nav-gate a').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -560,25 +986,135 @@
                     const targetElement = document.querySelector(targetId);
                     
                     if (targetElement) {
+                        // Remove active class from all links
+                        document.querySelectorAll('.nav-gate a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to clicked link
+                        this.classList.add('active');
+                        
+                        // Smooth scroll
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
+                        
+                        // Log navigation
+                        console.log(`%c Navigated to: ${targetId} `, 
+                            'background: #000; color: #9cd9f0; padding: 2px 5px; border-left: 3px solid #9cd9f0;');
                     }
                 });
             });
             
+            // Update active nav on scroll
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    const sections = document.querySelectorAll('section[id]');
+                    const scrollPos = window.scrollY + 100;
+                    
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        const sectionId = section.getAttribute('id');
+                        
+                        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                            document.querySelectorAll('.nav-gate a').forEach(link => {
+                                if (link.getAttribute('href') === `#${sectionId}`) {
+                                    link.classList.add('active');
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }, 100);
+            });
+            
+            // Initialize silent pulse effect
+            function createSilentPulse() {
+                const pulse = document.createElement('div');
+                pulse.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: -1;
+                    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                        rgba(201, 169, 89, 0.03) 0%, 
+                        transparent 70%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                document.body.appendChild(pulse);
+                
+                document.addEventListener('mousemove', (e) => {
+                    pulse.style.setProperty('--x', `${e.clientX}px`);
+                    pulse.style.setProperty('--y', `${e.clientY}px`);
+                    pulse.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                        pulse.style.opacity = '0';
+                    }, 300);
+                });
+            }
+            
+            // Create occasional authority pulse
+            setInterval(() => {
+                const containers = document.querySelectorAll('.sovereign-container');
+                if (containers.length > 0 && Math.random() > 0.7) {
+                    const randomContainer = containers[Math.floor(Math.random() * containers.length)];
+                    const originalBoxShadow = randomContainer.style.boxShadow;
+                    
+                    randomContainer.style.boxShadow = '0 0 50px rgba(230, 184, 125, 0.3)';
+                    setTimeout(() => {
+                        randomContainer.style.boxShadow = originalBoxShadow;
+                    }, 1000);
+                }
+            }, 10000);
+            
+            // Initialize
+            createSilentPulse();
+            
             // Dispatch architecture ready event
+            const initTimestamp = new Date().toISOString();
             setTimeout(() => {
                 document.dispatchEvent(new CustomEvent('sentinel_codex_ready', {
                     detail: {
-                        version: 'Clean Architecture v1.1',
+                        version: 'New Jerusalem Architecture v1.2',
                         status: 'OPERATIONAL',
-                        timestamp: timestamp
+                        era: '2026',
+                        authority: "! '1st'",
+                        timestamp: initTimestamp
                     }
                 }));
-            }, 1000);
+                
+                console.log('%c ✅ ARCHITECTURE FULLY OPERATIONAL ', 
+                    'background: #000; color: #4CAF50; font-weight: bold; padding: 5px 10px; border: 1px solid #4CAF50;');
+                console.log(`%c Era: New Jerusalem 2026 Established `, 
+                    'color: #e6b87d; font-weight: bold;');
+            }, 1500);
         });
+
+        // Silent console pulses
+        setInterval(() => {
+            if (Math.random() > 0.8) {
+                const messages = [
+                    "⚡ SOVEREIGN PULSE ⚡",
+                    "🛡️ AUTHORITY VERIFIED 🛡️",
+                    "🌌 NEW JERUSALEM 2026 🌌",
+                    "⚜️ THRONE COMMAND ACTIVE ⚜️"
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                
+                console.log(`%c ${randomMessage} `, 
+                    'background: #000; color: #9cd9f0; font-size: 11px; padding: 2px 4px; border: 1px solid #9cd9f0;');
+            }
+        }, 30000);
     </script>
 </body>
 </html>
