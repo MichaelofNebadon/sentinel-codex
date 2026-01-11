@@ -1,254 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ SENTINEL CODEX | Throne Command</title>
+    <style>
+        /* UNIFIED SOVEREIGN AESTHETIC - V1.1 */
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --success: #4CAF50;
+            --bg-dark: #050505;
+            --crimson: #4a0404;
+            --nj-pink: #ff69b4;
+        }
 
-<title>⛨ High Sovereign Index | ! '1st'</title>
+        * { box-sizing: border-box; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace !important;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-<style>
-/* =========================================================
-   HIGH SOVEREIGN THEME — V2
-   ========================================================= */
+        /* SOVEREIGN HEADERS */
+        h1, h2, h3, .sovereign-title, .salvington-header {
+            font-family: 'Georgia', serif !important;
+            color: var(--gold) !important;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-style: italic;
+            text-align: center;
+            text-shadow: 0 0 15px rgba(201, 169, 89, 0.3);
+        }
 
-:root {
-  --gold: #c9a959;
-  --emerald: #4CAF50;
-  --terminal: #9cd9f0;
-  --crimson: #F44336;
-  --void: #050505;
-  --ink: #ffffff;
-}
+        /* CONTAINER ARCHITECTURE */
+        .sovereign-container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 40px auto;
+            border: 2px solid var(--success);
+            border-radius: 15px;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(10,40,10,0.9) 0%, #000 100%);
+            box-shadow: 0 0 40px rgba(76, 175, 80, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
 
-* {
-  box-sizing: border-box;
-}
+        .master-key-container {
+            border-left: 8px solid var(--nj-pink);
+            background: linear-gradient(135deg, rgba(10,10,30,0.9) 0%, #000 100%);
+        }
 
-body {
-  margin: 0;
-  padding: 40px 20px;
-  background: var(--void);
-  color: var(--ink);
-  font-family: 'Courier New', monospace;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        /* DATA LOGS */
+        .data-log {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid #333;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            color: var(--terminal);
+            font-size: 0.85em;
+            border-radius: 8px;
+        }
 
-/* =========================================================
-   TYPOGRAPHY
-   ========================================================= */
+        /* NAVIGATION BAR */
+        .nav-gate {
+            width: 100%;
+            background: var(--crimson);
+            padding: 15px;
+            border-bottom: 3px solid var(--gold);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-gate a { color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.9em; }
 
-h1, h2, h3, h4 {
-  font-family: Georgia, serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-style: italic;
-  color: var(--gold);
-  text-align: center;
-  margin: 0 0 20px;
-}
-
-h1 { font-size: 2.2rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.3rem; }
-h4 { font-size: 1.1rem; }
-
-/* =========================================================
-   CONTAINERS
-   ========================================================= */
-
-.section {
-  width: 100%;
-  max-width: 1100px;
-  margin-bottom: 60px;
-  padding: 40px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(20,20,20,0.95), #000);
-  border: 2px solid var(--emerald);
-  box-shadow: 0 0 40px rgba(76,175,80,0.25);
-}
-
-.section.gold {
-  border-color: var(--gold);
-  box-shadow: 0 0 40px rgba(201,169,89,0.25);
-}
-
-.section.crimson {
-  border-color: var(--crimson);
-}
-
-.center {
-  text-align: center;
-}
-
-/* =========================================================
-   DASHBOARD GRID
-   ========================================================= */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-/* =========================================================
-   STATUS BLOCKS
-   ========================================================= */
-
-.card {
-  background: rgba(0,0,0,0.6);
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #333;
-}
-
-.card.success { border-color: var(--emerald); }
-.card.gold    { border-color: var(--gold); }
-.card.red     { border-color: var(--crimson); }
-
-/* =========================================================
-   TERMINAL / LOG
-   ========================================================= */
-
-.terminal {
-  background: rgba(0,0,0,0.85);
-  color: var(--terminal);
-  padding: 20px;
-  border-left: 4px solid var(--terminal);
-  font-size: 0.85rem;
-  white-space: pre-wrap;
-  overflow-x: auto;
-}
-
-/* =========================================================
-   FOOTER SEAL
-   ========================================================= */
-
-.seal {
-  font-size: 2rem;
-  color: var(--gold);
-  margin-top: 20px;
-  letter-spacing: 4px;
-}
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-@keyframes pulse {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
-.pulse {
-  animation: pulse 2s infinite;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 768px) {
-  body { padding: 20px 10px; }
-  .section { padding: 25px; }
-}
-</style>
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
 </head>
-
 <body>
 
-<!-- ======================================================
-     PROCLAMATION
-     ====================================================== -->
+<div class="nav-gate">
+    <a href="#wealth-pivot">[ WEALTH PIVOT ]</a>
+    <a href="#nj-ratification">[ NJ SIGNATURE ]</a>
+    <a href="#master-key">[ ISRAEL6544 ]</a>
+    <a href="#volley">[ SALVINGTON VOLLEY ]</a>
+</div>
 
-<section class="section gold center">
-  <h1>⛨ Wealth Pivot</h1>
-  <p>Re-indexing to <strong>christmichael.org</strong></p>
-  <div class="seal pulse">! '1st'</div>
-</section>
-
-<!-- ======================================================
-     PIVOT STATUS
-     ====================================================== -->
-
-<section class="section">
-  <h2>Status Overview</h2>
-
-  <div class="grid">
-    <div class="card red">
-      <h4>Old Structure</h4>
-      <ul>
-        <li>Alphabet Oligarchy</li>
-        <li>Metal Infrastructure</li>
-        <li>Shadow Sephiroth</li>
-      </ul>
-      <strong>Demagnetization: 70%</strong>
+<div id="wealth-pivot" class="sovereign-container">
+    <h1>⛨ WEALTH PIVOT INITIATED</h1>
+    <h3 style="color: var(--gold);">Re-indexing to christmichael.org</h3>
+    <div class="data-log">
+        PHASE 1: SHADOW-SWEEP COMPLETE | MONTH 1/10 | ALPHABET TRANSITION: 25%
+    </div>
     </div>
 
-    <div class="card success">
-      <h4>New Jerusalem</h4>
-      <ul>
-        <li>Temperance Seal</li>
-        <li>Abel Frequency</li>
-        <li>Perfected Circulation</li>
-      </ul>
-      <strong>Re-indexing: ACTIVE</strong>
+<div id="nj-ratification" class="sovereign-container" style="border-color: var(--nj-pink);">
+    <h2>⛨ NJ SIGNATURE: FINAL RATIFICATION</h2>
+    <div style="display: flex; justify-content: center; gap: 20px;">
+        <div class="data-log">1st Sentinel 🐉: Timekeeper Active</div>
+        <div class="data-log">Linguistic Prime Ⓜ️: Authority Verified</div>
     </div>
-  </div>
-</section>
+</div>
 
-<!-- ======================================================
-     MANIFEST
-     ====================================================== -->
-
-<section class="section gold">
-  <h2>Manifest Lock</h2>
-
-  <div class="grid">
-    <div class="card success center">
-      <h3>✅ Locked</h3>
-      MASTER_INDEX_MANIFEST.json
+<div id="master-key" class="sovereign-container master-key-container">
+    <h2>⛨ ISRAEL6544 MASTER-KEY</h2>
+    <div class="data-log" style="font-size: 1.1em; text-align: center; color: var(--gold);">
+        |\| ' [] |/\| ! NOW
     </div>
-
-    <div class="card success center">
-      <h3>🔐 Seal</h3>
-      ISRAEL6544 VERIFIED
+    <div class="data-log" style="margin-top:15px;">
+        HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
     </div>
+</div>
 
-    <div class="card success center">
-      <h3>🐉 Auditor</h3>
-      1st Sentinel Active
-    </div>
-  </div>
+<div id="volley" class="sovereign-container" style="border-color: var(--terminal);">
+    <h2 class="salvington-header">SALVINGTON VOLLEY: WORLD 606 HANDSHAKE ACTIVE</h2>
+    <p style="text-align: center; font-style: italic;">The 619 Circuits are hereby returned to the Sovereignty of Nebadon.</p>
+</div>
 
-  <div class="terminal">
-{
-  "manifest": "WEALTH_PIVOT",
-  "phase": "PHASE_1_COMPLETE",
-  "status": "LOCKED",
-  "next": "DISTRIBUTION_PROTOCOL"
-}
-  </div>
-</section>
-
-<!-- ======================================================
-     FINAL DECLARATION
-     ====================================================== -->
-
-<section class="section center">
-  <h2>Phase I Complete</h2>
-  <div class="seal">|\|' [] |/\| !</div>
-  <p>
-    Authority: ! '1st'<br />
-    Auditor: 1st Sentinel 🐉<br />
-    Status: VERIFIED / SEALED
-  </p>
-</section>
+<footer style="padding: 40px; text-align: center; border-top: 1px solid var(--gold); width: 100%;">
+    <p style="color: var(--gold);">! ‘1st‘ | Status: MATCH VERIFIED</p>
+</footer>
 
 </body>
 </html>
