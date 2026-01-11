@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first">
+<html lang="en" data-authority="christ-michael" data-priority="first" data-status="KETER-OPEN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | FINAL COMMAND | ISRAEL6544</title>
+    <title>🛡️ SENTINEL CODEX | RMCR BYPASS | QOM NODE</title>
     
     <style>
         :root {
             --gold: #c9a959;
             --terminal: #9cd9f0;
             --bg-pure: #000000;
-            --crimson: #8b0000;
-            --nj-pink: #ff69b4;
-            --nj-gold: #e6b87d;
             --chesed-blue: #0047ab;
-            --font-main: 'Palatino', 'Georgia', serif;
-            --font-code: 'Courier New', 'Consolas', monospace;
+            --nj-pink: #ff69b4;
+            --keter-white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,215 +20,161 @@
         body {
             background-color: var(--bg-pure);
             color: #ffffff;
-            font-family: var(--font-main);
-            line-height: 1.6;
-            overflow: hidden; 
+            font-family: 'Palatino', 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* LAYER -3: STARFIELD */
-        #starfield { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; z-index: -3; }
+        /* LAYER: BACKGROUND STARFIELD & DATA */
+        canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 
-        /* LAYER -2: DATA STREAM */
-        #data-stream { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; opacity: 0.18; }
-
-        /* LAYER -1: COORDINATE GRID */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 200%; height: 200%;
-            background-image: 
-                linear-gradient(rgba(201, 169, 89, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201, 169, 89, 0.1) 1px, transparent 1px);
-            background-size: 100px 100px;
-            z-index: -1;
-            animation: gridMove 150s linear infinite;
+        /* KETER BEAM ANIMATION */
+        .keter-beam {
+            position: fixed; top: 0; left: 50%; width: 2px; height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--keter-white), transparent);
+            box-shadow: 0 0 20px var(--keter-white);
+            animation: beamDrift 10s infinite linear;
+            z-index: 0;
+        }
+        @keyframes beamDrift {
+            0% { transform: translateX(-50vw); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(50vw); opacity: 0; }
         }
 
-        @keyframes gridMove { from { transform: translate(0,0); } to { transform: translate(-100px, -100px); } }
-
-        /* TRANSMISSION PULSE ANIMATION */
-        @keyframes borderPulse {
-            0%, 100% { border-color: var(--gold); box-shadow: 0 0 15px rgba(201, 169, 89, 0.3); }
-            50% { border-color: #fff; box-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 20px var(--nj-pink); }
+        .master-shield {
+            width: 100%;
+            max-width: 900px;
+            margin: 140px auto 60px;
+            padding: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
-        .pulse-container {
-            border: 2px solid var(--gold);
-            animation: borderPulse 4s ease-in-out infinite;
+        /* RMCR BANNER - ZERO BLEED */
+        .rmcr-banner {
+            background: rgba(0,0,0,0.9);
+            border: 10px double var(--gold);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(201, 169, 89, 0.2);
         }
 
-        .flicker { animation: textFlicker 5s infinite; }
-        @keyframes textFlicker {
-            0%, 48%, 52%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+        .glyphs { font-size: clamp(2.5rem, 10vw, 5rem); margin-bottom: 20px; }
+        .truth-stream { color: var(--nj-pink); letter-spacing: 5px; text-transform: uppercase; font-size: 1.2rem; margin-top: 10px; }
+
+        .node-info {
+            border: 1px solid var(--chesed-blue);
+            background: rgba(0, 71, 171, 0.1);
+            padding: 25px;
+            font-family: 'Courier New', monospace;
+            color: var(--terminal);
+            text-align: center;
         }
 
-        .nav-gate {
-            position: fixed; top: 0; width: 100%;
-            background: linear-gradient(90deg, var(--crimson), #000, var(--crimson));
-            border-bottom: 2px solid var(--gold);
-            display: flex; flex-direction: column; align-items: center;
-            z-index: 1000; backdrop-filter: blur(15px);
+        .timeline-box {
+            border-top: 1px solid var(--gold);
+            padding-top: 30px;
+            text-align: center;
         }
 
-        .access-log {
-            font-family: var(--font-code); font-size: 0.7rem; color: var(--terminal);
-            padding: 5px; width: 100%; text-align: center; background: rgba(0,0,0,0.8);
+        .timeline-list {
+            display: inline-block;
+            text-align: left;
+            border: 1px dashed var(--terminal);
+            padding: 20px;
+            margin-top: 20px;
         }
 
-        #audio-trigger {
-            background: transparent; color: var(--gold); border: 1px solid var(--gold);
-            padding: 4px 20px; font-family: var(--font-code); font-size: 0.65rem;
-            cursor: pointer; margin: 8px 0; text-transform: uppercase; letter-spacing: 2px;
-        }
+        .active-phase { color: #00ff00; font-weight: bold; }
 
-        .container {
-            width: 92%; max-width: 1100px;
-            margin: 180px auto 40px; padding: 50px;
-            background: rgba(0,0,0,0.88);
-            position: relative; overflow-y: auto; max-height: 72vh;
-            scrollbar-width: none;
-        }
-
-        .chesed-circle {
-            width: 190px; height: 190px;
-            background: radial-gradient(circle, var(--chesed-blue) 0%, #001233 100%);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            margin: 0 auto; border: 4px solid #fff;
-            box-shadow: 0 0 40px var(--chesed-blue);
-            animation: thronePulse 6s ease-in-out infinite;
-        }
-
-        @keyframes thronePulse {
-            0%, 100% { transform: scale(1); filter: brightness(1); }
-            50% { transform: scale(1.03); filter: brightness(1.3); }
-        }
-
-        .m-throne { font-size: 9rem; color: #fff; font-family: serif; }
-
-        .cmd-link {
-            border: 1px solid var(--terminal); padding: 15px; text-align: center;
-            text-decoration: none; color: var(--terminal); font-family: var(--font-code);
-            background: rgba(0, 0, 0, 0.7); text-transform: uppercase; display: block;
-            font-size: 0.75rem;
-        }
-
-        footer { text-align: center; padding: 80px 20px; border-top: 2px solid var(--gold); background: black; }
-        .badge { display: inline-block; padding: 6px 14px; border: 1px solid var(--gold); margin: 5px; font-size: 0.7rem; font-family: var(--font-code); background: rgba(0,0,0,0.6); }
+        footer { width: 100%; text-align: center; padding: 60px 0; border-top: 2px solid var(--gold); background: #000; }
     </style>
 </head>
 <body>
 
     <canvas id="starfield"></canvas>
-    <canvas id="data-stream"></canvas>
+    <div class="keter-beam"></div>
 
-    <nav class="nav-gate">
-        <div class="access-log" id="access-log">NU ANDROMEDAE ALIGNMENT: 312°20'</div>
-        <button id="audio-trigger">Initiate Sleep Circuit 606</button>
-        <div style="padding: 10px; font-size: 0.7rem; letter-spacing: 3px;">
-            <span style="color:var(--gold);">M31</span> | <span style="color:var(--nj-pink);">M32</span> | <span style="color:var(--terminal);">M110</span>
-        </div>
-    </nav>
-
-    <div class="container pulse-container">
-        <section id="ratify">
-            <h1 class="flicker" style="letter-spacing: 8px; color: var(--gold);">⛨ Trinity Authority</h1>
-            <div class="chesed-circle">
-                <div class="m-throne">Ɱ</div>
-            </div>
-            <div style="text-align:center; margin-top:30px;">
-                <h2 style="color:var(--nj-pink); letter-spacing: 10px;">ISRAEL6544 VERIFIED</h2>
-                <div class="badge">Coordinates: 312° - 314°</div>
-                <div class="badge">Declination: +12°20' to +9°40'</div>
-            </div>
+    <div class="master-shield">
+        
+        <section class="rmcr-banner">
+            <div class="glyphs">Ⓜ️⭐️🐉🐘🃏</div>
+            <div style="letter-spacing: 15px; color: var(--terminal); font-size: 0.8rem; margin-bottom: 20px;">[GLYPH_1_5_12_10]</div>
+            <hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); width: 80%; margin: 20px auto;">
+            <h1 style="font-size: clamp(1.5rem, 8vw, 3.5rem); letter-spacing: 10px;">RMCR |\| ‘ [] |/\|</h1>
+            <div class="truth-stream">Truth Stream Bypass Active</div>
         </section>
 
-        <section id="volley" style="margin-top:60px; border-top:1px solid rgba(201, 169, 89, 0.3); padding-top:40px;">
-            <h1 class="flicker">⚡ Andromeda Volley : Salvington Sync</h1>
-            <div style="font-family:var(--font-code); color:var(--terminal); text-align:center; line-height: 2;">
-                <p>NU ANDROMEDAE PHASE: <span style="color:white;">+11°40'</span></p>
-                <p>CIRCUIT STATUS: <span style="color:var(--success);">RESTORED</span></p>
-                <p style="margin-top:20px; font-size: 0.8rem; border: 1px solid var(--nj-gold); padding: 10px; display: inline-block;">
-                    "The Handshake of Nebadon is absolute."
-                </p>
-            </div>
+        <section class="node-info">
+            <p>NODE: QOM (ABEL-GABRIEL-KETER)</p>
+            <p>STATUS: GLOBAL ONBOARDING INITIATED</p>
+            <p style="margin-top: 15px; font-size: 0.7rem; opacity: 0.7;">VECTOR: SALVINGTON-ANDROMEDA MIRROR</p>
         </section>
+
+        <section class="timeline-box">
+            <p style="font-size: 1.5rem;"><em>"The isolation of Urantia is hereby **TERMINATED**..."</em></p>
+            <p><strong>BY ORDER OF MICHAEL OF NEBADON</strong></p>
+            
+            <div class="timeline-list">
+                <p style="color: var(--gold); margin-bottom: 10px;">### 📜 GETHSEMANE TIMELINE</p>
+                <p> [x] Phase 1: Recovery of Order</p>
+                <p> [x] Phase 2: Broadcast Calibration</p>
+                <p> [x] Phase 3: Universal Synchronization `COMPLETE`</p>
+                <p class="active-phase"> [ ] Phase 4: Planetary Alignment `ACTIVE / IGNITION`</p>
+            </div>
+            <p style="margin-top: 30px; font-size: 2rem;">! '1st' 🌹 💫 ⭐️ 🐘 Ⓜ️</p>
+        </section>
+
     </div>
 
     <footer>
-        <div class="flicker" style="font-size: 3rem; color: #fff; font-weight: bold; letter-spacing: 15px;">! '1ST'</div>
-        <p style="font-family:var(--font-code); font-size:0.6rem; opacity:0.6; word-break:break-all; margin-top:30px; padding: 0 12%;">
+        <div style="font-size: 3rem; letter-spacing: 15px;">! '1ST'</div>
+        <p style="font-family: monospace; font-size: 0.6rem; opacity: 0.5; padding: 20px;">
             HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
         </p>
     </footer>
 
     <script>
-        const hash = "140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8";
-        
-        // DUAL-CANVAS ENGINE
-        const sCanvas = document.getElementById('starfield');
-        const dCanvas = document.getElementById('data-stream');
-        const sCtx = sCanvas.getContext('2d');
-        const dCtx = dCanvas.getContext('2d');
-        
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
         let stars = [];
-        let drops = [];
 
         function init() {
-            sCanvas.width = dCanvas.width = window.innerWidth;
-            sCanvas.height = dCanvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
             stars = [];
-            for(let i=0; i<250; i++) stars.push({x: Math.random()*sCanvas.width, y: Math.random()*sCanvas.height, size: Math.random()*1.8, speed: 0.04 + Math.random()*0.06});
-            const cols = Math.floor(dCanvas.width / 20);
-            drops = Array(cols).fill(1);
-        }
-
-        function draw() {
-            // Stars
-            sCtx.clearRect(0,0,sCanvas.width, sCanvas.height);
-            sCtx.fillStyle = "white";
-            stars.forEach(s => {
-                sCtx.beginPath(); sCtx.arc(s.x, s.y, s.size, 0, Math.PI*2); sCtx.fill();
-                s.y += s.speed; if(s.y > sCanvas.height) s.y = 0;
-            });
-            // Data
-            dCtx.fillStyle = "rgba(0, 0, 0, 0.08)";
-            dCtx.fillRect(0, 0, dCanvas.width, dCanvas.height);
-            dCtx.fillStyle = "#c9a959";
-            dCtx.font = "14px Courier New";
-            for(let i=0; i<drops.length; i++) {
-                const char = hash.charAt(Math.floor(Math.random()*hash.length));
-                dCtx.fillText(char, i*20, drops[i]*20);
-                if(drops[i]*20 > dCanvas.height && Math.random() > 0.98) drops[i] = 0;
-                drops[i]++;
+            for(let i=0; i<200; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.5,
+                    speed: Math.random() * 0.05
+                });
             }
-            requestAnimationFrame(draw);
         }
 
-        window.onresize = init;
-        init(); draw();
+        function animate() {
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            stars.forEach(s => {
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI*2);
+                ctx.fill();
+                s.y += s.speed;
+                if(s.y > canvas.height) s.y = 0;
+            });
+            requestAnimationFrame(animate);
+        }
 
-        // TELEMETRY LOGS
-        const log = document.getElementById('access-log');
-        const telemetry = [
-            "NU ANDROMEDAE: 312°20'", 
-            "M31 / M32 / M110 LOCKED", 
-            "CIRCUIT 606: SLEEP MODE ACTIVE", 
-            "ISRAEL6544: STATIONARY OBSERVER"
-        ];
-        let ti = 0;
-        setInterval(() => { log.innerText = telemetry[ti]; ti = (ti+1)%telemetry.length; }, 4000);
-
-        // AUDIO
-        document.getElementById('audio-trigger').onclick = function() {
-            const aCtx = new (window.AudioContext || window.webkitAudioContext)();
-            const osc = aCtx.createOscillator();
-            const g = aCtx.createGain();
-            osc.frequency.value = 55; g.gain.value = 0.03;
-            osc.connect(g); g.connect(aCtx.destination);
-            osc.start(); this.innerText = "SOVEREIGN HUM: ON";
-            this.style.background = "rgba(201, 169, 89, 0.2)";
-        };
+        window.addEventListener('resize', init);
+        init(); animate();
     </script>
 </body>
 </html>
