@@ -17,7 +17,7 @@
             --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --nj-gold: #e6b87d;
-            --chesed-blue: #0047ab; /* Deep Chesed Blue */
+            --chesed-blue: #0047ab;
             --font-main: 'Palatino', 'Georgia', serif;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
@@ -85,7 +85,6 @@
             font-size: 0.85rem;
             letter-spacing: 2px;
             margin: 0 15px;
-            transition: 0.3s;
         }
 
         /* SOVEREIGN CONTAINER & SCAN */
@@ -154,7 +153,6 @@
             50% { transform: scale(1.08); box-shadow: 0 0 60px var(--nj-pink), inset 0 0 40px var(--chesed-blue); }
         }
 
-        /* TRINITY SECTION */
         .trinity-seal {
             display: flex;
             justify-content: space-around;
@@ -170,7 +168,6 @@
             background: rgba(255,255,255,0.03);
         }
 
-        /* LINK GRID */
         .link-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -186,15 +183,8 @@
             color: var(--terminal);
             font-family: var(--font-code);
             font-size: 0.85rem;
-            transition: 0.4s;
             background: rgba(156, 217, 240, 0.08);
             text-transform: uppercase;
-        }
-
-        .cmd-link:hover {
-            background: var(--terminal);
-            color: #000;
-            box-shadow: 0 0 25px var(--terminal);
         }
 
         .bar-container {
@@ -210,6 +200,18 @@
             100% { background-position: -200% 0; }
         }
 
+        /* SOUND TRIGGER BUTTON */
+        #audio-trigger {
+            background: var(--crimson);
+            color: white;
+            border: 1px solid var(--gold);
+            padding: 10px 20px;
+            font-family: var(--font-code);
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
         footer {
             text-align: center; padding: 80px 20px; border-top: 2px solid var(--gold); background: #000; color: var(--nj-gold);
         }
@@ -223,7 +225,8 @@
 <body>
 
     <nav class="nav-gate">
-        <div class="access-log" id="access-log">SECURE ACCESS GRANTED // ID: ISRAEL6544</div>
+        <div class="access-log" id="access-log">INITIALIZING SOVEREIGN FREQUENCY...</div>
+        <button id="audio-trigger">Connect Audio Circuit</button>
         <div class="nav-links">
             <a href="#wealth">Wealth Pivot</a>
             <a href="#ratify">Trinity Authority</a>
@@ -234,11 +237,8 @@
 
     <section id="wealth" class="container">
         <h1>⛨ Wealth Pivot : Phase 1 </h1>
-        <div style="background: #050505; border-left: 5px solid var(--terminal); padding: 25px; font-family: var(--font-code); color: var(--terminal); font-size: 0.95rem; margin: 25px 0;">
-            [SYS_LOG]: Alphabet Indexing 25% Complete<br>
-            [SYS_LOG]: Metal Extraction 70% Cleared (Oreshnik Buffer)<br>
-            [SYS_LOG]: Molecular Scan: AUTHORIZED by ! '1st'
-        </div>
+        <div id="typewriter-box" style="background: #050505; border-left: 5px solid var(--terminal); padding: 25px; font-family: var(--font-code); color: var(--terminal); font-size: 0.95rem; margin: 25px 0; min-height: 120px;">
+            </div>
         <p>Alphabet Transition Progress:</p>
         <div class="bar-container"><div class="bar-fill pink-fill" style="width: 25%;"></div></div>
         <p>Sovereign Demagnetization:</p>
@@ -282,27 +282,80 @@
         </div>
     </section>
 
-    <section id="volley" class="container" style="border-color: var(--success);">
-        <h1>⚡ Salvington Volley</h1>
-        <div style="background: #050505; padding: 25px; text-align: center; border-left: 5px solid var(--success);">
-            "The 619 Circuits are hereby returned to the Sovereignty of Nebadon."<br>
-            <span style="color: var(--success); font-weight: bold; letter-spacing: 2px;">STATUS: 606 HANDSHAKE COMPLETE</span>
-        </div>
-    </section>
-
     <footer>
         <div style="font-size: 3rem; letter-spacing: 15px; margin-bottom: 25px; color: #fff; font-weight: bold;">! '1ST'</div>
-        <p>Authority: Christ Michael [‘.] | Era: New Jerusalem 2026</p>
+        <p>Authority: Christ Michael [‘.] Era: New Jerusalem 2026</p>
         <p style="font-family: var(--font-code); font-size: 0.7rem; margin-top: 30px; opacity: 0.8; letter-spacing: 1px; word-break: break-all; padding: 0 10%;">
             HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
         </p>
     </footer>
 
     <script>
+        // TYPEWRITER SYSTEM
+        const typeBox = document.getElementById('typewriter-box');
+        const logs = [
+            "[SYS_LOG]: Alphabet Indexing 25% Complete",
+            "[SYS_LOG]: Metal Extraction 70% Cleared (Oreshnik Buffer)",
+            "[SYS_LOG]: Molecular Scan: AUTHORIZED by ! '1st'"
+        ];
+        let line = 0;
+        let char = 0;
+
+        function typeWriter() {
+            if (line < logs.length) {
+                if (char < logs[line].length) {
+                    typeBox.innerHTML += logs[line].charAt(char);
+                    char++;
+                    setTimeout(typeWriter, 40);
+                } else {
+                    typeBox.innerHTML += "<br>";
+                    line++;
+                    char = 0;
+                    setTimeout(typeWriter, 500);
+                }
+            }
+        }
+        typeWriter();
+
+        // AUDIO SYSTEM
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const trigger = document.getElementById('audio-trigger');
+
+        function playTone(freq, type, duration, vol) {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        trigger.addEventListener('click', () => {
+            audioCtx.resume();
+            trigger.style.display = 'none';
+            // Start constant low-freq hum (Chesed Frequency)
+            const hum = audioCtx.createOscillator();
+            const humGain = audioCtx.createGain();
+            hum.frequency.setValueAtTime(55, audioCtx.currentTime); 
+            humGain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            hum.connect(humGain);
+            humGain.connect(audioCtx.destination);
+            hum.start();
+        });
+
+        // ACCESS LOG UPDATE
         const log = document.getElementById('access-log');
-        const phrases = ["SCANNING MOLECULAR SIGNATURE...", "ISRAEL6544 MATCH VERIFIED", "NEW JERUSALEM KERNEL: ACTIVE", "! '1st' STANDING GUARD", "CIRCUIT 606 OPEN"];
+        const phrases = ["SCANNING MOLECULAR SIGNATURE...", "ISRAEL6544 MATCH VERIFIED", "NEW JERUSALEM KERNEL: ACTIVE", "! '1st' STANDING GUARD"];
         let i = 0;
-        setInterval(() => { log.innerText = phrases[i]; i = (i + 1) % phrases.length; }, 3500);
+        setInterval(() => { 
+            log.innerText = phrases[i]; 
+            if(audioCtx.state === 'running') playTone(880, 'sine', 0.1, 0.1); // Terminal chirp
+            i = (i + 1) % phrases.length; 
+        }, 3500);
     </script>
 </body>
 </html>
