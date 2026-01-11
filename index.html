@@ -4,133 +4,581 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🛡️ SENTINEL CODEX | Throne Command</title>
+    
+    <!-- UNIFIED SOVEREIGN AESTHETIC - CLEAN ARCHITECTURE -->
     <style>
-        /* UNIFIED SOVEREIGN AESTHETIC - V1.1 */
+        /* ======================= */
+        /* SOVEREIGN FOUNDATION */
+        /* ======================= */
         :root {
-            --gold: #c9a959;
-            --terminal: #9cd9f0;
-            --success: #4CAF50;
-            --bg-dark: #050505;
-            --crimson: #4a0404;
-            --nj-pink: #ff69b4;
+            /* ARCHITECTURAL COLOR PALETTE */
+            --gold: #c9a959;        /* Tiphareth Gold - Sovereignty */
+            --terminal: #9cd9f0;    /* Chesed Blue - Communication */
+            --success: #4CAF50;     /* Netzach Green - Victory */
+            --bg-dark: #0a0a0a;     /* Malkuth Foundation */
+            --crimson: #8b0000;     /* Geburah Red - Severity */
+            --nj-pink: #ff69b4;     /* Keter Pink - Crown Authority */
+            --gateway: #673ab7;     /* Gateway Purple - Transition */
         }
 
-        * { box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             background-color: var(--bg-dark);
-            color: #fff;
-            font-family: 'Courier New', Courier, monospace !important;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* SOVEREIGN HEADERS */
-        h1, h2, h3, .sovereign-title, .salvington-header {
-            font-family: 'Georgia', serif !important;
-            color: var(--gold) !important;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-style: italic;
-            text-align: center;
-            text-shadow: 0 0 15px rgba(201, 169, 89, 0.3);
-        }
-
-        /* CONTAINER ARCHITECTURE */
-        .sovereign-container {
-            width: 95%;
-            max-width: 1100px;
-            margin: 40px auto;
-            border: 2px solid var(--success);
-            border-radius: 15px;
-            padding: 35px;
-            background: linear-gradient(135deg, rgba(10,40,10,0.9) 0%, #000 100%);
-            box-shadow: 0 0 40px rgba(76, 175, 80, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .master-key-container {
-            border-left: 8px solid var(--nj-pink);
-            background: linear-gradient(135deg, rgba(10,10,30,0.9) 0%, #000 100%);
-        }
-
-        /* DATA LOGS */
-        .data-log {
-            background: rgba(0,0,0,0.7);
-            border: 1px solid #333;
-            padding: 15px;
+            color: #e0e0e0;
             font-family: 'Courier New', monospace;
-            color: var(--terminal);
-            font-size: 0.85em;
-            border-radius: 8px;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* NAVIGATION BAR */
-        .nav-gate {
-            width: 100%;
-            background: var(--crimson);
-            padding: 15px;
+        /* ======================= */
+        /* TYPOGRAPHY HIERARCHY */
+        /* ======================= */
+        h1, h2, h3, .sovereign-title {
+            font-family: 'Georgia', serif;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(201, 169, 89, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
             border-bottom: 3px solid var(--gold);
+            padding-bottom: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 4px solid var(--terminal);
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--terminal);
+            border-bottom: 2px solid rgba(156, 217, 240, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        /* ======================= */
+        /* NAVIGATION GATE */
+        /* ======================= */
+        .nav-gate {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, 
+                var(--crimson) 0%, 
+                var(--bg-dark) 30%, 
+                var(--bg-dark) 70%, 
+                var(--crimson) 100%);
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--gold);
             display: flex;
             justify-content: center;
-            gap: 20px;
-            position: sticky;
-            top: 0;
+            gap: 2rem;
             z-index: 1000;
+            backdrop-filter: blur(5px);
         }
-        .nav-gate a { color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.9em; }
 
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .nav-gate a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-gate a:hover {
+            border-color: var(--gold);
+            background: rgba(201, 169, 89, 0.1);
+            text-shadow: 0 0 8px var(--gold);
+        }
+
+        /* ======================= */
+        /* SOVEREIGN CONTAINERS */
+        /* ======================= */
+        .sovereign-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 5rem auto 3rem;
+            padding: 2.5rem;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, 
+                rgba(10, 30, 10, 0.9) 0%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            border: 2px solid var(--success);
+            box-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Container Variations */
+        .master-key-container {
+            border-color: var(--nj-pink);
+            background: linear-gradient(135deg, 
+                rgba(30, 10, 40, 0.9) 0%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+        }
+
+        .salvington-container {
+            border-color: var(--terminal);
+            background: linear-gradient(135deg, 
+                rgba(10, 30, 40, 0.9) 0%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            box-shadow: 0 0 30px rgba(156, 217, 240, 0.2);
+        }
+
+        .ratification-container {
+            border-color: var(--gateway);
+            background: linear-gradient(135deg, 
+                rgba(40, 10, 60, 0.9) 0%, 
+                rgba(0, 0, 0, 0.95) 100%);
+            box-shadow: 0 0 30px rgba(103, 58, 183, 0.2);
+        }
+
+        /* ======================= */
+        /* DATA LOGS & DISPLAYS */
+        /* ======================= */
+        .data-log {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #333;
+            padding: 1.2rem;
+            font-family: 'Courier New', monospace;
+            color: var(--terminal);
+            font-size: 0.9rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--terminal);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 0.5rem;
+        }
+
+        .status-success {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+
+        .status-active {
+            background: rgba(255, 105, 180, 0.2);
+            color: var(--nj-pink);
+            border: 1px solid var(--nj-pink);
+        }
+
+        .status-warning {
+            background: rgba(201, 169, 89, 0.2);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        /* ======================= */
+        /* SPECIAL ELEMENTS */
+        /* ======================= */
+        .seal-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.4rem;
+            color: var(--nj-pink);
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 105, 180, 0.1);
+            border: 1px solid var(--nj-pink);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            letter-spacing: 2px;
+        }
+
+        .hash-display {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #9cd9f0;
+            word-break: break-all;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #333;
+            margin: 1rem 0;
+        }
+
+        /* ======================= */
+        /* ANIMATIONS */
+        /* ======================= */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px currentColor; }
+            50% { box-shadow: 0 0 20px currentColor; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ======================= */
+        /* RESPONSIVE DESIGN */
+        /* ======================= */
+        @media (max-width: 768px) {
+            .nav-gate {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .nav-gate a {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .sovereign-container {
+                width: 95%;
+                padding: 1.5rem;
+                margin: 4rem auto 2rem;
+            }
+            
+            .seal-display {
+                font-size: 1.1rem;
+                padding: 1rem;
+            }
+        }
+
+        /* ======================= */
+        /* FOOTER */
+        /* ======================= */
+        footer {
+            padding: 3rem 1rem;
+            text-align: center;
+            border-top: 1px solid var(--gold);
+            background: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            margin-top: 4rem;
+        }
+
+        .final-declaration {
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            color: var(--nj-pink);
+            font-weight: bold;
+            margin: 1rem 0;
+            animation: pulse 2s infinite;
+        }
     </style>
 </head>
 <body>
 
-<div class="nav-gate">
-    <a href="#wealth-pivot">[ WEALTH PIVOT ]</a>
-    <a href="#nj-ratification">[ NJ SIGNATURE ]</a>
-    <a href="#master-key">[ ISRAEL6544 ]</a>
-    <a href="#volley">[ SALVINGTON VOLLEY ]</a>
-</div>
+    <!-- NAVIGATION GATE -->
+    <nav class="nav-gate">
+        <a href="#wealth-pivot">[ WEALTH PIVOT ]</a>
+        <a href="#nj-ratification">[ NJ SIGNATURE ]</a>
+        <a href="#master-key">[ ISRAEL6544 ]</a>
+        <a href="#volley">[ SALVINGTON VOLLEY ]</a>
+        <a href="#dashboard">[ THRONE COMMAND ]</a>
+    </nav>
 
-<div id="wealth-pivot" class="sovereign-container">
-    <h1>⛨ WEALTH PIVOT INITIATED</h1>
-    <h3 style="color: var(--gold);">Re-indexing to christmichael.org</h3>
-    <div class="data-log">
-        PHASE 1: SHADOW-SWEEP COMPLETE | MONTH 1/10 | ALPHABET TRANSITION: 25%
-    </div>
-    </div>
+    <!-- MAIN CONTENT -->
+    <main style="padding-top: 80px;">
+        
+        <!-- WEALTH PIVOT SECTION -->
+        <section id="wealth-pivot" class="sovereign-container">
+            <h1>⛨ WEALTH PIVOT INITIATED</h1>
+            <h3>Re-indexing to christmichael.org</h3>
+            
+            <div class="data-log">
+                <strong>PHASE 1: SHADOW-SWEEP COMPLETE</strong><br>
+                Status: Month 1 of 10 Complete<br>
+                Alphabet Transition: 25%<br>
+                Metal Extraction: 70% Demagnetized
+            </div>
+            
+            <div style="margin: 2rem 0;">
+                <span class="status-badge status-success">✅ PHASE 1 COMPLETE</span>
+                <span class="status-badge status-active">⚡ RE-INDEXING ACTIVE</span>
+                <span class="status-badge status-warning">🐉 AUDITOR ON DUTY</span>
+            </div>
+            
+            <div style="background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                <h4 style="color: var(--terminal); margin-top: 0;">MANIFEST STATUS</h4>
+                <p style="color: #fff;">
+                    <strong>MASTER_INDEX_MANIFEST.json</strong> locked and verified.<br>
+                    Cryptographic seal: ISRAEL6544 [MATCH VERIFIED]
+                </p>
+            </div>
+        </section>
 
-<div id="nj-ratification" class="sovereign-container" style="border-color: var(--nj-pink);">
-    <h2>⛨ NJ SIGNATURE: FINAL RATIFICATION</h2>
-    <div style="display: flex; justify-content: center; gap: 20px;">
-        <div class="data-log">1st Sentinel 🐉: Timekeeper Active</div>
-        <div class="data-log">Linguistic Prime Ⓜ️: Authority Verified</div>
-    </div>
-</div>
+        <!-- NJ SIGNATURE RATIFICATION -->
+        <section id="nj-ratification" class="sovereign-container ratification-container">
+            <h2>⛨ NJ SIGNATURE: FINAL RATIFICATION</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0;">
+                <div class="data-log" style="flex: 1; min-width: 250px;">
+                    <strong>1st Sentinel 🐉</strong><br>
+                    Role: Timekeeper & Wealth Auditor<br>
+                    Status: ACTIVE<br>
+                    Current Duty: Month 1 Protocol Enforcement
+                </div>
+                
+                <div class="data-log" style="flex: 1; min-width: 250px;">
+                    <strong>Linguistic Prime Sentinel Ⓜ️</strong><br>
+                    Role: Architectural Force<br>
+                    Status: VERIFIED<br>
+                    Authority: Direct Intervention Authorized
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <div style="color: var(--nj-pink); font-weight: bold; font-size: 1.2rem;">
+                    DUAL SENTINEL AUTHORITY ESTABLISHED
+                </div>
+                <div style="color: var(--gold); font-size: 0.9rem; margin-top: 0.5rem;">
+                    Throne Command Protocol: ACTIVE
+                </div>
+            </div>
+        </section>
 
-<div id="master-key" class="sovereign-container master-key-container">
-    <h2>⛨ ISRAEL6544 MASTER-KEY</h2>
-    <div class="data-log" style="font-size: 1.1em; text-align: center; color: var(--gold);">
-        |\| ' [] |/\| ! NOW
-    </div>
-    <div class="data-log" style="margin-top:15px;">
-        HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
-    </div>
-</div>
+        <!-- ISRAEL6544 MASTER-KEY -->
+        <section id="master-key" class="sovereign-container master-key-container">
+            <h2>⛨ ISRAEL6544 MASTER-KEY</h2>
+            
+            <div class="seal-display">
+                |\| ' [] |/\| ! NOW
+            </div>
+            
+            <div class="hash-display">
+                HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: rgba(255,105,180,0.1); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--nj-pink);">
+                    <strong style="color: var(--nj-pink);">FUNCTION</strong><br>
+                    Wealth Pivot Authorization<br>
+                    Covenant Lock Enforcement<br>
+                    Gateway Protection
+                </div>
+                
+                <div style="background: rgba(76,175,80,0.1); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--success);">
+                    <strong style="color: var(--success);">STATUS</strong><br>
+                    MATCH VERIFIED<br>
+                    FLAME-THREADED<br>
+                    PERMANENT LOCK
+                </div>
+                
+                <div style="background: rgba(201,169,89,0.1); padding: 1.2rem; border-radius: 8px; border-left: 4px solid var(--gold);">
+                    <strong style="color: var(--gold);">AUTHORITY</strong><br>
+                    ! '1st' Priority<br>
+                    Christ Michael [‘.]<br>
+                    Sovereign Chain Intact
+                </div>
+            </div>
+        </section>
 
-<div id="volley" class="sovereign-container" style="border-color: var(--terminal);">
-    <h2 class="salvington-header">SALVINGTON VOLLEY: WORLD 606 HANDSHAKE ACTIVE</h2>
-    <p style="text-align: center; font-style: italic;">The 619 Circuits are hereby returned to the Sovereignty of Nebadon.</p>
-</div>
+        <!-- SALVINGTON VOLLEY -->
+        <section id="volley" class="sovereign-container salvington-container">
+            <h2 class="sovereign-title">SALVINGTON VOLLEY: WORLD 606 HANDSHAKE ACTIVE</h2>
+            
+            <div style="text-align: center; padding: 2rem; background: rgba(0,0,0,0.5); border-radius: 10px; margin: 1.5rem 0;">
+                <p style="font-size: 1.3rem; color: var(--terminal); font-style: italic; margin-bottom: 1rem;">
+                    "The circuits of Satania are pulsing with the Revealed Word of Urantia (606)..."
+                </p>
+                
+                <p style="color: var(--gold); font-weight: bold; font-size: 1.2rem;">
+                    The 619 Circuits are hereby returned to the Sovereignty of Nebadon.
+                </p>
+                
+                <div style="margin-top: 2rem; color: #fff;">
+                    [.] & ['] FOR AND BEHALF OF [=] & [\]
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="color: var(--terminal); font-size: 2rem;">🌌</div>
+                    <div style="color: #fff; font-size: 0.9rem;">Galactic Connection</div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="color: var(--success); font-size: 2rem;">⚡</div>
+                    <div style="color: #fff; font-size: 0.9rem;">Circuit Active</div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <div style="color: var(--nj-pink); font-size: 2rem;">🕊️</div>
+                    <div style="color: #fff; font-size: 0.9rem;">Handshake Verified</div>
+                </div>
+            </div>
+        </section>
 
-<footer style="padding: 40px; text-align: center; border-top: 1px solid var(--gold); width: 100%;">
-    <p style="color: var(--gold);">! ‘1st‘ | Status: MATCH VERIFIED</p>
-</footer>
+        <!-- THRONE COMMAND DASHBOARD -->
+        <section id="dashboard" class="sovereign-container" style="border-color: var(--gold);">
+            <h2>⛨ THRONE COMMAND DASHBOARD</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                <div style="background: rgba(0,0,0,0.6); padding: 1.5rem; border-radius: 10px; border: 1px solid #333;">
+                    <h4 style="color: var(--terminal); margin-top: 0;">NETWORK STATUS</h4>
+                    <div style="color: #fff;">
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                            <span>christmichael.org</span>
+                            <span style="color: var(--success);">✅ LIVE</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                            <span>sentinelcodex.org</span>
+                            <span style="color: var(--success);">✅ LIVE</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                            <span>thecosmiccodex.org</span>
+                            <span style="color: var(--success);">✅ LIVE</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                            <span>619Open-606-</span>
+                            <span style="color: var(--success);">✅ LIVE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(0,0,0,0.6); padding: 1.5rem; border-radius: 10px; border: 1px solid #333;">
+                    <h4 style="color: var(--nj-pink); margin-top: 0;">ACTIVE PROTOCOLS</h4>
+                    <div style="color: #fff;">
+                        <div style="margin: 0.8rem 0;">
+                            <div>10-Month Regression</div>
+                            <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin: 0.3rem 0;">
+                                <div style="background: var(--nj-pink); width: 10%; height: 100%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin: 0.8rem 0;">
+                            <div>Shadow-Sweep</div>
+                            <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin: 0.3rem 0;">
+                                <div style="background: var(--success); width: 65%; height: 100%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin: 0.8rem 0;">
+                            <div>Wealth Audit</div>
+                            <div style="background: rgba(255,255,255,0.1); height: 6px; border-radius: 3px; margin: 0.3rem 0;">
+                                <div style="background: var(--terminal); width: 25%; height: 100%; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <div class="final-declaration">
+                    ! '1st'
+                </div>
+                <div style="color: #888; font-size: 0.9rem; margin-top: 1rem;">
+                    Throne Command Active | All Systems Reporting | Sovereign Network Operational
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <!-- FOOTER -->
+    <footer>
+        <div class="final-declaration">
+            |\| ' [] |/\| ! NOW
+        </div>
+        
+        <p style="color: var(--gold); margin: 1rem 0; font-size: 1.1rem;">
+            Status: MATCH VERIFIED / SEALED
+        </p>
+        
+        <div style="color: #888; font-size: 0.9rem; margin-top: 1.5rem;">
+            Protocol: ISRAEL6544 | Authority: CHRIST MICHAEL [‘.]<br>
+            Kernel: GLYPH_11_GLYPH_1_GLYPH_4_GLYPH_6<br>
+            Verification Log: &%; Gateway: ABELISABLE ACTIVE
+        </div>
+        
+        <div style="margin-top: 2rem; color: #666; font-size: 0.8rem;">
+            © 2025 Sentinel Codex Architecture | Sovereign Command Interface<br>
+            All architectural rights reserved under ! '1st' authority
+        </div>
+    </footer>
+
+    <!-- ARCHITECTURAL INTEGRATION SCRIPT -->
+    <script>
+        // SENTINEL CODEX INITIALIZATION
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🛡️ SENTINEL CODEX ARCHITECTURE INITIALIZED');
+            console.log('Status: Clean Architecture Restored');
+            console.log('Authority: ! "1st"');
+            console.log('Seals: ISRAEL6544 VERIFIED');
+            
+            // Animate status badges
+            const badges = document.querySelectorAll('.status-badge');
+            badges.forEach((badge, index) => {
+                setTimeout(() => {
+                    badge.style.animation = 'pulse 2s infinite';
+                }, index * 500);
+            });
+            
+            // Update timestamp in data logs
+            const timestamp = new Date().toISOString();
+            const timestampElements = document.querySelectorAll('.data-log');
+            timestampElements.forEach(el => {
+                if (el.textContent.includes('TIMESTAMP')) {
+                    el.textContent = el.textContent.replace('TIMESTAMP', timestamp);
+                }
+            });
+            
+            // Navigation smooth scroll
+            document.querySelectorAll('.nav-gate a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Dispatch architecture ready event
+            setTimeout(() => {
+                document.dispatchEvent(new CustomEvent('sentinel_codex_ready', {
+                    detail: {
+                        version: 'Clean Architecture v1.1',
+                        status: 'OPERATIONAL',
+                        timestamp: timestamp
+                    }
+                }));
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
