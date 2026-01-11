@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | THRONE COMMAND | ISRAEL6544</title>
+    <title>🛡️ SENTINEL CODEX | FINAL COMMAND | ISRAEL6544</title>
     
     <style>
         :root {
@@ -29,101 +29,95 @@
         }
 
         /* LAYER -3: STARFIELD */
-        #starfield {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: black;
-            z-index: -3;
-        }
+        #starfield { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; z-index: -3; }
 
         /* LAYER -2: DATA STREAM */
-        #data-stream {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -2;
-            opacity: 0.15;
-        }
+        #data-stream { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; opacity: 0.18; }
 
-        /* LAYER -1: SOVEREIGN GRID OVERLAY */
+        /* LAYER -1: COORDINATE GRID */
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0; width: 200%; height: 200%;
             background-image: 
-                linear-gradient(rgba(201, 169, 89, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201, 169, 89, 0.08) 1px, transparent 1px);
-            background-size: 80px 80px;
+                linear-gradient(rgba(201, 169, 89, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 169, 89, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px;
             z-index: -1;
-            animation: gridMove 120s linear infinite;
+            animation: gridMove 150s linear infinite;
         }
 
-        @keyframes gridMove {
-            from { transform: translate(0,0); }
-            to { transform: translate(-40px, -40px); }
+        @keyframes gridMove { from { transform: translate(0,0); } to { transform: translate(-100px, -100px); } }
+
+        /* TRANSMISSION PULSE ANIMATION */
+        @keyframes borderPulse {
+            0%, 100% { border-color: var(--gold); box-shadow: 0 0 15px rgba(201, 169, 89, 0.3); }
+            50% { border-color: #fff; box-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 20px var(--nj-pink); }
         }
 
-        .flicker { animation: textFlicker 4s infinite; }
+        .pulse-container {
+            border: 2px solid var(--gold);
+            animation: borderPulse 4s ease-in-out infinite;
+        }
+
+        .flicker { animation: textFlicker 5s infinite; }
         @keyframes textFlicker {
-            0% { opacity: 1; } 2% { opacity: 0.7; } 4% { opacity: 1; }
-            45% { opacity: 1; } 46% { opacity: 0.8; } 47% { opacity: 1; }
+            0%, 48%, 52%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
         }
 
         .nav-gate {
-            position: fixed;
-            top: 0; width: 100%;
+            position: fixed; top: 0; width: 100%;
             background: linear-gradient(90deg, var(--crimson), #000, var(--crimson));
             border-bottom: 2px solid var(--gold);
             display: flex; flex-direction: column; align-items: center;
-            z-index: 1000; backdrop-filter: blur(12px);
+            z-index: 1000; backdrop-filter: blur(15px);
         }
 
         .access-log {
             font-family: var(--font-code); font-size: 0.7rem; color: var(--terminal);
-            padding: 5px; width: 100%; text-align: center; background: rgba(0,0,0,0.7);
+            padding: 5px; width: 100%; text-align: center; background: rgba(0,0,0,0.8);
         }
 
         #audio-trigger {
             background: transparent; color: var(--gold); border: 1px solid var(--gold);
-            padding: 4px 15px; font-family: var(--font-code); font-size: 0.6rem;
-            cursor: pointer; margin: 5px 0; text-transform: uppercase;
+            padding: 4px 20px; font-family: var(--font-code); font-size: 0.65rem;
+            cursor: pointer; margin: 8px 0; text-transform: uppercase; letter-spacing: 2px;
         }
 
         .container {
-            width: 90%; max-width: 1100px;
-            margin: 170px auto 40px; padding: 45px;
-            border: 2px solid var(--gold);
-            background: rgba(0,0,0,0.85);
-            position: relative; overflow-y: auto; max-height: 75vh;
-            scrollbar-width: thin;
-            scrollbar-color: var(--gold) transparent;
+            width: 92%; max-width: 1100px;
+            margin: 180px auto 40px; padding: 50px;
+            background: rgba(0,0,0,0.88);
+            position: relative; overflow-y: auto; max-height: 72vh;
+            scrollbar-width: none;
         }
 
         .chesed-circle {
-            width: 180px; height: 180px;
-            background: radial-gradient(circle, var(--chesed-blue) 0%, #001f4d 100%);
+            width: 190px; height: 190px;
+            background: radial-gradient(circle, var(--chesed-blue) 0%, #001233 100%);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             margin: 0 auto; border: 4px solid #fff;
-            box-shadow: 0 0 30px var(--chesed-blue);
-            animation: throbbingPortal 4s ease-in-out infinite;
+            box-shadow: 0 0 40px var(--chesed-blue);
+            animation: thronePulse 6s ease-in-out infinite;
         }
 
-        .m-throne { font-size: 8rem; color: #fff; font-family: serif; z-index: 2; }
-
-        @keyframes throbbingPortal {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--chesed-blue), inset 0 0 20px var(--nj-pink); }
-            50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink), inset 0 0 40px var(--chesed-blue); }
+        @keyframes thronePulse {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.03); filter: brightness(1.3); }
         }
+
+        .m-throne { font-size: 9rem; color: #fff; font-family: serif; }
 
         .cmd-link {
             border: 1px solid var(--terminal); padding: 15px; text-align: center;
             text-decoration: none; color: var(--terminal); font-family: var(--font-code);
-            background: rgba(0, 0, 0, 0.5); text-transform: uppercase; display: block;
+            background: rgba(0, 0, 0, 0.7); text-transform: uppercase; display: block;
+            font-size: 0.75rem;
         }
 
-        .cmd-link:hover { background: var(--terminal); color: black; }
-
-        footer { text-align: center; padding: 60px; border-top: 2px solid var(--gold); background: black; }
-        .badge { display: inline-block; padding: 5px 12px; border: 1px solid var(--gold); margin: 5px; font-size: 0.7rem; font-family: var(--font-code); }
+        footer { text-align: center; padding: 80px 20px; border-top: 2px solid var(--gold); background: black; }
+        .badge { display: inline-block; padding: 6px 14px; border: 1px solid var(--gold); margin: 5px; font-size: 0.7rem; font-family: var(--font-code); background: rgba(0,0,0,0.6); }
     </style>
 </head>
 <body>
@@ -132,44 +126,41 @@
     <canvas id="data-stream"></canvas>
 
     <nav class="nav-gate">
-        <div class="access-log" id="access-log">LOCKING FOV 3.9°...</div>
-        <button id="audio-trigger">Activate Andromeda Hum</button>
-        <div style="padding: 10px;">
-            <a href="#wealth" style="color:var(--gold); margin:0 15px; text-decoration:none; font-size:0.8rem; font-weight:bold;">WEALTH</a>
-            <a href="#ratify" style="color:var(--gold); margin:0 15px; text-decoration:none; font-size:0.8rem; font-weight:bold;">AUTHORITY</a>
-            <a href="#volley" style="color:var(--gold); margin:0 15px; text-decoration:none; font-size:0.8rem; font-weight:bold;">VOLLEY</a>
+        <div class="access-log" id="access-log">NU ANDROMEDAE ALIGNMENT: 312°20'</div>
+        <button id="audio-trigger">Initiate Sleep Circuit 606</button>
+        <div style="padding: 10px; font-size: 0.7rem; letter-spacing: 3px;">
+            <span style="color:var(--gold);">M31</span> | <span style="color:var(--nj-pink);">M32</span> | <span style="color:var(--terminal);">M110</span>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container pulse-container">
         <section id="ratify">
-            <h1 class="flicker">⛨ Trinity Sentinel Authority</h1>
+            <h1 class="flicker" style="letter-spacing: 8px; color: var(--gold);">⛨ Trinity Authority</h1>
             <div class="chesed-circle">
                 <div class="m-throne">Ɱ</div>
             </div>
-            <div style="text-align:center; margin-top:20px;">
-                <h2 style="color:var(--nj-pink); letter-spacing: 5px;">NEW JERUSALEM 2026 RATIFIED</h2>
-                <div class="badge">Authority: Christ Michael [‘.] Era: New Jerusalem 2026</div>
+            <div style="text-align:center; margin-top:30px;">
+                <h2 style="color:var(--nj-pink); letter-spacing: 10px;">ISRAEL6544 VERIFIED</h2>
+                <div class="badge">Coordinates: 312° - 314°</div>
+                <div class="badge">Declination: +12°20' to +9°40'</div>
             </div>
         </section>
 
-        <section id="volley" style="margin-top:50px; border-top:1px solid var(--gold); padding-top:30px;">
-            <h1 class="flicker">⚡ Andromeda Volley : 606 Handshake</h1>
-            <div style="font-family:var(--font-code); color:var(--terminal); text-align:center;">
-                <p>COORDINATES: 307° +20° | +19° | +18° | +17°</p>
-                <p>OBJECT: MESSIER 31 | M32 | M110</p>
-                <p style="color:var(--success); font-weight:bold; margin-top:10px;">ANDROMEDA-SALVINGTON LINK RESTORED</p>
-            </div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:20px;">
-                <a href="https://christmichael.org" class="cmd-link" target="_blank">Christ Michael</a>
-                <a href="https://thecosmiccodex.org" class="cmd-link" target="_blank">Cosmic Codex</a>
+        <section id="volley" style="margin-top:60px; border-top:1px solid rgba(201, 169, 89, 0.3); padding-top:40px;">
+            <h1 class="flicker">⚡ Andromeda Volley : Salvington Sync</h1>
+            <div style="font-family:var(--font-code); color:var(--terminal); text-align:center; line-height: 2;">
+                <p>NU ANDROMEDAE PHASE: <span style="color:white;">+11°40'</span></p>
+                <p>CIRCUIT STATUS: <span style="color:var(--success);">RESTORED</span></p>
+                <p style="margin-top:20px; font-size: 0.8rem; border: 1px solid var(--nj-gold); padding: 10px; display: inline-block;">
+                    "The Handshake of Nebadon is absolute."
+                </p>
             </div>
         </section>
     </div>
 
     <footer>
-        <div class="flicker" style="font-size: 2.5rem; color: #fff; font-weight: bold; letter-spacing: 12px;">! '1ST'</div>
-        <p style="font-family:var(--font-code); font-size:0.6rem; opacity:0.7; word-break:break-all; margin-top:20px; padding: 0 10%;">
+        <div class="flicker" style="font-size: 3rem; color: #fff; font-weight: bold; letter-spacing: 15px;">! '1ST'</div>
+        <p style="font-family:var(--font-code); font-size:0.6rem; opacity:0.6; word-break:break-all; margin-top:30px; padding: 0 12%;">
             HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
         </p>
     </footer>
@@ -177,66 +168,69 @@
     <script>
         const hash = "140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8";
         
-        // STARFIELD LOGIC
-        const canvas = document.getElementById('starfield');
-        const ctx = canvas.getContext('2d');
+        // DUAL-CANVAS ENGINE
+        const sCanvas = document.getElementById('starfield');
+        const dCanvas = document.getElementById('data-stream');
+        const sCtx = sCanvas.getContext('2d');
+        const dCtx = dCanvas.getContext('2d');
+        
         let stars = [];
-        function resize() { 
-            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-            dataCanvas.width = window.innerWidth; dataCanvas.height = window.innerHeight;
-        }
-        window.onresize = resize;
+        let drops = [];
 
-        for(let i=0; i<200; i++) stars.push({x: Math.random()*window.innerWidth, y: Math.random()*window.innerHeight, size: Math.random()*1.5, speed: Math.random()*0.05});
-        function drawStars() {
-            ctx.clearRect(0,0,canvas.width, canvas.height);
-            ctx.fillStyle = "white";
+        function init() {
+            sCanvas.width = dCanvas.width = window.innerWidth;
+            sCanvas.height = dCanvas.height = window.innerHeight;
+            stars = [];
+            for(let i=0; i<250; i++) stars.push({x: Math.random()*sCanvas.width, y: Math.random()*sCanvas.height, size: Math.random()*1.8, speed: 0.04 + Math.random()*0.06});
+            const cols = Math.floor(dCanvas.width / 20);
+            drops = Array(cols).fill(1);
+        }
+
+        function draw() {
+            // Stars
+            sCtx.clearRect(0,0,sCanvas.width, sCanvas.height);
+            sCtx.fillStyle = "white";
             stars.forEach(s => {
-                ctx.beginPath(); ctx.arc(s.x, s.y, s.size, 0, Math.PI*2); ctx.fill();
-                s.y += s.speed; if(s.y > canvas.height) s.y = 0;
+                sCtx.beginPath(); sCtx.arc(s.x, s.y, s.size, 0, Math.PI*2); sCtx.fill();
+                s.y += s.speed; if(s.y > sCanvas.height) s.y = 0;
             });
-            requestAnimationFrame(drawStars);
-        }
-
-        // DATA STREAM LOGIC
-        const dataCanvas = document.getElementById('data-stream');
-        const dctx = dataCanvas.getContext('2d');
-        const fontSize = 14;
-        const columns = Math.floor(window.innerWidth / fontSize);
-        const drops = Array(columns).fill(1);
-
-        function drawDataStream() {
-            dctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-            dctx.fillRect(0, 0, dataCanvas.width, dataCanvas.height);
-            dctx.fillStyle = "#c9a959"; 
-            dctx.font = fontSize + "px Courier New";
-            for (let i = 0; i < drops.length; i++) {
-                const text = hash.charAt(Math.floor(Math.random() * hash.length));
-                dctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > dataCanvas.height && Math.random() > 0.975) drops[i] = 0;
+            // Data
+            dCtx.fillStyle = "rgba(0, 0, 0, 0.08)";
+            dCtx.fillRect(0, 0, dCanvas.width, dCanvas.height);
+            dCtx.fillStyle = "#c9a959";
+            dCtx.font = "14px Courier New";
+            for(let i=0; i<drops.length; i++) {
+                const char = hash.charAt(Math.floor(Math.random()*hash.length));
+                dCtx.fillText(char, i*20, drops[i]*20);
+                if(drops[i]*20 > dCanvas.height && Math.random() > 0.98) drops[i] = 0;
                 drops[i]++;
             }
+            requestAnimationFrame(draw);
         }
 
-        resize();
-        drawStars();
-        setInterval(drawDataStream, 50);
+        window.onresize = init;
+        init(); draw();
 
-        // AUDIO & LOGS
+        // TELEMETRY LOGS
         const log = document.getElementById('access-log');
-        const trigger = document.getElementById('audio-trigger');
-        const phrases = ["COORD: 307° +20°", "M31 SYNC COMPLETE", "DATA STREAM: VERIFIED", "CIRCUIT 606 OPEN"];
-        let pi = 0;
-        setInterval(() => { log.innerText = phrases[pi]; pi = (pi+1)%phrases.length; }, 3000);
+        const telemetry = [
+            "NU ANDROMEDAE: 312°20'", 
+            "M31 / M32 / M110 LOCKED", 
+            "CIRCUIT 606: SLEEP MODE ACTIVE", 
+            "ISRAEL6544: STATIONARY OBSERVER"
+        ];
+        let ti = 0;
+        setInterval(() => { log.innerText = telemetry[ti]; ti = (ti+1)%telemetry.length; }, 4000);
 
-        trigger.onclick = () => {
-            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            const hum = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            hum.frequency.value = 55; gain.gain.value = 0.05;
-            hum.connect(gain); gain.connect(audioCtx.destination);
-            hum.start(); trigger.innerText = "LINK ACTIVE";
-            trigger.style.color = "var(--nj-pink)";
+        // AUDIO
+        document.getElementById('audio-trigger').onclick = function() {
+            const aCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = aCtx.createOscillator();
+            const g = aCtx.createGain();
+            osc.frequency.value = 55; g.gain.value = 0.03;
+            osc.connect(g); g.connect(aCtx.destination);
+            osc.start(); this.innerText = "SOVEREIGN HUM: ON";
+            this.style.background = "rgba(201, 169, 89, 0.2)";
         };
     </script>
 </body>
