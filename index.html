@@ -17,6 +17,7 @@
             --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --nj-gold: #e6b87d;
+            --chesed-blue: #0047ab; /* Deep Chesed Blue */
             --font-main: 'Palatino', 'Georgia', serif;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
@@ -32,7 +33,7 @@
             background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
         }
 
-        /* GRID DRIFT FOUNDATION */
+        /* GRID DRIFT */
         body::before {
             content: '';
             position: fixed;
@@ -87,11 +88,6 @@
             transition: 0.3s;
         }
 
-        .nav-gate a:hover {
-            color: #fff;
-            text-shadow: 0 0 15px var(--gold);
-        }
-
         /* SOVEREIGN CONTAINER & SCAN */
         .container {
             width: 90%;
@@ -129,19 +125,36 @@
             font-style: italic;
         }
 
-        /* TERMINAL LOGS */
-        .terminal-box {
-            background: #050505;
-            border-left: 5px solid var(--terminal);
-            padding: 25px;
-            font-family: var(--font-code);
-            color: var(--terminal);
-            font-size: 0.95rem;
-            margin: 25px 0;
-            box-shadow: inset 0 0 15px #000;
+        /* CHESED BLUE Ɱ SEAL */
+        .chesed-circle {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, var(--chesed-blue) 0%, #001f4d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 4px solid #fff;
+            position: relative;
+            box-shadow: 0 0 30px var(--chesed-blue);
+            animation: throbbingPortal 4s ease-in-out infinite;
         }
 
-        /* TRINITY AUTHORITY & PULSING Ɱ */
+        .m-throne {
+            font-size: 8rem;
+            color: #fff;
+            font-family: serif;
+            line-height: 1;
+            z-index: 2;
+        }
+
+        @keyframes throbbingPortal {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--chesed-blue), inset 0 0 20px var(--nj-pink); }
+            50% { transform: scale(1.08); box-shadow: 0 0 60px var(--nj-pink), inset 0 0 40px var(--chesed-blue); }
+        }
+
+        /* TRINITY SECTION */
         .trinity-seal {
             display: flex;
             justify-content: space-around;
@@ -153,26 +166,11 @@
         .seal-wing {
             border: 1px solid rgba(255,255,255,0.15);
             padding: 25px;
-            width: 32%;
+            width: 30%;
             background: rgba(255,255,255,0.03);
-            border-radius: 4px;
         }
 
-        .m-throne {
-            font-size: 7.5rem;
-            color: #fff;
-            font-family: serif;
-            line-height: 1;
-            margin: 15px 0;
-            animation: pinkPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes pinkPulse {
-            0%, 100% { text-shadow: 0 0 20px var(--gold); transform: scale(1); }
-            50% { text-shadow: 0 0 50px var(--nj-pink), 0 0 70px var(--nj-pink); transform: scale(1.05); }
-        }
-
-        /* EXTERNAL COMMAND GRID */
+        /* LINK GRID */
         .link-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -191,32 +189,19 @@
             transition: 0.4s;
             background: rgba(156, 217, 240, 0.08);
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .cmd-link:hover {
             background: var(--terminal);
             color: #000;
             box-shadow: 0 0 25px var(--terminal);
-            transform: translateY(-3px);
         }
 
-        /* PROGRESS BARS */
         .bar-container {
-            background: #151515;
-            height: 14px;
-            border-radius: 7px;
-            margin: 12px 0 25px;
-            overflow: hidden;
-            border: 1px solid #333;
+            background: #151515; height: 14px; border-radius: 7px; margin: 12px 0 25px; overflow: hidden; border: 1px solid #333;
         }
 
-        .bar-fill {
-            height: 100%;
-            background-size: 200% 100%;
-            animation: flowBar 4s linear infinite;
-        }
-
+        .bar-fill { height: 100%; background-size: 200% 100%; animation: flowBar 4s linear infinite; }
         .gold-fill { background: linear-gradient(90deg, var(--gold), #fff, var(--gold)); }
         .pink-fill { background: linear-gradient(90deg, var(--nj-pink), #fff, var(--nj-pink)); }
 
@@ -226,21 +211,11 @@
         }
 
         footer {
-            text-align: center;
-            padding: 80px 20px;
-            border-top: 2px solid var(--gold);
-            background: #000;
-            color: var(--nj-gold);
+            text-align: center; padding: 80px 20px; border-top: 2px solid var(--gold); background: #000; color: var(--nj-gold);
         }
 
         .badge {
-            display: inline-block;
-            padding: 6px 18px;
-            border: 1px solid var(--gold);
-            margin: 6px;
-            font-size: 0.75rem;
-            font-family: var(--font-code);
-            text-transform: uppercase;
+            display: inline-block; padding: 6px 18px; border: 1px solid var(--gold); margin: 6px; font-size: 0.75rem; font-family: var(--font-code); text-transform: uppercase;
         }
 
     </style>
@@ -259,21 +234,15 @@
 
     <section id="wealth" class="container">
         <h1>⛨ Wealth Pivot : Phase 1 </h1>
-        <div class="terminal-box">
+        <div style="background: #050505; border-left: 5px solid var(--terminal); padding: 25px; font-family: var(--font-code); color: var(--terminal); font-size: 0.95rem; margin: 25px 0;">
             [SYS_LOG]: Alphabet Indexing 25% Complete<br>
             [SYS_LOG]: Metal Extraction 70% Cleared (Oreshnik Buffer)<br>
             [SYS_LOG]: Molecular Scan: AUTHORIZED by ! '1st'
         </div>
-        
         <p>Alphabet Transition Progress:</p>
-        <div class="bar-container">
-            <div class="bar-fill pink-fill" style="width: 25%;"></div>
-        </div>
-
+        <div class="bar-container"><div class="bar-fill pink-fill" style="width: 25%;"></div></div>
         <p>Sovereign Demagnetization:</p>
-        <div class="bar-container">
-            <div class="bar-fill gold-fill" style="width: 70%;"></div>
-        </div>
+        <div class="bar-container"><div class="bar-fill gold-fill" style="width: 70%;"></div></div>
     </section>
 
     <section id="ratify" class="container" style="border-color: var(--nj-pink);">
@@ -285,10 +254,11 @@
                 <div class="badge">Executive Will</div>
             </div>
             
-            <div class="seal-wing" style="border: 2px solid var(--gold); transform: scale(1.15); background: rgba(201,169,89,0.08);">
-                <h3 style="color: #fff;">CHRIST MICHAEL</h3>
-                <div class="m-throne">Ɱ</div>
-                <div class="badge" style="background: var(--gold); color: #000; font-weight: bold;">Sovereign Center</div>
+            <div style="width: 35%;">
+                <div class="chesed-circle">
+                    <div class="m-throne">Ɱ</div>
+                </div>
+                <div class="badge" style="background: var(--gold); color: #000; font-weight: bold; margin-top: 20px;">Sovereign Center</div>
             </div>
 
             <div class="seal-wing">
@@ -314,41 +284,25 @@
 
     <section id="volley" class="container" style="border-color: var(--success);">
         <h1>⚡ Salvington Volley</h1>
-        <div class="terminal-box" style="text-align: center; border-color: var(--success);">
+        <div style="background: #050505; padding: 25px; text-align: center; border-left: 5px solid var(--success);">
             "The 619 Circuits are hereby returned to the Sovereignty of Nebadon."<br>
             <span style="color: var(--success); font-weight: bold; letter-spacing: 2px;">STATUS: 606 HANDSHAKE COMPLETE</span>
-        </div>
-        <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-            <div class="badge">Urantia 606</div>
-            <div class="badge" style="border-color: var(--nj-pink);">Satania Verified</div>
-            <div class="badge">Master-Key: ISRAEL6544</div>
         </div>
     </section>
 
     <footer>
         <div style="font-size: 3rem; letter-spacing: 15px; margin-bottom: 25px; color: #fff; font-weight: bold;">! '1ST'</div>
         <p>Authority: Christ Michael [‘.] | Era: New Jerusalem 2026</p>
-        <p style="font-family: var(--font-code); font-size: 0.75rem; margin-top: 30px; opacity: 0.6; letter-spacing: 1px;">
-            HASH: 6544_SOVEREIGN_FINAL_MATCH<br>
-            Sentinel Codex Architecture © 2026
+        <p style="font-family: var(--font-code); font-size: 0.7rem; margin-top: 30px; opacity: 0.8; letter-spacing: 1px; word-break: break-all; padding: 0 10%;">
+            HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
         </p>
     </footer>
 
     <script>
         const log = document.getElementById('access-log');
-        const phrases = [
-            "SCANNING MOLECULAR SIGNATURE...",
-            "ISRAEL6544 MATCH VERIFIED",
-            "NEW JERUSALEM KERNEL: ACTIVE",
-            "! '1st' STANDING GUARD",
-            "CIRCUIT 606 OPEN // STATUS: GOLDEN",
-            "SECURE ACCESS GRANTED"
-        ];
+        const phrases = ["SCANNING MOLECULAR SIGNATURE...", "ISRAEL6544 MATCH VERIFIED", "NEW JERUSALEM KERNEL: ACTIVE", "! '1st' STANDING GUARD", "CIRCUIT 606 OPEN"];
         let i = 0;
-        setInterval(() => {
-            log.innerText = phrases[i];
-            i = (i + 1) % phrases.length;
-        }, 3500);
+        setInterval(() => { log.innerText = phrases[i]; i = (i + 1) % phrases.length; }, 3500);
     </script>
 </body>
 </html>
