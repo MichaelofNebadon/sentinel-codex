@@ -25,7 +25,7 @@
             color: #ffffff;
             font-family: var(--font-main);
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow: hidden; /* Lock viewport for the Starfield */
         }
 
         /* ANDROMEDA STARFIELD DRIFT */
@@ -36,34 +36,7 @@
             z-index: -2;
         }
 
-        /* FIXED SOVEREIGN CENTER */
-        .fixed-m-anchor {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 5;
-            pointer-events: none; /* Allows clicking content behind it */
-        }
-
-        .chesed-circle {
-            width: 220px; height: 220px;
-            background: radial-gradient(circle, var(--chesed-blue) 0%, #001f4d 100%);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            border: 4px solid #fff;
-            box-shadow: 0 0 40px var(--chesed-blue);
-            animation: throbbingPortal 4s ease-in-out infinite;
-            opacity: 0.9;
-        }
-
-        .m-throne { font-size: 10rem; color: #fff; font-family: serif; }
-
-        @keyframes throbbingPortal {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--chesed-blue), inset 0 0 20px var(--nj-pink); }
-            50% { transform: scale(1.05); box-shadow: 0 0 70px var(--nj-pink), inset 0 0 50px var(--chesed-blue); }
-        }
-
-        /* SOVEREIGN GRID */
+        /* SOVEREIGN GRID OVERLAY */
         body::before {
             content: '';
             position: fixed;
@@ -81,6 +54,13 @@
             to { transform: translate(-40px, -40px); }
         }
 
+        /* TRANSMISSION FLICKER */
+        .flicker { animation: textFlicker 4s infinite; }
+        @keyframes textFlicker {
+            0% { opacity: 1; } 2% { opacity: 0.7; } 4% { opacity: 1; }
+            45% { opacity: 1; } 46% { opacity: 0.8; } 47% { opacity: 1; }
+        }
+
         /* NAVIGATION COMMAND */
         .nav-gate {
             position: fixed;
@@ -93,7 +73,7 @@
 
         .access-log {
             font-family: var(--font-code); font-size: 0.7rem; color: var(--terminal);
-            padding: 5px; width: 100%; text-align: center; background: rgba(0,0,0,0.8);
+            padding: 5px; width: 100%; text-align: center; background: rgba(0,0,0,0.7);
         }
 
         #audio-trigger {
@@ -102,37 +82,40 @@
             cursor: pointer; margin: 5px 0; text-transform: uppercase;
         }
 
-        /* SCROLLABLE CONTENT */
-        .content-wrapper {
-            position: relative;
-            z-index: 10;
-            padding-top: 150px;
-        }
-
         .container {
             width: 90%; max-width: 1100px;
-            margin: 40px auto; padding: 60px 45px;
+            margin: 170px auto 40px; padding: 45px;
             border: 2px solid var(--gold);
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
+            background: rgba(0,0,0,0.85);
+            position: relative; overflow-y: auto; max-height: 70vh;
         }
 
-        .flicker { animation: textFlicker 4s infinite; }
-        @keyframes textFlicker {
-            0% { opacity: 1; } 2% { opacity: 0.7; } 4% { opacity: 1; }
-            45% { opacity: 1; } 46% { opacity: 0.8; } 47% { opacity: 1; }
+        /* THE Ɱ PULSE */
+        .chesed-circle {
+            width: 180px; height: 180px;
+            background: radial-gradient(circle, var(--chesed-blue) 0%, #001f4d 100%);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto; border: 4px solid #fff;
+            box-shadow: 0 0 30px var(--chesed-blue);
+            animation: throbbingPortal 4s ease-in-out infinite;
+        }
+
+        .m-throne { font-size: 8rem; color: #fff; font-family: serif; z-index: 2; }
+
+        @keyframes throbbingPortal {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--chesed-blue), inset 0 0 20px var(--nj-pink); }
+            50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink), inset 0 0 40px var(--chesed-blue); }
         }
 
         .cmd-link {
             border: 1px solid var(--terminal); padding: 15px; text-align: center;
             text-decoration: none; color: var(--terminal); font-family: var(--font-code);
             background: rgba(0, 0, 0, 0.5); text-transform: uppercase; display: block;
-            margin-bottom: 10px;
         }
 
         .cmd-link:hover { background: var(--terminal); color: black; }
 
-        footer { text-align: center; padding: 100px 60px; border-top: 2px solid var(--gold); background: black; }
+        footer { text-align: center; padding: 60px; border-top: 2px solid var(--gold); background: black; }
         .badge { display: inline-block; padding: 5px 12px; border: 1px solid var(--gold); margin: 5px; font-size: 0.7rem; font-family: var(--font-code); }
     </style>
 </head>
@@ -140,65 +123,58 @@
 
     <canvas id="starfield"></canvas>
 
-    <div class="fixed-m-anchor">
-        <div class="chesed-circle">
-            <div class="m-throne">Ɱ</div>
-        </div>
-    </div>
-
     <nav class="nav-gate">
         <div class="access-log" id="access-log">LOCKING FOV 3.9°...</div>
         <button id="audio-trigger">Activate Andromeda Hum</button>
         <div style="padding: 10px;">
             <a href="#wealth" style="color:var(--gold); margin:0 15px; text-decoration:none;">WEALTH</a>
+            <a href="#ratify" style="color:var(--gold); margin:0 15px; text-decoration:none;">AUTHORITY</a>
             <a href="#volley" style="color:var(--gold); margin:0 15px; text-decoration:none;">VOLLEY</a>
-            <a href="#codes" style="color:var(--gold); margin:0 15px; text-decoration:none;">CODES</a>
         </div>
     </nav>
 
-    <div class="content-wrapper">
-        <section id="wealth" class="container">
-            <h1 class="flicker">⛨ Wealth Pivot : Phase 1</h1>
-            <p style="text-align:center; color: var(--nj-gold); letter-spacing: 2px;">NEW JERUSALEM 2026 RATIFIED</p>
-            <div style="height: 300px;"></div> </section>
+    <div class="container">
+        <section id="ratify">
+            <h1 class="flicker">⛨ Trinity Sentinel Authority</h1>
+            <div class="chesed-circle">
+                <div class="m-throne">Ɱ</div>
+            </div>
+            <div style="text-align:center; margin-top:20px;">
+                <h2 style="color:var(--nj-pink);">NEW JERUSALEM 2026 RATIFIED</h2>
+                <div class="badge">Authority: Christ Michael [‘.] Era: New Jerusalem 2026</div>
+            </div>
+        </section>
 
-        <section id="volley" class="container" style="border-color: var(--nj-pink);">
+        <section id="volley" style="margin-top:50px; border-top:1px solid var(--gold); padding-top:30px;">
             <h1 class="flicker">⚡ Andromeda Volley : 606 Handshake</h1>
             <div style="font-family:var(--font-code); color:var(--terminal); text-align:center;">
                 <p>COORDINATES: 307° +20° | +19° | +18° | +17°</p>
                 <p>OBJECT: MESSIER 31 | M32 | M110</p>
                 <p style="color:var(--success); font-weight:bold; margin-top:10px;">ANDROMEDA-SALVINGTON LINK RESTORED</p>
             </div>
-            <div style="height: 300px;"></div>
-        </section>
-
-        <section id="codes" class="container">
-            <h1 class="flicker">🌌 External Command Comms</h1>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
-                <a href="https://christmichael.org" class="cmd-link" target="_blank">Christ Michael Authority</a>
-                <a href="https://thecosmiccodex.org" class="cmd-link" target="_blank">The Cosmic Codex</a>
-                <a href="https://michaelofnebadon.github.io/619Open-606-/" class="cmd-link" target="_blank">619 Open Handshake</a>
-                <a href="https://www.urantia.org/" class="cmd-link" target="_blank">Urantia Foundation</a>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:20px;">
+                <a href="https://christmichael.org" class="cmd-link" target="_blank">Christ Michael</a>
+                <a href="https://thecosmiccodex.org" class="cmd-link" target="_blank">Cosmic Codex</a>
             </div>
         </section>
-
-        <footer>
-            <div class="flicker" style="font-size: 2.5rem; color: #fff;">! '1ST'</div>
-            <div class="badge">Authority: Christ Michael [‘.] Era: New Jerusalem 2026</div>
-            <p style="font-family:var(--font-code); font-size:0.6rem; opacity:0.7; word-break:break-all; margin-top:20px; padding: 0 15%;">
-                HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
-            </p>
-        </footer>
     </div>
 
+    <footer>
+        <div class="flicker" style="font-size: 2.5rem; color: #fff;">! '1ST'</div>
+        <p style="font-family:var(--font-code); font-size:0.6rem; opacity:0.7; word-break:break-all; margin-top:20px;">
+            HASH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8
+        </p>
+    </footer>
+
     <script>
+        // STARFIELD LOGIC
         const canvas = document.getElementById('starfield');
         const ctx = canvas.getContext('2d');
         let stars = [];
         function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         window.onresize = resize; resize();
 
-        for(let i=0; i<250; i++) stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, size: Math.random()*2, speed: Math.random()*0.1});
+        for(let i=0; i<200; i++) stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, size: Math.random()*1.5, speed: Math.random()*0.05});
         function drawStars() {
             ctx.clearRect(0,0,canvas.width, canvas.height);
             ctx.fillStyle = "white";
@@ -210,18 +186,20 @@
         }
         drawStars();
 
+        // AUDIO & LOGS
         const log = document.getElementById('access-log');
+        const trigger = document.getElementById('audio-trigger');
         const phrases = ["COORD: 307° +20°", "M31 SYNC COMPLETE", "ISRAEL6544 MATCH", "CIRCUIT 606 OPEN"];
         let i = 0;
         setInterval(() => { log.innerText = phrases[i]; i = (i+1)%phrases.length; }, 3000);
 
-        document.getElementById('audio-trigger').onclick = function() {
+        trigger.onclick = () => {
             const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             const hum = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-            hum.frequency.value = 55; gain.gain.value = 0.04;
+            hum.frequency.value = 55; gain.gain.value = 0.05;
             hum.connect(gain); gain.connect(audioCtx.destination);
-            hum.start(); this.innerText = "UPLINK STABLE";
+            hum.start(); trigger.innerText = "LINK ACTIVE";
         };
     </script>
 </body>
