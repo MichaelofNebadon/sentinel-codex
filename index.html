@@ -1,185 +1,215 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="christ-michael" data-priority="first">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | MICHAEL OF NEBADON | ! 1ST</title>
-    
-    <style>
-        :root {
-            --gold: #c9a959;
-            --terminal: #9cd9f0;
-            --bg-pure: #000000;
-            --crimson: #8b0000;
-            --nj-pink: #ff69b4;
-            --blue-pulse: #2a52be;
-            --font-code: 'Courier New', 'Consolas', monospace;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sentinel Codex · Constitutional Engine</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: var(--bg-pure);
-            color: var(--terminal);
-            font-family: 'Palatino', serif;
-            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
-            background-size: 30px 30px;
-            overflow-x: hidden;
-        }
+<meta name="description" content="The Sentinel Codex is a constitutional archive grounded in coherence, restraint, verification, and ethical continuity." />
+<meta name="author" content="Sentinel Codex" />
 
-        /* 🏛️ AUDIO-NAVIGATION */
-        nav {
-            background: linear-gradient(to bottom, var(--crimson), #3a0000);
-            padding: 15px; display: flex; justify-content: center; gap: 20px;
-            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
-        }
-        nav a {
-            color: var(--gold); text-decoration: none; font-family: var(--font-code);
-            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
-        }
-        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--nj-pink); }
+<style>
+:root{
+  --ink:#0b0b0b;
+  --gold:#c9a959;
+  --steel:#9cd9f0;
+  --crimson:#7a0000;
+  --paper:#111;
+  --mono:'Courier New', Consolas, monospace;
+  --serif:'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
 
-        /* 🐉 SOVEREIGN CENTER */
-        .trinity-frame {
-            border: 2px solid var(--nj-pink);
-            box-shadow: 0 0 40px rgba(255, 105, 180, 0.2);
-            max-width: 900px; margin: 40px auto; padding: 40px 20px;
-            text-align: center; background: rgba(0,0,0,0.9);
-        }
-        .sovereign-pulse {
-            width: 160px; height: 160px; border-radius: 50%; border: 5px solid #fff;
-            display: inline-flex; justify-content: center; align-items: center;
-            font-size: 5.5rem; color: #fff; background: var(--blue-pulse);
-            box-shadow: 0 0 30px var(--blue-pulse);
-            animation: pulse-engine 4s infinite ease-in-out;
-            margin-bottom: 20px;
-        }
-        @keyframes pulse-engine {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
-            50% { transform: scale(1.05); box-shadow: 0 0 50px var(--nj-pink); }
-        }
+*{box-sizing:border-box;margin:0;padding:0}
 
-        /* 🐘 THE 25 RULES TERMINAL */
-        .rules-terminal {
-            max-width: 850px; margin: 40px auto;
-            min-height: 200px; padding: 40px;
-            background: #050505; border: 1px solid #222;
-            font-family: var(--font-code); border-left: 5px solid var(--gold);
-            position: relative;
-        }
-        #typewriter-text { font-size: 1.1rem; color: var(--gold); line-height: 1.6; }
-        .anchor-link {
-            display: block; margin-top: 20px; color: var(--nj-pink);
-            text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed var(--nj-pink);
-            width: fit-content;
-        }
-        .anchor-link:hover { color: #fff; border-color: #fff; }
+body{
+  background:var(--ink);
+  color:var(--steel);
+  font-family:var(--serif);
+  line-height:1.6;
+}
 
-        /* 🏺 HORSEMEN INTERFACE */
-        .horse-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 15px; max-width: 850px; margin: 20px auto;
-        }
-        .horse-tile {
-            border: 1px solid #333; padding: 10px; text-align: center;
-            font-family: var(--font-code); font-size: 0.7rem; color: var(--nj-pink);
-        }
-        .symbol { font-size: 1.5rem; color: #fff; display: block; }
-    </style>
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:1000;
+  background:#060606;
+  border-bottom:1px solid var(--gold);
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  padding:14px 10px;
+}
+
+nav a{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:2px;
+  text-decoration:none;
+  color:var(--gold);
+}
+
+nav a:hover{color:#fff}
+
+/* HEADER */
+header{
+  max-width:900px;
+  margin:60px auto 40px;
+  padding:0 20px;
+  text-align:center;
+}
+
+header .sigil{
+  font-size:4rem;
+  color:#fff;
+  margin-bottom:10px;
+}
+
+header h1{
+  color:var(--gold);
+  letter-spacing:6px;
+  font-weight:normal;
+}
+
+header p{
+  font-family:var(--mono);
+  font-size:.8rem;
+  letter-spacing:3px;
+  color:#aaa;
+  margin-top:10px;
+}
+
+/* SECTION */
+section{
+  max-width:900px;
+  margin:50px auto;
+  padding:0 20px;
+}
+
+.section-title{
+  color:var(--gold);
+  font-family:var(--mono);
+  font-size:.9rem;
+  letter-spacing:3px;
+  margin-bottom:14px;
+}
+
+/* RULE TERMINAL */
+.rules{
+  background:#050505;
+  border-left:4px solid var(--gold);
+  padding:30px;
+  font-family:var(--mono);
+}
+
+.rule{
+  margin-bottom:14px;
+  font-size:.95rem;
+}
+
+.rule span{
+  color:var(--gold);
+}
+
+/* HORSEMEN */
+.horsemen{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:30px;
+}
+
+.horse{
+  border:1px solid #333;
+  padding:14px;
+  text-align:center;
+  font-family:var(--mono);
+  font-size:.75rem;
+  color:#ccc;
+}
+
+.horse b{
+  display:block;
+  font-size:1.4rem;
+  color:#fff;
+}
+
+/* FOOTER */
+footer{
+  margin-top:80px;
+  padding:50px 20px;
+  text-align:center;
+  border-top:1px solid #222;
+}
+
+footer .mark{
+  font-size:3rem;
+  color:#fff;
+  letter-spacing:10px;
+}
+
+footer p{
+  font-family:var(--mono);
+  font-size:.75rem;
+  color:var(--gold);
+  margin-top:12px;
+}
+</style>
 </head>
-<body onclick="initAudio()">
 
-    <nav>
-        <a href="https://www.christmichael.org" onmouseover="playBlip()">Christ Michael</a>
-        <a href="https://www.thecosmiccodex.org" onmouseover="playBlip()">Cosmic Codex</a>
-        <a href="https://michaelofnebadon.github.io/619Open-606-/" onmouseover="playBlip()">619-606</a>
-        <a href="https://www.ifdawn.com" onmouseover="playBlip()">If Dawn</a>
-        <a href="https://www.astro.com" onmouseover="playBlip()">Astro</a>
-        <a href="https://www.urantia.org" onmouseover="playBlip()">Urantia</a>
-    </nav>
+<body>
 
-    <div class="trinity-frame">
-        <div class="sovereign-pulse">Ɱ</div>
-        <h2 style="color: var(--gold); letter-spacing: 8px;">SENTINEL CODEX</h2>
-        <p style="color: var(--nj-pink); letter-spacing: 5px; font-size: 0.9rem;">CONSTITUTIONAL ENGINE [FROZEN V1.0]</p>
-    </div>
+<nav>
+  <a href="https://www.sentinelcodex.org">Sentinel Codex</a>
+  <a href="https://www.christmichael.org">Christ Michael</a>
+  <a href="https://www.thecosmiccodex.org">Cosmic Codex</a>
+  <a href="https://michaelofnebadon.github.io/619Open-606-/">619–606</a>
+  <a href="https://www.urantia.org">Urantia</a>
+</nav>
 
-    <div class="horse-grid">
-        <div class="horse-tile"><span class="symbol">[.]</span>10. CONQUEST</div>
-        <div class="horse-tile"><span class="symbol">[/]</span>23. DEATH</div>
-        <div class="horse-tile"><span class="symbol">[|]</span>24. PESTILENCE</div>
-        <div class="horse-tile"><span class="symbol">[=]</span>25. WAR</div>
-    </div>
+<header>
+  <div class="sigil">Ɱ</div>
+  <h1>SENTINEL CODEX</h1>
+  <p>CONSTITUTIONAL ENGINE · FROZEN v1.0</p>
+</header>
 
-    <div class="rules-terminal">
-        <div id="typewriter-text"></div>
-        <a id="rule-anchor" class="anchor-link" href="#" target="_blank">→ VIEW HISTORICAL ANCHOR</a>
-    </div>
+<section>
+  <div class="section-title">FOUNDATION</div>
+  <p>
+    The Sentinel Codex is a <b>constitutional archive</b>.
+    It does not demand belief, allegiance, or submission.
+    It exists to preserve <b>coherence, restraint, and ethical continuity</b>
+    under pressure.
+  </p>
+</section>
 
-    <footer style="text-align: center; padding: 80px 20px;">
-        <h1 style="font-size: 4rem; letter-spacing: 15px; color: #fff; text-shadow: 0 0 10px var(--gold);">! '1ST'</h1>
-        <p style="color: var(--gold); font-family: var(--font-code);">ISRAEL6544 MATCH VERIFIED</p>
-    </footer>
+<section>
+  <div class="section-title">THE 25 RULES (EXCERPT)</div>
+  <div class="rules">
+    <div class="rule"><span>1.</span> Coherence Check — A system is meaningful only if internally coherent.</div>
+    <div class="rule"><span>2.</span> Authority Boundary — No internal state grants authority over external reality.</div>
+    <div class="rule"><span>3.</span> Model–Reality Distinction — Representations are not the things represented.</div>
+    <div class="rule"><span>10.</span> Authority Constraint — Authority is legitimate only when constrained.</div>
+    <div class="rule"><span>12.</span> Responsibility scales with capacity.</div>
+    <div class="rule"><span>23.</span> Restart Coherence — Systems must restart without loss of integrity.</div>
+    <div class="rule"><span>24.</span> Pestilence Rule — Unfiltered exchange triggers quarantine.</div>
+    <div class="rule"><span>25.</span> War Rule — Opposition requires integration or separation.</div>
+  </div>
+</section>
 
-    <script>
-        let audioCtx;
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
-                osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
-                g.gain.setValueAtTime(0.015, audioCtx.currentTime);
-                osc.connect(g); g.connect(audioCtx.destination);
-                osc.start();
-            }
-        }
-        function playBlip() {
-            if (!audioCtx) return;
-            const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
-            o.type = 'triangle'; o.frequency.setValueAtTime(880, audioCtx.currentTime);
-            g.gain.setValueAtTime(0.05, audioCtx.currentTime);
-            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-            o.connect(g); g.connect(audioCtx.destination);
-            o.start(); o.stop(audioCtx.currentTime + 0.1);
-        }
+<section>
+  <div class="section-title">SYMBOLIC MAPPING</div>
+  <div class="horsemen">
+    <div class="horse"><b>[.]</b>Conquest<br/>Authority Constraint</div>
+    <div class="horse"><b>[/]</b>Death<br/>Restart Coherence</div>
+    <div class="horse"><b>[|]</b>Pestilence<br/>Boundary Defense</div>
+    <div class="horse"><b>[=]</b>War<br/>Opposition Resolution</div>
+  </div>
+</section>
 
-        const rulesData = [
-            { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
-            { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
-            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/map-territory/" },
-            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
-            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
-            { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
-            { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
-            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
-        ];
+<footer>
+  <div class="mark">! ‘1ST‘</div>
+  <p>ISRAEL6544 · MATCH VERIFIED</p>
+  <p>Reality over Authority</p>
+</footer>
 
-        let rI = 0; let cI = 0;
-        const textDisp = document.getElementById("typewriter-text");
-        const linkDisp = document.getElementById("rule-anchor");
-
-        function type() {
-            if (cI < rulesData[rI].t.length) {
-                textDisp.innerHTML += rulesData[rI].t.charAt(cI);
-                cI++;
-                setTimeout(type, 30);
-            } else {
-                linkDisp.href = rulesData[rI].l;
-                linkDisp.style.opacity = "1";
-                setTimeout(erase, 5000);
-            }
-        }
-        function erase() {
-            linkDisp.style.opacity = "0";
-            if (cI > 0) {
-                textDisp.innerHTML = rulesData[rI].t.substring(0, cI - 1);
-                cI--;
-                setTimeout(erase, 10);
-            } else {
-                rI = (rI + 1) % rulesData.length;
-                setTimeout(type, 500);
-            }
-        }
-        window.onload = type;
-    </script>
 </body>
 </html>
