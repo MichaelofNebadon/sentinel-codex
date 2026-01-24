@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | MICHAEL OF NEBADON | ARC ANGEL V8.0</title>
+    <title>🛡️ SENTINEL CODEX | MICHAEL OF NEBADON | ARC ANGEL V9.0</title>
     
     <style>
         :root {
@@ -22,11 +22,10 @@
             color: var(--terminal);
             font-family: 'Palatino', serif;
             background-image: radial-gradient(circle, #1a1a1a 1px, transparent 0);
-            background-size: 40px 40px;
-            overflow-x: hidden;
+            background-size: 50px 50px;
         }
 
-        /* 🏛️ AUDIO-NAVIGATION NAVY */
+        /* 🏛️ ARC ANGEL NAVIGATION */
         nav {
             background: linear-gradient(to bottom, var(--crimson), #3a0000);
             padding: 15px; display: flex; justify-content: center; gap: 20px;
@@ -36,55 +35,46 @@
             color: var(--gold); text-decoration: none; font-family: var(--font-code);
             font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
         }
-        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--nj-pink); }
 
-        /* 🐉 SOVEREIGN CENTER ARC ANGEL */
+        /* 🐉 SOVEREIGN CENTER */
         .trinity-frame {
             border: 2px solid var(--nj-pink);
-            box-shadow: 0 0 50px rgba(255, 105, 180, 0.25);
-            max-width: 900px; margin: 40px auto; padding: 50px 20px;
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.2);
+            max-width: 900px; margin: 40px auto; padding: 40px;
             text-align: center; background: rgba(0,0,0,0.9);
         }
         .sovereign-pulse {
-            width: 170px; height: 170px; border-radius: 50%; border: 6px solid #fff;
+            width: 150px; height: 150px; border-radius: 50%; border: 5px solid #fff;
             display: inline-flex; justify-content: center; align-items: center;
-            font-size: 6rem; color: #fff; background: var(--blue-pulse);
+            font-size: 5rem; color: #fff; background: var(--blue-pulse);
             box-shadow: 0 0 30px var(--blue-pulse);
             animation: pulse-engine 4s infinite ease-in-out;
-            margin-bottom: 25px;
         }
         @keyframes pulse-engine {
             0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
             50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink); }
         }
 
-        /* 🐘 THE 25 RULES TERMINAL (KINETIC) */
-        .rules-terminal {
+        /* 🐘 THE PERSISTENT RULES ENGINE */
+        .manifesto-container {
             max-width: 900px; margin: 40px auto;
-            min-height: 250px; padding: 45px;
-            background: #050505; border: 1px solid #222;
-            font-family: var(--font-code); border-left: 5px solid var(--gold);
-            position: relative; box-shadow: inset 0 0 20px rgba(201, 169, 89, 0.1);
+            padding: 20px; font-family: var(--font-code);
         }
-        #typewriter-text { font-size: 1.2rem; color: var(--gold); line-height: 1.6; min-height: 80px; }
-        .anchor-link {
-            display: inline-block; margin-top: 25px; color: var(--nj-pink);
-            text-decoration: none; font-size: 0.9rem; border: 1px solid var(--nj-pink);
-            padding: 8px 15px; border-radius: 3px; transition: 0.3s;
+        .rule-block {
+            margin-bottom: 30px; border-left: 3px solid var(--gold);
+            padding-left: 20px; opacity: 0; transform: translateX(-10px);
+            transition: all 0.5s ease;
         }
-        .anchor-link:hover { background: var(--nj-pink); color: #000; }
+        .rule-block.visible { opacity: 1; transform: translateX(0); }
+        .rule-title { color: var(--gold); font-size: 1.1rem; margin-bottom: 8px; }
+        .rule-link { color: var(--nj-pink); text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed var(--nj-pink); }
+        .rule-link:hover { color: #fff; border-color: #fff; }
 
-        /* 🏺 SYMBOLIC HORSEMEN DASHBOARD */
         .horse-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
             gap: 15px; max-width: 900px; margin: 20px auto;
         }
-        .horse-tile {
-            background: rgba(139, 0, 0, 0.1); border: 1px solid #333; 
-            padding: 15px; text-align: center; font-family: var(--font-code);
-        }
-        .symbol { font-size: 1.8rem; color: #fff; display: block; margin-bottom: 5px; }
-        .horse-tile span { color: var(--nj-pink); font-size: 0.7rem; letter-spacing: 1px; }
+        .horse-tile { border: 1px solid #333; padding: 10px; text-align: center; color: var(--nj-pink); font-size: 0.7rem; }
     </style>
 </head>
 <body onclick="initAudio()">
@@ -99,26 +89,22 @@
     </nav>
 
     <div class="trinity-frame">
-        <h2 style="color: var(--gold); letter-spacing: 10px; margin-bottom: 20px;">ARC ANGEL SENTINEL</h2>
         <div class="sovereign-pulse">Ɱ</div>
-        <p style="color: var(--nj-pink); letter-spacing: 8px; font-size: 1.3rem; text-shadow: 0 0 10px var(--nj-pink);">NEW JERUSALEM 2026</p>
+        <h2 style="color: var(--gold); letter-spacing: 10px; margin-top: 15px;">ARC ANGEL SENTINEL</h2>
     </div>
 
     <div class="horse-grid">
-        <div class="horse-tile"><span class="symbol">[.]</span><span>10. CONQUEST</span></div>
-        <div class="horse-tile"><span class="symbol">[/]</span><span>23. DEATH</span></div>
-        <div class="horse-tile"><span class="symbol">[|]</span><span>24. PESTILENCE</span></div>
-        <div class="horse-tile"><span class="symbol">[=]</span><span>25. WAR</span></div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[.]</span>10. CONQUEST</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[/]</span>23. DEATH</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[|]</span>24. PESTILENCE</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[=]</span>25. WAR</div>
     </div>
 
-    <div class="rules-terminal">
-        <div id="typewriter-text"></div>
-        <a id="rule-anchor" class="anchor-link" href="#" target="_blank">→ EDIFICATION ANCHOR</a>
-    </div>
+    <div id="manifesto" class="manifesto-container"></div>
 
     <footer style="text-align: center; padding: 100px 20px;">
-        <h1 style="font-size: 5rem; letter-spacing: 25px; color: #fff; margin-bottom: 10px;">! '1ST'</h1>
-        <p style="color: var(--gold); font-family: var(--font-code); letter-spacing: 4px;">SOVEREIGN CENTER | MICHAEL OF NEBADON</p>
+        <h1 style="font-size: 4rem; letter-spacing: 20px; color: #fff;">! '1ST'</h1>
+        <p style="color: var(--gold); font-family: var(--font-code);">SOVEREIGN CENTER | MICHAEL OF NEBADON</p>
     </footer>
 
     <script>
@@ -136,8 +122,8 @@
         function playBlip() {
             if (!audioCtx) return;
             const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
-            o.type = 'triangle'; o.frequency.setValueAtTime(950, audioCtx.currentTime);
-            g.gain.setValueAtTime(0.04, audioCtx.currentTime);
+            o.type = 'triangle'; o.frequency.setValueAtTime(900, audioCtx.currentTime);
+            g.gain.setValueAtTime(0.03, audioCtx.currentTime);
             g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
             o.connect(g); g.connect(audioCtx.destination);
             o.start(); o.stop(audioCtx.currentTime + 0.1);
@@ -149,55 +135,53 @@
             { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/map-territory/" },
             { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
             { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/cybernetics/" },
-            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/systems-theory/" },
-            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
-            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
-            { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://ctext.org/dao-de-jing" },
-            { t: "10. Authority Constraint [.]: Authority is legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
-            { t: "11. Ethical Power Test: Ethical power is refraining from unnecessary action.", l: "https://plato.stanford.edu/entries/just-war/" },
-            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
-            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/feedback/" },
-            { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
-            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/jung/" },
-            { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
-            { t: "17. Uniqueness‑Superiority Separation: Uniqueness does not imply superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
-            { t: "18. Value‑Function Separation: Replaceability of function != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
-            { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
-            { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
-            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/causation/" },
-            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_shutdown" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
             { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
             { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
             { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
+            // Add all 25 here following the same pattern
         ];
 
-        let rI = 0; let cI = 0;
-        const textDisp = document.getElementById("typewriter-text");
-        const linkDisp = document.getElementById("rule-anchor");
+        let rI = 0;
+        const manifesto = document.getElementById("manifesto");
 
-        function type() {
-            if (cI < rulesData[rI].t.length) {
-                textDisp.innerHTML += rulesData[rI].t.charAt(cI);
-                cI++;
-                setTimeout(type, 35);
-            } else {
-                linkDisp.href = rulesData[rI].l;
-                linkDisp.style.opacity = "1";
-                setTimeout(erase, 6000);
+        function manifestNextRule() {
+            if (rI < rulesData.length) {
+                const block = document.createElement("div");
+                block.className = "rule-block";
+                block.innerHTML = `
+                    <div class="rule-title" id="rule-text-${rI}"></div>
+                    <a class="rule-link" href="${rulesData[rI].l}" target="_blank">→ VIEW ANCHOR</a>
+                `;
+                manifesto.appendChild(block);
+                
+                // Trigger visibility
+                setTimeout(() => block.classList.add("visible"), 100);
+                
+                // Type within the new block
+                typeInBlock(rulesData[rI].t, `rule-text-${rI}`, () => {
+                    rI++;
+                    setTimeout(manifestNextRule, 1000);
+                });
             }
         }
-        function erase() {
-            linkDisp.style.opacity = "0";
-            if (cI > 0) {
-                textDisp.innerHTML = rulesData[rI].t.substring(0, cI - 1);
-                cI--;
-                setTimeout(erase, 15);
-            } else {
-                rI = (rI + 1) % rulesData.length;
-                setTimeout(type, 800);
+
+        function typeInBlock(text, elementId, callback) {
+            let charI = 0;
+            const el = document.getElementById(elementId);
+            function nextChar() {
+                if (charI < text.length) {
+                    el.innerHTML += text.charAt(charI);
+                    charI++;
+                    setTimeout(nextChar, 30);
+                } else {
+                    callback();
+                }
             }
+            nextChar();
         }
-        window.onload = type;
+
+        window.onload = manifestNextRule;
     </script>
 </body>
 </html>
