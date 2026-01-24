@@ -81,13 +81,6 @@
         <h2 style="color: var(--gold); letter-spacing: 10px; margin-top: 15px;">ARC ANGEL SENTINEL</h2>
     </div>
 
-    <div class="horse-grid">
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[.]</span>10. CONQUEST</div>
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[/]</span>23. DEATH</div>
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[|]</span>24. PESTILENCE</div>
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[=]</span>25. WAR</div>
-    </div>
-
     <div id="manifesto" class="manifesto-container"></div>
 
     <script>
@@ -113,19 +106,19 @@
         }
 
         const rulesData = [
-            { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
+            { t: "1. Coherence Check: System meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
             { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
-            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/" },
+            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://plato.stanford.edu/entries/models-science/" },
             { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
-            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/cybernetics/" },
-            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/systems-theory/" },
+            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/information-biological/" },
+            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://www.law.cornell.edu/wex/due_process" },
             { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
             { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
-            { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://ctext.org/dao-de-jing" },
-            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/" },
-            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/just-war/" },
-            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
-            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/feedback/" },
+            { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://avalon.law.yale.edu/18th_century/fed51.asp" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
+            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/ethics-belief/" },
+            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://www.law.cornell.edu/wex/fiduciary_duty" },
+            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/boundary-logic/" },
             { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
             { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/jung/" },
             { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
@@ -133,11 +126,11 @@
             { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
             { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
             { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
-            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/causation/" },
-            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_shutdown" },
+            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/scientific-method/" },
+            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://plato.stanford.edu/entries/ritual/" },
             { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
             { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
-            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en" }
+            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
         ];
 
         let rI = 0;
@@ -156,7 +149,7 @@
                 
                 typeInBlock(rulesData[rI].t, `rule-text-${rI}`, () => {
                     rI++;
-                    setTimeout(manifestNextRule, 200);
+                    setTimeout(manifestNextRule, 150);
                 });
             }
         }
@@ -168,7 +161,7 @@
                 if (charI < text.length) {
                     el.innerHTML += text.charAt(charI);
                     charI++;
-                    setTimeout(nextChar, 15);
+                    setTimeout(nextChar, 10);
                 } else { callback(); }
             }
             nextChar();
@@ -178,4 +171,3 @@
     </script>
 </body>
 </html>
-
