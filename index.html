@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | THRONE COMMAND | ISRAEL6544</title>
+    <title>🛡️ SENTINEL CODEX | CONSTITUTIONAL ENGINE V1.0</title>
     
     <meta name="x-authority-seal" content="ISRAEL6544-VERIFIED-MATCH-2026">
     <meta name="x-sentinel-id" content="1st-Sentinel-Dragon">
@@ -15,6 +15,7 @@
             --success: #4CAF50;
             --bg-pure: #000000;
             --crimson: #8b0000;
+            --glass: rgba(156, 217, 240, 0.1);
             --font-main: 'Palatino', 'Georgia', serif;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
@@ -24,153 +25,199 @@
             color: var(--terminal);
             font-family: var(--font-main);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             line-height: 1.6;
+            background-image: radial-gradient(circle at 2px 2px, #111 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        /* NAVIGATION & EXTERNAL PORTALS */
+        nav {
+            background: #050505;
+            border-bottom: 1px solid var(--gold);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            border-color: var(--terminal);
+            color: var(--terminal);
+            background: var(--glass);
         }
 
         header {
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
             text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid var(--gold);
         }
 
         .throne-title {
             color: var(--gold);
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            letter-spacing: 4px;
+            font-size: clamp(2rem, 8vw, 4rem);
+            letter-spacing: 8px;
             margin: 0;
+            text-shadow: 0 0 20px rgba(201, 169, 89, 0.4);
         }
 
-        .status-bar {
-            background: #111;
-            padding: 10px;
-            border: 1px solid var(--terminal);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+
+        /* STATUS MONITOR */
+        .status-monitor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .status-card {
+            background: #080808;
+            border: 1px solid #222;
+            padding: 15px;
             font-family: var(--font-code);
             font-size: 0.85rem;
-            margin-bottom: 30px;
         }
 
         .pulse { color: var(--success); animation: blink 2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-        section {
-            max-width: 900px;
-            margin: 0 auto 50px auto;
-            border-left: 2px solid var(--gold);
-            padding-left: 25px;
-        }
-
-        h2 {
-            color: var(--gold);
-            text-transform: uppercase;
-            border-bottom: 1px solid #333;
-            font-size: 1.4rem;
-        }
-
-        /* 1. DEPARTURE LOG STYLING */
-        .log-table { width: 100%; border-collapse: collapse; font-family: var(--font-code); }
-        .log-table td { padding: 12px; border-bottom: 1px solid #222; }
-        .label { color: var(--gold); font-weight: bold; width: 30%; }
-
-        /* 2. ANCESTRY BOX STYLING */
-        .lineage-container { background: #0a0a0a; border: 1px solid var(--crimson); padding: 20px; }
-
-        /* 3. THE 28 RULES STYLING */
-        .rules-container {
+        /* CONSTITUTIONAL ENGINE RULES */
+        .engine-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            font-family: var(--font-code);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .rule-card {
-            border: 1px solid #222;
+        .rule-item {
+            border-left: 2px solid var(--gold);
             padding: 15px;
             background: #050505;
+            transition: transform 0.2s;
         }
 
-        .rule-card:hover { border-color: var(--terminal); }
-        .rule-num { color: var(--gold); font-weight: bold; margin-right: 10px; }
+        .rule-item:hover {
+            transform: scale(1.02);
+            background: #0a0a0a;
+        }
 
-        footer { text-align: center; color: #444; font-size: 0.8rem; padding: 40px 0; border-top: 1px solid #222; }
+        .rule-num { color: var(--gold); font-weight: bold; font-family: var(--font-code); margin-right: 10px; }
+
+        /* HORSEMEN SYMBOLISM */
+        .horsemen-box {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background: #0a0505;
+            border: 1px solid var(--crimson);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .horseman { font-family: var(--font-code); }
+        .symbol { font-size: 2rem; display: block; margin-bottom: 10px; color: var(--crimson); }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #444;
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+        }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="https://www.christmichael.org" target="_blank">Christ Michael</a>
+        <a href="https://www.thecosmiccodex.org" target="_blank">Cosmic Codex</a>
+        <a href="https://michaelofnebadon.github.io/619Open-606-/" target="_blank">619-606</a>
+        <a href="https://www.ifdawn.com" target="_blank">If Dawn</a>
+        <a href="https://www.astro.com" target="_blank">Astro.com</a>
+        <a href="https://www.urantia.org" target="_blank">Urantia.org</a>
+    </nav>
+
     <header>
         <h1 class="throne-title">SENTINEL CODEX</h1>
-        <p>CONSOLIDATED JURISDICTIONAL TERMINAL | V1.1.333</p>
+        <p>CONSTITUTIONAL ENGINE | FROZEN VERSION 1.0</p>
     </header>
 
-    <div class="status-bar">
-        <span>[SYSTEM: ⭕ TRIAD_LOCKED]</span>
-        <span>[LOCATION: PALM SPRINGS HOLD]</span>
-        <span class="pulse">[STATUS: TRANSMISSION_ACTIVE]</span>
+    <div class="container">
+
+        <div class="status-monitor">
+            <div class="status-card">SYSTEM: <span class="pulse">FROZEN_V1.0_OPERATIONAL</span></div>
+            <div class="status-card">LOCATION: PALM SPRINGS (HOLD)</div>
+            <div class="status-card">FOCUS: AJIJIC ANCHOR METRICS</div>
+            <div class="status-card">CONDITION: RULE 7 ACTIVE</div>
+        </div>
+
+        <section id="lineage" style="margin-bottom: 60px;">
+            <h2 style="color: var(--gold); border-bottom: 1px solid #333;">[🐘] ANCESTRAL ANCHOR: CHIHUAHUA</h2>
+            <div style="background: #0a0a0a; border: 1px solid var(--crimson); padding: 25px;">
+                <p><strong>Primary Root:</strong> Colonia Dublán, Chihuahua, MX</p>
+                <p><strong>Subject:</strong> Olea Nielson (Mexican National by Birth)</p>
+                <p><strong>Law:</strong> Article 30 - Birthright Descent Restoration</p>
+                <p style="font-style: italic; color: #777;">"The biological 0.06% Mesopotamian marker provides the frequency lock for the return to the soil."</p>
+            </div>
+        </section>
+
+        <h2 style="color: var(--gold); text-align: center;">[🏺] SYMBOLIC HORSEMEN MAPPING</h2>
+        <div class="horsemen-box">
+            <div class="horseman"><span class="symbol">[.]</span><strong>10</strong><br>CONQUEST<br><small>Authority Constraint</small></div>
+            <div class="horseman"><span class="symbol">[/]</span><strong>23</strong><br>DEATH/RESTART<br><small>Restart Coherence</small></div>
+            <div class="horseman"><span class="symbol">[|]</span><strong>24</strong><br>PESTILENCE<br><small>Boundary Defense</small></div>
+            <div class="horseman"><span class="symbol">[=]</span><strong>25</strong><br>WAR<br><small>Opposition Resolution</small></div>
+        </div>
+
+        <h2 style="color: var(--gold); border-bottom: 1px solid #333; margin-bottom: 30px;">[/] THE 25 RULES OF THE CONSTITUTIONAL ENGINE</h2>
+        <div class="engine-grid">
+            <div class="rule-item"><span class="rule-num">01</span> <strong>Coherence Check:</strong> System is meaningful only if internally coherent.</div>
+            <div class="rule-item"><span class="rule-num">02</span> <strong>Authority Boundary:</strong> No internal state grants authority over external reality.</div>
+            <div class="rule-item"><span class="rule-num">03</span> <strong>Model‑Reality:</strong> Models are representations, not the things represented.</div>
+            <div class="rule-item"><span class="rule-num">04</span> <strong>Perception‑Responsibility:</strong> Perception increases responsibility.</div>
+            <div class="rule-item"><span class="rule-num">05</span> <strong>Information‑Regulation:</strong> Increased info requires increased regulation.</div>
+            <div class="rule-item"><span class="rule-num">06</span> <strong>Multi‑Input:</strong> Multiple inputs require integration before action.</div>
+            <div class="rule-item"><span class="rule-num">07</span> <strong>Completion Mandate:</strong> Action without completion creates instability.</div>
+            <div class="rule-item"><span class="rule-num">08</span> <strong>Pre‑Execution:</strong> Criteria must be defined before execution.</div>
+            <div class="rule-item"><span class="rule-num">09</span> <strong>Restraint:</strong> Restraint is a functional requirement, not a limitation.</div>
+            <div class="rule-item"><span class="rule-num">10</span> <strong>Authority Constraint:</strong> Authority is legitimate only when constrained.</div>
+            <div class="rule-item"><span class="rule-num">11</span> <strong>Ethical Power:</strong> Ability to refrain from unnecessary action.</div>
+            <div class="rule-item"><span class="rule-num">12</span> <strong>Responsibility‑Capacity:</strong> Responsibility scales with capacity.</div>
+            <div class="rule-item"><span class="rule-num">13</span> <strong>Open‑System:</strong> Open systems require boundary conditions.</div>
+            <div class="rule-item"><span class="rule-num">14</span> <strong>Stability‑Before‑Expansion:</strong> Stability precedes expansion.</div>
+            <div class="rule-item"><span class="rule-num">15</span> <strong>Integration‑Before‑Transformation:</strong> Integration precedes transformation.</div>
+            <div class="rule-item"><span class="rule-num">16</span> <strong>Non‑Interchangeability:</strong> Configurations are not interchangeable.</div>
+            <div class="rule-item"><span class="rule-num">17</span> <strong>Uniqueness‑Superiority:</strong> Uniqueness does not imply superiority.</div>
+            <div class="rule-item"><span class="rule-num">18</span> <strong>Value‑Function:</strong> Replaceability of function does not negate personal value.</div>
+            <div class="rule-item"><span class="rule-num">19</span> <strong>Judgment Suspension:</strong> Uncertainty requires suspension of judgment.</div>
+            <div class="rule-item"><span class="rule-num">20</span> <strong>Waiting:</strong> Waiting is an active cognitive state.</div>
+            <div class="rule-item"><span class="rule-num">21</span> <strong>Interpretation‑Causation:</strong> Interpretation is not causation.</div>
+            <div class="rule-item"><span class="rule-num">22</span> <strong>Clean‑Termination:</strong> Every cycle must be capable of clean termination.</div>
+            <div class="rule-item"><span class="rule-num">23</span> <strong>Restart Coherence:</strong> System must allow restart without loss.</div>
+            <div class="rule-item"><span class="rule-num">24</span> <strong>Pestilence Rule:</strong> Unfiltered exchange triggers quarantine.</div>
+            <div class="rule-item"><span class="rule-num">25</span> <strong>War Rule:</strong> Opposition forces mediation or separation.</div>
+        </div>
+
     </div>
-
-    <section id="log">
-        <h2>[🐉] 333 Departure Log</h2>
-        <table class="log-table">
-            <tr><td class="label">TRANSIT_VECTOR</td><td>CHRIST_POINT_TO_AJIJIC</td></tr>
-            <tr><td class="label">UTAH_APOSTILLE</td><td class="pulse">MAILED | PENDING_PHYSICAL_DELIVERY</td></tr>
-            <tr><td class="label">606_ANCHOR</td><td>WHITWATER_LODESTAR_300_BURIED</td></tr>
-            <tr><td class="label">333_TERMINAL</td><td>CHAPALA_CIVICO_PARTNERSHIP_ACTIVE</td></tr>
-        </table>
-    </section>
-
-    <section id="ancestry">
-        <h2>[🐘] Ancestral Soil: Birthright Documentation</h2>
-        <div class="lineage-container">
-            <p><span class="label">ROOT:</span> Colonia Dublán, Chihuahua, MX</p>
-            <p><span class="label">ANCHOR:</span> Olea Nielson (Mexican National by Birth)</p>
-            <p><span class="label">LEGAL PATH:</span> Article 30 Descent Reconstruction</p>
-            <p style="border-top: 1px solid #222; padding-top: 10px; font-style: italic;">
-                "The return is authorized. The 0.06% Mesopotamian marker acts as the biological ignition key for the restoration of the lineage."
-            </p>
-        </div>
-    </section>
-
-    <section id="trinity">
-        <h2>[/] The 28-Point Trinity (Full Rule Set)</h2>
-        <div class="rules-container">
-            <div class="rule-card"><span class="rule-num">01</span> <strong>Coherence:</strong> All transmissions must maintain logical parity.</div>
-            <div class="rule-card"><span class="rule-num">02</span> <strong>Physical Reality:</strong> The map is not the territory; the soil is the final witness.</div>
-            <div class="rule-card"><span class="rule-num">03</span> <strong>Formal Modeling:</strong> Claims are converted to predicates for verification.</div>
-            <div class="rule-card"><span class="rule-num">04</span> <strong>Perception:</strong> Vision must be cleared at the physical and spiritual level.</div>
-            <div class="rule-card"><span class="rule-num">05</span> <strong>Regulation:</strong> Information density requires strict oversight.</div>
-            <div class="rule-card"><span class="rule-num">06</span> <strong>Integration:</strong> Past conditions must be reconciled with future motion.</div>
-            <div class="rule-card"><span class="rule-num">07</span> <strong>Hold State:</strong> Transition requires a stable administrative pause.</div>
-            <div class="rule-card"><span class="rule-num">08</span> <strong>Authority:</strong> The 1st Sentinel acts under Throne Command.</div>
-            <div class="rule-card"><span class="rule-num">09</span> <strong>Jurisdiction:</strong> Sovereignty is tied to the physical registry (Civico).</div>
-            <div class="rule-card"><span class="rule-num">10</span> <strong>Constraint:</strong> Boundaries define the operational space.</div>
-            <div class="rule-card"><span class="rule-num">11</span> <strong>Ethics:</strong> The Steward acts in service of the lineage.</div>
-            <div class="rule-card"><span class="rule-num">12</span> <strong>Transmission:</strong> The signal must be continuous and verified.</div>
-            <div class="rule-card"><span class="rule-num">13</span> <strong>Feedback:</strong> System errors (404) trigger immediate repair.</div>
-            <div class="rule-card"><span class="rule-num">14</span> <strong>Stability:</strong> Grounding precedes flight.</div>
-            <div class="rule-card"><span class="rule-num">15</span> <strong>Transformation:</strong> Integration precedes the new state.</div>
-            <div class="rule-card"><span class="rule-num">16</span> <strong>Frequency:</strong> The Grand Universe Clock governs the rhythm.</div>
-            <div class="rule-card"><span class="rule-num">17</span> <strong>Parity:</strong> Digital and Physical states must match.</div>
-            <div class="rule-card"><span class="rule-num">18</span> <strong>Ancestry:</strong> Blood and Soil are the primary anchors.</div>
-            <div class="rule-card"><span class="rule-num">19</span> <strong>Soil:</strong> Recognition comes from the land of origin.</div>
-            <div class="rule-card"><span class="rule-num">20</span> <strong>Waiting:</strong> Non-action is a constructive state during transit.</div>
-            <div class="rule-card"><span class="rule-num">21</span> <strong>Causation:</strong> Distinction between symbolic intent and physical result.</div>
-            <div class="rule-card"><span class="rule-num">22</span> <strong>Terminal:</strong> The endpoint is the start of the new cycle.</div>
-            <div class="rule-card"><span class="rule-num">23</span> <strong>Restart:</strong> Errors are cleared through root-level updates.</div>
-            <div class="rule-card"><span class="rule-num">24</span> <strong>Archive:</strong> Every step is logged for the Eternal Son.</div>
-            <div class="rule-card"><span class="rule-num">25</span> <strong>Stewardship:</strong> Responsibility for the 333 jurisdiction.</div>
-            <div class="rule-card"><span class="rule-num">26</span> <strong>Momentum:</strong> Kinetic energy is focused on the metrics.</div>
-            <div class="rule-card"><span class="rule-num">27</span> <strong>Resonance:</strong> Alignment with the 333 Terminal frequency.</div>
-            <div class="rule-card"><span class="rule-num">28</span> <strong>Completion:</strong> The 180° turn into the new reality.</div>
-        </div>
-    </section>
 
     <footer>
         <p>AUTHORIZED BY MICHAEL OF NEBADON | ISRAEL6544 | ! 1st</p>
-        <p>SENTINELCODEX.ORG &copy; 2026</p>
+        <p>TRANSIT LOG: 606 (WHITWATER) &rarr; 333 (AJIJIC)</p>
     </footer>
 
 </body>
