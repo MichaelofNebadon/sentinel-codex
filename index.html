@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | ARC ANGEL TOTALITY | ! 1ST</title>
+    <title>🛡️ SENTINEL CODEX | ARC ANGEL V12.0 | ! 1ST</title>
     
     <style>
         :root {
@@ -110,24 +110,24 @@
             { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
             { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://plato.stanford.edu/entries/models-science/" },
             { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
-            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/information-biological/" },
-            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://www.law.cornell.edu/wex/due_process" },
-            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
-            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
+            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/information/" },
+            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://www.law.cornell.edu/constitution/fourth_amendment" },
+            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://britannica.com/science/thermodynamics" },
+            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.nasa.gov/history/apollo-flight-journal/" },
             { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://avalon.law.yale.edu/18th_century/fed51.asp" },
-            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.archives.gov/founding-docs/magna-carta" },
             { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/ethics-belief/" },
             { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://www.law.cornell.edu/wex/fiduciary_duty" },
-            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/boundary-logic/" },
+            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/systems-theory/" },
             { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
-            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/jung/" },
+            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/personality-development/" },
             { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
             { t: "17. Uniqueness‑Superiority Separation: Uniqueness != superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
             { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
             { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
             { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
             { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/scientific-method/" },
-            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://plato.stanford.edu/entries/ritual/" },
+            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_exit" },
             { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
             { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
             { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
@@ -149,7 +149,7 @@
                 
                 typeInBlock(rulesData[rI].t, `rule-text-${rI}`, () => {
                     rI++;
-                    setTimeout(manifestNextRule, 150);
+                    setTimeout(manifestNextRule, 100);
                 });
             }
         }
@@ -161,7 +161,7 @@
                 if (charI < text.length) {
                     el.innerHTML += text.charAt(charI);
                     charI++;
-                    setTimeout(nextChar, 10);
+                    setTimeout(nextChar, 5);
                 } else { callback(); }
             }
             nextChar();
