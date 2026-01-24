@@ -2,86 +2,90 @@
 <html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
     <meta charset="UTF-8">
-    <title>🛡️ SENTINEL CODEX | ARC ANGEL V16.0 | SCAFFOLD INTEGRATED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ SENTINEL CODEX | ARC ANGEL TOTALITY | ! 1ST</title>
+    
     <style>
         :root {
-            --gold-tipheret: #ffcf40;
+            --gold: #c9a959;
             --terminal: #9cd9f0;
             --bg-pure: #000000;
+            --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --blue-pulse: #2a52be;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: var(--bg-pure);
             color: var(--terminal);
             font-family: 'Palatino', serif;
-            background-image: radial-gradient(circle, #222 1px, transparent 0);
+            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 0);
             background-size: 50px 50px;
-            margin: 0;
         }
 
-        /* 🏛️ SOVEREIGN NAVIGATION */
         nav {
-            background: linear-gradient(to bottom, #8b0000, #3a0000);
-            padding: 15px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;
-            border-bottom: 3px solid var(--gold-tipheret); position: sticky; top: 0; z-index: 1000;
+            background: linear-gradient(to bottom, var(--crimson), #3a0000);
+            padding: 15px; display: flex; justify-content: center; gap: 20px;
+            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
-        nav a {
-            color: var(--gold-tipheret); text-decoration: none; font-family: var(--font-code);
-            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
-        }
+        nav a { color: var(--gold); text-decoration: none; font-family: var(--font-code); font-size: 0.75rem; letter-spacing: 2px; }
 
         .trinity-frame {
-            border: 3px solid var(--gold-tipheret);
-            box-shadow: 0 0 60px rgba(255, 207, 64, 0.3);
-            max-width: 950px; margin: 40px auto; padding: 40px;
-            text-align: center; background: rgba(0,0,0,0.95);
+            border: 2px solid var(--nj-pink);
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.2);
+            max-width: 900px; margin: 40px auto; padding: 40px;
+            text-align: center; background: rgba(0,0,0,0.9);
         }
-
         .sovereign-pulse {
-            width: 120px; height: 120px; border-radius: 50%; border: 6px solid var(--gold-tipheret);
+            width: 140px; height: 140px; border-radius: 50%; border: 5px solid #fff;
             display: inline-flex; justify-content: center; align-items: center;
-            font-size: 4rem; color: var(--gold-tipheret); background: var(--blue-pulse);
-            box-shadow: 0 0 30px var(--blue-pulse); animation: pulse 5s infinite;
+            font-size: 5rem; color: #fff; background: var(--blue-pulse);
+            box-shadow: 0 0 30px var(--blue-pulse);
+            animation: pulse-engine 4s infinite ease-in-out;
         }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes pulse-engine {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
+            50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink); }
+        }
 
-        .manifesto-container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        
+        .manifesto-container { max-width: 900px; margin: 40px auto; padding: 20px; font-family: var(--font-code); }
         .rule-block {
-            margin-bottom: 25px; border-left: 4px solid var(--gold-tipheret);
+            margin-bottom: 25px; border-left: 3px solid var(--gold);
             padding-left: 20px; opacity: 0; transform: translateX(-10px);
-            transition: all 0.4s ease-out;
+            transition: all 0.4s ease;
         }
         .rule-block.visible { opacity: 1; transform: translateX(0); }
-        .rule-title { color: var(--gold-tipheret); font-size: 1rem; font-weight: bold; margin-bottom: 5px; }
-        .rule-links { display: flex; gap: 10px; flex-wrap: wrap; }
-        .rule-anchor { 
-            color: var(--nj-pink); text-decoration: none; font-size: 0.75rem; 
-            border: 1px solid var(--nj-pink); padding: 2px 6px; 
-        }
-        .rule-anchor:hover { background: var(--gold-tipheret); color: #000; }
+        .rule-title { color: var(--gold); font-size: 1rem; margin-bottom: 5px; }
+        .rule-link { color: var(--nj-pink); text-decoration: none; font-size: 0.75rem; border-bottom: 1px dashed var(--nj-pink); }
+        .rule-link:hover { color: #fff; border-color: #fff; }
 
-        .horseman-tag { color: #fff; font-size: 0.7rem; letter-spacing: 2px; margin-top: 5px; display: block; }
+        .horse-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 900px; margin: 20px auto; }
+        .horse-tile { border: 1px solid #333; padding: 10px; text-align: center; color: var(--nj-pink); font-size: 0.7rem; }
     </style>
 </head>
 <body onclick="initAudio()">
 
     <nav>
-        <a href="https://christmichael.org">ChristMichael.org</a>
-        <a href="https://thecosmiccodex.org">TheCosmicCodex.org</a>
-        <a href="https://michaelofnebadon.github.io/619Open-606-/">619Open-606-</a>
-        <a href="https://www.ifdawn.com/">IfDawn.com</a>
-        <a href="https://www.urantia.org">Urantia.org</a>
-        <a href="https://www.astro.com">Astro.com</a>
+        <a href="https://www.christmichael.org" onmouseover="playBlip()">Christ Michael</a>
+        <a href="https://www.thecosmiccodex.org" onmouseover="playBlip()">Cosmic Codex</a>
+        <a href="https://michaelofnebadon.github.io/619Open-606-/" onmouseover="playBlip()">619-606</a>
+        <a href="https://www.ifdawn.com" onmouseover="playBlip()">If Dawn</a>
+        <a href="https://www.astro.com" onmouseover="playBlip()">Astro</a>
+        <a href="https://www.urantia.org" onmouseover="playBlip()">Urantia</a>
     </nav>
 
     <div class="trinity-frame">
-        <div class="sovereign-pulse">Ⓜ️</div>
-        <h1 style="color: var(--gold-tipheret); letter-spacing: 10px; margin-top: 15px;">CONSTITUTIONAL ENGINE</h1>
-        <p style="color: var(--nj-pink); font-size: 0.8rem;">FROZEN v1.0 | SCAFFOLD INTEGRATED</p>
+        <div class="sovereign-pulse">Ɱ</div>
+        <h2 style="color: var(--gold); letter-spacing: 10px; margin-top: 15px;">ARC ANGEL SENTINEL</h2>
+    </div>
+
+    <div class="horse-grid">
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[.]</span>10. CONQUEST</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[/]</span>23. DEATH</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[|]</span>24. PESTILENCE</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[=]</span>25. WAR</div>
     </div>
 
     <div id="manifesto" class="manifesto-container"></div>
@@ -91,70 +95,67 @@
         function initAudio() {
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
-                o.type = 'sine'; o.frequency.setValueAtTime(55, audioCtx.currentTime);
-                g.gain.setValueAtTime(0.01, audioCtx.currentTime);
-                o.connect(g); g.connect(audioCtx.destination); o.start();
+                const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
+                osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
+                g.gain.setValueAtTime(0.012, audioCtx.currentTime);
+                osc.connect(g); g.connect(audioCtx.destination);
+                osc.start();
             }
+        }
+        function playBlip() {
+            if (!audioCtx) return;
+            const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
+            o.type = 'triangle'; o.frequency.setValueAtTime(900, audioCtx.currentTime);
+            g.gain.setValueAtTime(0.03, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(); o.stop(audioCtx.currentTime + 0.1);
         }
 
         const rulesData = [
-            { t: "1. Coherence Check: System meaningful only if consistent.", links: [["Aristotle", "https://plato.stanford.edu/entries/aristotle-metaphysics/"], ["Gödel", "https://plato.stanford.edu/entries/goedel-incompleteness/"]] },
-            { t: "2. Authority Boundary: No internal state grants external authority.", links: [["Kant", "https://plato.stanford.edu/entries/kant-metaphysics/"], ["Hume", "https://plato.stanford.edu/entries/hume-moral/"]] },
-            { t: "3. Model-Reality Distinction: Map != Territory.", links: [["Korzybski", "https://www.generalsemantics.org/map-territory/"], ["SEP Models", "https://plato.stanford.edu/entries/models-science/"]] },
-            { t: "4. Perception-Responsibility Link: Perception increases duty.", links: [["Arendt", "https://plato.stanford.edu/entries/arendt/"], ["Luke 12:48", "https://www.biblegateway.com/passage/?search=Luke+12%3A48"]] },
-            { t: "5. Information-Regulation Scaling: Info requires regulation.", links: [["Wiener", "https://plato.stanford.edu/entries/cybernetics/"], ["GDPR", "https://gdpr.eu/"]] },
-            { t: "6. Multi-Input Integration: Integrate multiple sources.", links: [["Systems Theory", "https://plato.stanford.edu/entries/systems-theory/"], ["Due Process", "https://www.law.cornell.edu/wex/due_process"]] },
-            { t: "7. Completion Condition Mandate: Defined closure prevents instability.", links: [["PMI Closure", "https://www.pmi.org/learning/library/project-closure-best-practices-6958"], ["Thermodynamics", "https://plato.stanford.edu/entries/thermodynamics/"]] },
-            { t: "8. Pre-Execution Criteria: Define criteria before action.", links: [["IEEE Ethics", "https://www.ieee.org/about/corporate/governance/p7-8.html"], ["ROE Doctrine", "https://www.jcs.mil/Doctrine/"]] },
-            { t: "9. Restraint as Function: Restraint is necessity.", links: [["Tao Te Ching", "https://ctext.org/dao-de-jing"], ["Federalist 51", "https://avalon.law.yale.edu/18th_century/fed51.asp"]] },
-            { t: "10. Authority Constraint: Legitimate only when bounded.", links: [["Magna Carta", "https://www.bl.uk/magna-carta"], ["Montesquieu", "https://plato.stanford.edu/entries/montesquieu/"]], h: "[.] CONQUEST" },
-            { t: "11. Ethical Power Test: Power is refraining from action.", links: [["Dalai Lama", "https://www.dalailama.com/messages/ethics"], ["Just War", "https://plato.stanford.edu/entries/just-war/"]] },
-            { t: "12. Responsibility-Capacity Scaling: Responsibility scales with power.", links: [["Singer", "https://plato.stanford.edu/entries/singer/"], ["Fiduciary Law", "https://www.law.cornell.edu/wex/fiduciary_duty"]] },
-            { t: "13. Open-System Boundaries: Boundaries ensure stability.", links: [["Feedback Loops", "https://plato.stanford.edu/entries/feedback/"], ["Immune Theory", "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2277372/"]] },
-            { t: "14. Stability-Before-Expansion: Stabilize before growth.", links: [["Maslow", "https://www.simplypsychology.org/maslow.html"], ["Urban Planning", "https://www.planetizen.com/definition/stability"]] },
-            { t: "15. Integration-Before-Transformation: Unity before change.", links: [["Jung", "https://plato.stanford.edu/entries/jung/"], ["USIP", "https://www.usip.org/"]] },
-            { t: "16. Non-Interchangeability: Unique configurations are fixed.", links: [["Kant", "https://plato.stanford.edu/entries/kant-moral/"], ["WHO Ethics", "https://www.who.int/ethics"]] },
-            { t: "17. Uniqueness-Superiority Separation: Different != Better.", links: [["Blake", "https://www.bl.uk/collection-items/there-is-no-natural-religion"], ["UDHR", "https://www.un.org/en/about-us/universal-declaration-of-human-rights"]] },
-            { t: "18. Value-Function Separation: Function != intrinsic value.", links: [["Human Dignity", "https://www.vatican.va/"], ["Disability Ethics", "https://plato.stanford.edu/entries/disability/"]] },
-            { t: "19. Judgment Suspension: Uncertainty requires pause.", links: [["Skepticism", "https://plato.stanford.edu/entries/skepticism/"], ["Peer Review", "https://www.nature.com/"]] },
-            { t: "20. Waiting as Active State: Attention is not passivity.", links: [["Frankl", "https://www.viktorfrankl.org/"], ["Mindfulness", "https://www.dalailama.com/teachings/buddhism"]] },
-            { t: "21. Interpretation-Causation Distinction: Correlation != Cause.", links: [["Causation", "https://plato.stanford.edu/entries/causation/"], ["Evidence", "https://www.law.cornell.edu/wex/burden_of_proof"]] },
-            { t: "22. Clean-Termination Capability: Every process must end.", links: [["CS Shutdown", "https://en.wikipedia.org/wiki/Graceful_shutdown"], ["Ritual Closure", "https://plato.stanford.edu/entries/ritual/"]] },
-            { t: "23. Restart Coherence: Systems must allow clean restart.", links: [["Continuity", "https://constitutioncenter.org/"], ["SemVer", "https://semver.org/"]], h: "[/] DEATH / RESTART" },
-            { t: "24. Pestilence Rule: Boundary breaches trigger quarantine.", links: [["Quarantine Law", "https://www.cdc.gov/quarantine/"], ["Cyber Sandbox", "https://www.nist.gov/cyberframework"]], h: "[|] PESTILENCE" },
-            { t: "25. War Rule: Resolve or separate opposition.", links: [["Conflict Theory", "https://plato.stanford.edu/entries/conflict/"], ["ICRC War Law", "https://www.icrc.org/en/war-and-law"]], h: "[=] WAR" }
+            { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
+            { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
+            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/" },
+            { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
+            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/cybernetics/" },
+            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/systems-theory/" },
+            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
+            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
+            { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://ctext.org/dao-de-jing" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
+            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/just-war/" },
+            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
+            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/feedback/" },
+            { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
+            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/jung/" },
+            { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
+            { t: "17. Uniqueness‑Superiority Separation: Uniqueness != superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
+            { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
+            { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
+            { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
+            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/causation/" },
+            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_shutdown" },
+            { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
+            { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
+            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
         ];
 
         let rI = 0;
-        const container = document.getElementById("manifesto");
+        const manifesto = document.getElementById("manifesto");
 
-        function manifest() {
+        function manifestNextRule() {
             if (rI < rulesData.length) {
-                const data = rulesData[rI];
                 const block = document.createElement("div");
                 block.className = "rule-block";
-                
-                let linkHtml = data.links.map(l => `<a class="rule-anchor" href="${l[1]}" target="_blank">${l[0]}</a>`).join("");
-                let horsemanHtml = data.h ? `<span class="horseman-tag">${data.h}</span>` : "";
-                
-                block.innerHTML = `<div class="rule-title" id="r-${rI}"></div><div class="rule-links">${linkHtml}</div>${horsemanHtml}`;
-                container.appendChild(block);
-                
+                block.innerHTML = `
+                    <div class="rule-title" id="rule-text-${rI}"></div>
+                    <a class="rule-link" href="${rulesData[rI].l}" target="_blank">→ VIEW ANCHOR</a>
+                `;
+                manifesto.appendChild(block);
                 setTimeout(() => block.classList.add("visible"), 50);
-                type(data.t, `r-${rI}`, () => { rI++; setTimeout(manifest, 150); });
+                
+                typeInBlock(rulesData[rI].t, `rule-text-${rI}`, () => {
+                    rI++;
+                    setTimeout(manifestNextRule, 200);
+                });
             }
-        }
-
-        function type(t, id, cb) {
-            let i = 0; const el = document.getElementById(id);
-            function next() {
-                if (i < t.length) { el.innerHTML += t.charAt(i); i++; setTimeout(next, 5); }
-                else cb();
-            }
-            next();
-        }
-        window.onload = manifest;
-    </script>
-</body>
-</html>
