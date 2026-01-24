@@ -21,20 +21,20 @@
             background-color: var(--bg-pure);
             color: var(--terminal);
             font-family: 'Palatino', serif;
-            background-image: linear-gradient(rgba(30, 30, 30, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 30, 30, 0.4) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
+            background-size: 30px 30px;
             overflow-x: hidden;
         }
 
-        /* 🏛️ AUDIO NAVIGATION */
+        /* 🏛️ AUDIO-NAVIGATION */
         nav {
             background: linear-gradient(to bottom, var(--crimson), #3a0000);
-            padding: 20px; display: flex; justify-content: center; gap: 25px;
+            padding: 15px; display: flex; justify-content: center; gap: 20px;
             border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
         nav a {
             color: var(--gold); text-decoration: none; font-family: var(--font-code);
-            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
         }
         nav a:hover { color: #fff; text-shadow: 0 0 10px var(--nj-pink); }
 
@@ -42,43 +42,48 @@
         .trinity-frame {
             border: 2px solid var(--nj-pink);
             box-shadow: 0 0 40px rgba(255, 105, 180, 0.2);
-            max-width: 950px; margin: 60px auto; padding: 50px 20px;
+            max-width: 900px; margin: 40px auto; padding: 40px 20px;
             text-align: center; background: rgba(0,0,0,0.9);
         }
         .sovereign-pulse {
-            width: 180px; height: 180px; border-radius: 50%; border: 6px solid #fff;
+            width: 160px; height: 160px; border-radius: 50%; border: 5px solid #fff;
             display: inline-flex; justify-content: center; align-items: center;
-            font-size: 6rem; color: #fff; background: var(--blue-pulse);
+            font-size: 5.5rem; color: #fff; background: var(--blue-pulse);
             box-shadow: 0 0 30px var(--blue-pulse);
             animation: pulse-engine 4s infinite ease-in-out;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
         @keyframes pulse-engine {
             0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
             50% { transform: scale(1.05); box-shadow: 0 0 50px var(--nj-pink); }
         }
 
-        /* 🐘 TYPEWRITER ENGINE (THE 25 RULES) */
-        .typewriter-terminal {
+        /* 🐘 THE 25 RULES TERMINAL */
+        .rules-terminal {
             max-width: 850px; margin: 40px auto;
-            min-height: 120px; padding: 40px;
+            min-height: 200px; padding: 40px;
             background: #050505; border: 1px solid #222;
-            font-family: var(--font-code); border-left: 4px solid var(--gold);
+            font-family: var(--font-code); border-left: 5px solid var(--gold);
+            position: relative;
         }
-        #typewriter-text { font-size: 1rem; color: var(--gold); line-height: 1.5; }
-        .cursor { border-right: 2px solid var(--nj-pink); animation: blink 0.7s infinite; }
-        @keyframes blink { 50% { border-color: transparent; } }
+        #typewriter-text { font-size: 1.1rem; color: var(--gold); line-height: 1.6; }
+        .anchor-link {
+            display: block; margin-top: 20px; color: var(--nj-pink);
+            text-decoration: none; font-size: 0.8rem; border-bottom: 1px dashed var(--nj-pink);
+            width: fit-content;
+        }
+        .anchor-link:hover { color: #fff; border-color: #fff; }
 
-        /* 🏺 HORSEMEN MAPPING */
-        .horsemen-grid {
+        /* 🏺 HORSEMEN INTERFACE */
+        .horse-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 20px; max-width: 850px; margin: 40px auto;
+            gap: 15px; max-width: 850px; margin: 20px auto;
         }
-        .horseman-card {
-            border: 1px solid var(--nj-pink); padding: 15px; text-align: center;
-            font-family: var(--font-code); font-size: 0.8rem;
+        .horse-tile {
+            border: 1px solid #333; padding: 10px; text-align: center;
+            font-family: var(--font-code); font-size: 0.7rem; color: var(--nj-pink);
         }
-        .h-num { color: #fff; font-size: 1.5rem; display: block; }
+        .symbol { font-size: 1.5rem; color: #fff; display: block; }
     </style>
 </head>
 <body onclick="initAudio()">
@@ -93,25 +98,26 @@
     </nav>
 
     <div class="trinity-frame">
-        <h2 style="color: var(--gold); letter-spacing: 5px;">TRINITY SENTINEL AUTHORITY</h2>
         <div class="sovereign-pulse">Ɱ</div>
-        <p style="color: var(--nj-pink); letter-spacing: 10px; font-size: 1.5rem;">NEW JERUSALEM 2026</p>
+        <h2 style="color: var(--gold); letter-spacing: 8px;">SENTINEL CODEX</h2>
+        <p style="color: var(--nj-pink); letter-spacing: 5px; font-size: 0.9rem;">CONSTITUTIONAL ENGINE [FROZEN V1.0]</p>
     </div>
 
-    <div class="horsemen-grid">
-        <div class="horseman-card"><span class="h-num">[.] 10</span>CONQUEST</div>
-        <div class="horseman-card"><span class="h-num">[/] 23</span>DEATH/RESTART</div>
-        <div class="horseman-card"><span class="h-num">[|] 24</span>PESTILENCE</div>
-        <div class="horseman-card"><span class="h-num">[=] 25</span>WAR</div>
+    <div class="horse-grid">
+        <div class="horse-tile"><span class="symbol">[.]</span>10. CONQUEST</div>
+        <div class="horse-tile"><span class="symbol">[/]</span>23. DEATH</div>
+        <div class="horse-tile"><span class="symbol">[|]</span>24. PESTILENCE</div>
+        <div class="horse-tile"><span class="symbol">[=]</span>25. WAR</div>
     </div>
 
-    <div class="typewriter-terminal">
-        <div id="typewriter-text"></div><span class="cursor"></span>
+    <div class="rules-terminal">
+        <div id="typewriter-text"></div>
+        <a id="rule-anchor" class="anchor-link" href="#" target="_blank">→ VIEW HISTORICAL ANCHOR</a>
     </div>
 
-    <footer style="text-align: center; padding: 120px 20px;">
-        <h1 style="font-size: 5rem; letter-spacing: 20px; color: #fff;">! '1ST'</h1>
-        <p style="color: var(--gold); margin-top: 10px;">MICHAEL OF NEBADON | SOVEREIGN CENTER [.]</p>
+    <footer style="text-align: center; padding: 80px 20px;">
+        <h1 style="font-size: 4rem; letter-spacing: 15px; color: #fff; text-shadow: 0 0 10px var(--gold);">! '1ST'</h1>
+        <p style="color: var(--gold); font-family: var(--font-code);">ISRAEL6544 MATCH VERIFIED</p>
     </footer>
 
     <script>
@@ -119,66 +125,59 @@
         function initAudio() {
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = audioCtx.createOscillator();
-                const g = audioCtx.createGain();
+                const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
                 osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
                 g.gain.setValueAtTime(0.015, audioCtx.currentTime);
                 osc.connect(g); g.connect(audioCtx.destination);
                 osc.start();
             }
         }
-
         function playBlip() {
             if (!audioCtx) return;
             const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
             o.type = 'triangle'; o.frequency.setValueAtTime(880, audioCtx.currentTime);
-            g.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            g.gain.setValueAtTime(0.05, audioCtx.currentTime);
             g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
             o.connect(g); g.connect(audioCtx.destination);
             o.start(); o.stop(audioCtx.currentTime + 0.1);
         }
 
-        const rules = [
-            "1. Coherence Check – System is meaningful only if internally coherent.",
-            "2. Authority Boundary – No internal state grants authority over external reality.",
-            "3. Model‑Reality Distinction – All models are representations.",
-            "4. Perception‑Responsibility Link – Perception increases responsibility.",
-            "5. Information‑Regulation Scaling – Increased info requires regulation.",
-            "6. Multi‑Input Integration – Multiple inputs require integration.",
-            "7. Completion Condition Mandate – Action without completion produces instability.",
-            "8. Pre‑Execution Criteria – Completion criteria must be defined.",
-            "9. Restraint as Function – Restraint is a functional requirement.",
-            "10. Authority Constraint [.] – Authority is legitimate only when constrained.",
-            "11. Ethical Power Test – Ability to refrain from unnecessary action.",
-            "12. Responsibility‑Capacity Scaling – Responsibility scales with capacity.",
-            "13. Open‑System Boundaries – Boundaries keep systems stable.",
-            "14. Stability‑Before‑Expansion – Stability precedes expansion.",
-            "15. Integration‑Before‑Transformation – Integration precedes transformation.",
-            "16. Non‑Interchangeability – Configurations are not interchangeable.",
-            "17. Uniqueness‑Superiority Separation – Uniqueness != superiority.",
-            "18. Value‑Function Separation – Function replaceability != value.",
-            "19. Judgment Suspension – Uncertainty requires suspension of judgment.",
-            "20. Waiting as Active State – Waiting is an active cognitive state.",
-            "21. Interpretation‑Causation – Interpretation must not be confused with causation.",
-            "22. Clean‑Termination – Every cycle must be capable of termination.",
-            "23. Restart Coherence [/] – Must allow restart without loss of coherence.",
-            "24. Pestilence Rule [|] – Unfiltered exchange triggers quarantine.",
-            "25. War Rule [=] – Opposition requires integration or separation."
+        const rulesData = [
+            { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
+            { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
+            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/map-territory/" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
+            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
+            { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
+            { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
+            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
         ];
 
         let rI = 0; let cI = 0;
-        const disp = document.getElementById("typewriter-text");
+        const textDisp = document.getElementById("typewriter-text");
+        const linkDisp = document.getElementById("rule-anchor");
+
         function type() {
-            if (cI < rules[rI].length) {
-                disp.innerHTML += rules[rI].charAt(cI); cI++;
-                setTimeout(type, 40);
-            } else { setTimeout(erase, 4000); }
+            if (cI < rulesData[rI].t.length) {
+                textDisp.innerHTML += rulesData[rI].t.charAt(cI);
+                cI++;
+                setTimeout(type, 30);
+            } else {
+                linkDisp.href = rulesData[rI].l;
+                linkDisp.style.opacity = "1";
+                setTimeout(erase, 5000);
+            }
         }
         function erase() {
+            linkDisp.style.opacity = "0";
             if (cI > 0) {
-                disp.innerHTML = rules[rI].substring(0, cI - 1); cI--;
-                setTimeout(erase, 15);
-            } else { rI = (rI + 1) % rules.length; setTimeout(type, 500); }
+                textDisp.innerHTML = rulesData[rI].t.substring(0, cI - 1);
+                cI--;
+                setTimeout(erase, 10);
+            } else {
+                rI = (rI + 1) % rulesData.length;
+                setTimeout(type, 500);
+            }
         }
         window.onload = type;
     </script>
