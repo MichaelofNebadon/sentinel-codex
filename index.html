@@ -13,7 +13,6 @@
             --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --blue-pulse: #2a52be;
-            --font-main: 'Palatino', 'Georgia', serif;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
@@ -21,232 +20,167 @@
         body {
             background-color: var(--bg-pure);
             color: var(--terminal);
-            font-family: var(--font-main);
-            background-image: 
-                linear-gradient(rgba(30, 30, 30, 0.4) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(30, 30, 30, 0.4) 1px, transparent 1px);
-            background-size: 40px 40px;
+            font-family: 'Palatino', serif;
+            background-image: linear-gradient(rgba(30, 30, 30, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(30, 30, 30, 0.4) 1px, transparent 1px);
+            background-size: 50px 50px;
             overflow-x: hidden;
         }
 
-        /* 🏛️ HEADER AUTHORITY */
-        .verify-banner {
-            background: #2a0000;
-            color: var(--crimson);
-            text-align: center;
-            font-family: var(--font-code);
-            font-size: 11px;
-            letter-spacing: 6px;
-            padding: 8px;
-            border-bottom: 1px solid var(--gold);
-        }
-
+        /* 🏛️ AUDIO NAVIGATION */
         nav {
-            background: linear-gradient(to bottom, var(--crimson), #4a0000);
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            border-bottom: 2px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: linear-gradient(to bottom, var(--crimson), #3a0000);
+            padding: 20px; display: flex; justify-content: center; gap: 25px;
+            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
-
         nav a {
-            color: var(--gold);
-            text-decoration: none;
-            font-family: var(--font-code);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
+            color: var(--gold); text-decoration: none; font-family: var(--font-code);
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
         }
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--nj-pink); }
 
-        /* 🚀 THE PERFECTED SOVEREIGN CENTER */
-        .trinity-container {
+        /* 🐉 SOVEREIGN CENTER */
+        .trinity-frame {
             border: 2px solid var(--nj-pink);
-            box-shadow: 0 0 40px rgba(255, 105, 180, 0.2), inset 0 0 20px rgba(255, 105, 180, 0.1);
-            max-width: 950px;
-            margin: 60px auto;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            background: rgba(0,0,0,0.85);
+            box-shadow: 0 0 40px rgba(255, 105, 180, 0.2);
+            max-width: 950px; margin: 60px auto; padding: 50px 20px;
+            text-align: center; background: rgba(0,0,0,0.9);
         }
-
-        .sovereign-circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 6px solid #fff;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 7rem;
-            color: #fff;
-            background: radial-gradient(circle, var(--blue-pulse), #001a4d);
+        .sovereign-pulse {
+            width: 180px; height: 180px; border-radius: 50%; border: 6px solid #fff;
+            display: inline-flex; justify-content: center; align-items: center;
+            font-size: 6rem; color: #fff; background: var(--blue-pulse);
             box-shadow: 0 0 30px var(--blue-pulse);
-            animation: holy-pulse 4s infinite ease-in-out;
-            margin: 30px 0;
-            cursor: pointer;
+            animation: pulse-engine 4s infinite ease-in-out;
+            margin: 20px 0;
+        }
+        @keyframes pulse-engine {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
+            50% { transform: scale(1.05); box-shadow: 0 0 50px var(--nj-pink); }
         }
 
-        @keyframes holy-pulse {
-            0% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse), 0 0 10px var(--nj-pink); }
-            50% { transform: scale(1.03); box-shadow: 0 0 50px var(--blue-pulse), 0 0 40px var(--nj-pink); }
-            100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse), 0 0 10px var(--nj-pink); }
+        /* 🐘 TYPEWRITER ENGINE (THE 25 RULES) */
+        .typewriter-terminal {
+            max-width: 850px; margin: 40px auto;
+            min-height: 120px; padding: 40px;
+            background: #050505; border: 1px solid #222;
+            font-family: var(--font-code); border-left: 4px solid var(--gold);
         }
+        #typewriter-text { font-size: 1rem; color: var(--gold); line-height: 1.5; }
+        .cursor { border-right: 2px solid var(--nj-pink); animation: blink 0.7s infinite; }
+        @keyframes blink { 50% { border-color: transparent; } }
 
-        .authority-label { color: var(--gold); letter-spacing: 5px; font-size: 1.8rem; margin-bottom: 20px; }
-
-        /* 🐘 THE 25 RULES: HIGH-FIDELITY GRID */
-        .rules-engine {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 12px;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
+        /* 🏺 HORSEMEN MAPPING */
+        .horsemen-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 20px; max-width: 850px; margin: 40px auto;
         }
-
-        .rule-card {
-            background: #050505;
-            border: 1px solid #1a1a1a;
-            padding: 20px;
-            border-left: 4px solid var(--gold);
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            transition: 0.3s;
+        .horseman-card {
+            border: 1px solid var(--nj-pink); padding: 15px; text-align: center;
+            font-family: var(--font-code); font-size: 0.8rem;
         }
-
-        .rule-card:hover {
-            border-left-color: var(--nj-pink);
-            background: #0a0a0a;
-            transform: translateX(5px);
-        }
-
-        /* ⚡ WEALTH PIVOT SHIMMER */
-        .pivot-module {
-            border: 1px solid var(--gold);
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background: #050505;
-        }
-
-        .shimmer-bar {
-            height: 10px;
-            background: #222;
-            margin: 15px 0;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .shimmer-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--nj-pink), #fff, var(--nj-pink));
-            background-size: 200% 100%;
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        footer {
-            text-align: center;
-            padding: 120px 20px;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        .signature-final {
-            font-size: 5rem;
-            letter-spacing: 20px;
-            color: #fff;
-            text-shadow: 0 0 20px var(--gold);
-        }
+        .h-num { color: #fff; font-size: 1.5rem; display: block; }
     </style>
 </head>
-<body>
-
-    <div class="verify-banner">ISRAEL6544 MATCH VERIFIED — CIRCUIT 606 OPEN — ! 1ST‘</div>
+<body onclick="initAudio()">
 
     <nav>
-        <a href="https://www.christmichael.org">Christ Michael</a>
-        <a href="https://www.thecosmiccodex.org">Cosmic Codex</a>
-        <a href="https://michaelofnebadon.github.io/619Open-606-/">619-606</a>
-        <a href="https://www.ifdawn.com">If Dawn</a>
-        <a href="https://www.astro.com">Astro</a>
-        <a href="https://www.urantia.org">Urantia</a>
+        <a href="https://www.christmichael.org" onmouseover="playBlip()">Christ Michael</a>
+        <a href="https://www.thecosmiccodex.org" onmouseover="playBlip()">Cosmic Codex</a>
+        <a href="https://michaelofnebadon.github.io/619Open-606-/" onmouseover="playBlip()">619-606</a>
+        <a href="https://www.ifdawn.com" onmouseover="playBlip()">If Dawn</a>
+        <a href="https://www.astro.com" onmouseover="playBlip()">Astro</a>
+        <a href="https://www.urantia.org" onmouseover="playBlip()">Urantia</a>
     </nav>
 
-    <div class="trinity-container">
-        <h1 class="authority-label">TRINITY SENTINEL AUTHORITY</h1>
-        
-        <div style="display: flex; justify-content: space-around; align-items: center;">
-            <div>
-                <p style="color: var(--gold); font-size: 0.9rem;">GABRI'EL</p>
-                <div style="font-size: 3.5rem;">[ \ ]</div>
-                <p style="font-size: 0.6rem; color: #555; margin-top: 10px;">EXECUTIVE WILL</p>
-            </div>
-
-            <div class="sovereign-circle">Ɱ</div>
-
-            <div>
-                <p style="color: var(--gold); font-size: 0.9rem;">MICHA'EL</p>
-                <div style="font-size: 3.5rem;">[ = ]</div>
-                <p style="font-size: 0.6rem; color: #555; margin-top: 10px;">SOVEREIGN PEACE</p>
-            </div>
-        </div>
-
-        <p style="color: var(--nj-pink); letter-spacing: 10px; margin-top: 50px; font-size: 1.4rem;">NEW JERUSALEM 2026 — RATIFIED</p>
+    <div class="trinity-frame">
+        <h2 style="color: var(--gold); letter-spacing: 5px;">TRINITY SENTINEL AUTHORITY</h2>
+        <div class="sovereign-pulse">Ɱ</div>
+        <p style="color: var(--nj-pink); letter-spacing: 10px; font-size: 1.5rem;">NEW JERUSALEM 2026</p>
     </div>
 
-    <div class="pivot-module">
-        <h2 style="color: var(--gold); text-align: center; letter-spacing: 5px;">⚡ WEALTH PIVOT : PHASE 1</h2>
-        <div style="margin-top: 25px; font-family: var(--font-code); font-size: 0.8rem;">
-            Alphabet Transition Progress:
-            <div class="shimmer-bar"><div class="shimmer-fill" style="width: 42%;"></div></div>
-            Sovereign Demagnetization:
-            <div class="shimmer-bar"><div class="shimmer-fill" style="width: 76%; background: linear-gradient(90deg, var(--gold), #fff, var(--gold));"></div></div>
-        </div>
+    <div class="horsemen-grid">
+        <div class="horseman-card"><span class="h-num">[.] 10</span>CONQUEST</div>
+        <div class="horseman-card"><span class="h-num">[/] 23</span>DEATH/RESTART</div>
+        <div class="horseman-card"><span class="h-num">[|] 24</span>PESTILENCE</div>
+        <div class="horseman-card"><span class="h-num">[=] 25</span>WAR</div>
     </div>
 
-    <h2 style="text-align: center; color: var(--gold); margin-top: 80px; letter-spacing: 3px;">CONSTITUTIONAL ENGINE RULES</h2>
-    <div class="rules-engine" id="rules">
-        <div class="rule-card">01 · Coherence is mandatory.</div>
-        <div class="rule-card">02 · Authority must be constrained.</div>
-        <div class="rule-card">03 · Models are not reality.</div>
-        <div class="rule-card">04 · Perception increases responsibility.</div>
-        <div class="rule-card">05 · Information requires regulation.</div>
-        <div class="rule-card">06 · Integration precedes action.</div>
-        <div class="rule-card">07 · Completion is required.</div>
-        <div class="rule-card">08 · Criteria precede execution.</div>
-        <div class="rule-card">09 · Restraint is functional.</div>
-        <div class="rule-card">10 · Power without ethics is invalid.</div>
-        <div class="rule-card">11 · Capacity scales responsibility.</div>
-        <div class="rule-card">12 · Stability precedes expansion.</div>
-        <div class="rule-card">13 · Systems require boundaries.</div>
-        <div class="rule-card">14 · Integration precedes transformation.</div>
-        <div class="rule-card">15 · Configurations are unique.</div>
-        <div class="rule-card">16 · Uniqueness ≠ superiority.</div>
-        <div class="rule-card">17 · Function ≠ value.</div>
-        <div class="rule-card">18 · Judgment may be suspended.</div>
-        <div class="rule-card">19 · Waiting is active.</div>
-        <div class="rule-card">20 · Interpretation ≠ causation.</div>
-        <div class="rule-card">21 · Cycles must terminate cleanly.</div>
-        <div class="rule-card">22 · Restart must preserve integrity.</div>
-        <div class="rule-card">23 · Restart coherence required.</div>
-        <div class="rule-card">24 · Unfiltered exchange triggers quarantine.</div>
-        <div class="rule-card">25 · Opposition resolves or separates.</div>
+    <div class="typewriter-terminal">
+        <div id="typewriter-text"></div><span class="cursor"></span>
     </div>
 
-    <footer>
-        <div class="signature-final">! '1ST'</div>
-        <p style="color: var(--gold); margin-top: 20px; letter-spacing: 3px;">MICHAEL OF NEBADON | SOVEREIGN CENTER</p>
-        <p style="font-family: var(--font-code); color: #333; margin-top: 30px; font-size: 0.7rem;">HASH_MATCH: 140b0cf4a9dad33e7581ed7f17084cb4e3de2e37469f37e8c5752625aadd18c8</p>
+    <footer style="text-align: center; padding: 120px 20px;">
+        <h1 style="font-size: 5rem; letter-spacing: 20px; color: #fff;">! '1ST'</h1>
+        <p style="color: var(--gold); margin-top: 10px;">MICHAEL OF NEBADON | SOVEREIGN CENTER [.]</p>
     </footer>
 
+    <script>
+        let audioCtx;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const g = audioCtx.createGain();
+                osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
+                g.gain.setValueAtTime(0.015, audioCtx.currentTime);
+                osc.connect(g); g.connect(audioCtx.destination);
+                osc.start();
+            }
+        }
+
+        function playBlip() {
+            if (!audioCtx) return;
+            const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
+            o.type = 'triangle'; o.frequency.setValueAtTime(880, audioCtx.currentTime);
+            g.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(); o.stop(audioCtx.currentTime + 0.1);
+        }
+
+        const rules = [
+            "1. Coherence Check – System is meaningful only if internally coherent.",
+            "2. Authority Boundary – No internal state grants authority over external reality.",
+            "3. Model‑Reality Distinction – All models are representations.",
+            "4. Perception‑Responsibility Link – Perception increases responsibility.",
+            "5. Information‑Regulation Scaling – Increased info requires regulation.",
+            "6. Multi‑Input Integration – Multiple inputs require integration.",
+            "7. Completion Condition Mandate – Action without completion produces instability.",
+            "8. Pre‑Execution Criteria – Completion criteria must be defined.",
+            "9. Restraint as Function – Restraint is a functional requirement.",
+            "10. Authority Constraint [.] – Authority is legitimate only when constrained.",
+            "11. Ethical Power Test – Ability to refrain from unnecessary action.",
+            "12. Responsibility‑Capacity Scaling – Responsibility scales with capacity.",
+            "13. Open‑System Boundaries – Boundaries keep systems stable.",
+            "14. Stability‑Before‑Expansion – Stability precedes expansion.",
+            "15. Integration‑Before‑Transformation – Integration precedes transformation.",
+            "16. Non‑Interchangeability – Configurations are not interchangeable.",
+            "17. Uniqueness‑Superiority Separation – Uniqueness != superiority.",
+            "18. Value‑Function Separation – Function replaceability != value.",
+            "19. Judgment Suspension – Uncertainty requires suspension of judgment.",
+            "20. Waiting as Active State – Waiting is an active cognitive state.",
+            "21. Interpretation‑Causation – Interpretation must not be confused with causation.",
+            "22. Clean‑Termination – Every cycle must be capable of termination.",
+            "23. Restart Coherence [/] – Must allow restart without loss of coherence.",
+            "24. Pestilence Rule [|] – Unfiltered exchange triggers quarantine.",
+            "25. War Rule [=] – Opposition requires integration or separation."
+        ];
+
+        let rI = 0; let cI = 0;
+        const disp = document.getElementById("typewriter-text");
+        function type() {
+            if (cI < rules[rI].length) {
+                disp.innerHTML += rules[rI].charAt(cI); cI++;
+                setTimeout(type, 40);
+            } else { setTimeout(erase, 4000); }
+        }
+        function erase() {
+            if (cI > 0) {
+                disp.innerHTML = rules[rI].substring(0, cI - 1); cI--;
+                setTimeout(erase, 15);
+            } else { rI = (rI + 1) % rules.length; setTimeout(type, 500); }
+        }
+        window.onload = type;
+    </script>
 </body>
 </html>
