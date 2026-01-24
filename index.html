@@ -1,283 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ SENTINEL CODEX | ARC ANGEL TOTALITY | ! 1ST</title>
+    
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --blue-pulse: #2a52be;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
 
-<title>Sentinel Codex · Constitutional Engine (Frozen v1.0)</title>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: 'Palatino', serif;
+            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 0);
+            background-size: 50px 50px;
+        }
 
-<meta name="description" content="The Sentinel Codex is a constitutional archive grounded in coherence, restraint, verification, and ethical continuity." />
-<meta name="author" content="Sentinel Codex" />
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #3a0000);
+            padding: 15px; display: flex; justify-content: center; gap: 20px;
+            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
+        }
+        nav a { color: var(--gold); text-decoration: none; font-family: var(--font-code); font-size: 0.75rem; letter-spacing: 2px; }
 
-<!-- Open Graph -->
-<meta property="og:title" content="Sentinel Codex · Constitutional Engine" />
-<meta property="og:description" content="Reality over Authority. A frozen constitutional archive." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.sentinelcodex.org/" />
+        .trinity-frame {
+            border: 2px solid var(--nj-pink);
+            box-shadow: 0 0 50px rgba(255, 105, 180, 0.2);
+            max-width: 900px; margin: 40px auto; padding: 40px;
+            text-align: center; background: rgba(0,0,0,0.9);
+        }
+        .sovereign-pulse {
+            width: 140px; height: 140px; border-radius: 50%; border: 5px solid #fff;
+            display: inline-flex; justify-content: center; align-items: center;
+            font-size: 5rem; color: #fff; background: var(--blue-pulse);
+            box-shadow: 0 0 30px var(--blue-pulse);
+            animation: pulse-engine 4s infinite ease-in-out;
+        }
+        @keyframes pulse-engine {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
+            50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink); }
+        }
 
-<!-- SVG Favicon -->
-<link rel="icon" type="image/svg+xml"
-  href="data:image/svg+xml,
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-    <rect width='100' height='100' fill='black'/>
-    <text x='50' y='65' font-size='60' text-anchor='middle' fill='white'>Ɱ</text>
-  </svg>" />
+        .manifesto-container { max-width: 900px; margin: 40px auto; padding: 20px; font-family: var(--font-code); }
+        .rule-block {
+            margin-bottom: 25px; border-left: 3px solid var(--gold);
+            padding-left: 20px; opacity: 0; transform: translateX(-10px);
+            transition: all 0.4s ease;
+        }
+        .rule-block.visible { opacity: 1; transform: translateX(0); }
+        .rule-title { color: var(--gold); font-size: 1rem; margin-bottom: 5px; }
+        .rule-link { color: var(--nj-pink); text-decoration: none; font-size: 0.75rem; border-bottom: 1px dashed var(--nj-pink); }
+        .rule-link:hover { color: #fff; border-color: #fff; }
 
-<style>
-:root{
-  --bg:#0a0a0a;
-  --ink:#e6e6e6;
-  --gold:#c9a959;
-  --steel:#9cd9f0;
-  --mono:'Courier New', Consolas, monospace;
-  --serif:'Palatino Linotype','Book Antiqua',Palatino,serif;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--serif);
-  line-height:1.65;
-}
-
-nav{
-  position:sticky;top:0;
-  background:#050505;
-  border-bottom:1px solid var(--gold);
-  padding:14px;
-  display:flex;
-  justify-content:center;
-  gap:22px;
-}
-
-nav a{
-  color:var(--gold);
-  text-decoration:none;
-  font-family:var(--mono);
-  font-size:.75rem;
-  letter-spacing:2px;
-}
-
-main{
-  max-width:960px;
-  margin:60px auto;
-  padding:0 24px;
-}
-
-header{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-header .sigil{
-  font-size:4rem;
-  margin-bottom:10px;
-}
-
-header h1{
-  color:var(--gold);
-  letter-spacing:6px;
-  font-weight:normal;
-}
-
-header p{
-  font-family:var(--mono);
-  font-size:.8rem;
-  letter-spacing:3px;
-  color:#aaa;
-}
-
-.toggle{
-  margin:40px 0;
-  text-align:center;
-}
-
-.toggle button{
-  background:#111;
-  color:var(--gold);
-  border:1px solid var(--gold);
-  padding:8px 14px;
-  font-family:var(--mono);
-  font-size:.7rem;
-  letter-spacing:2px;
-  cursor:pointer;
-}
-
-.section{
-  margin-top:60px;
-}
-
-.section h2{
-  font-family:var(--mono);
-  color:var(--gold);
-  font-size:.9rem;
-  letter-spacing:3px;
-  margin-bottom:16px;
-}
-
-.rules{
-  background:#050505;
-  border-left:4px solid var(--gold);
-  padding:30px;
-}
-
-.rule{
-  margin-bottom:14px;
-  font-family:var(--mono);
-  font-size:.9rem;
-}
-
-.rule span{
-  color:var(--gold);
-}
-
-.horsemen{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-top:30px;
-}
-
-.horse{
-  border:1px solid #333;
-  padding:14px;
-  text-align:center;
-  font-family:var(--mono);
-  font-size:.75rem;
-}
-
-.horse b{
-  display:block;
-  font-size:1.4rem;
-}
-
-.archive{
-  background:#060606;
-  border:1px dashed #444;
-  padding:20px;
-  font-family:var(--mono);
-  font-size:.75rem;
-  color:#ccc;
-}
-
-footer{
-  margin-top:80px;
-  padding:50px 20px;
-  text-align:center;
-  border-top:1px solid #222;
-}
-
-footer .mark{
-  font-size:3rem;
-  letter-spacing:10px;
-}
-
-.hidden{display:none}
-</style>
-
-<script>
-function toggleMode(){
-  document.getElementById('symbolic').classList.toggle('hidden');
-  document.getElementById('academic').classList.toggle('hidden');
-}
-</script>
+        .horse-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 900px; margin: 20px auto; }
+        .horse-tile { border: 1px solid #333; padding: 10px; text-align: center; color: var(--nj-pink); font-size: 0.7rem; }
+    </style>
 </head>
+<body onclick="initAudio()">
 
-<body>
+    <nav>
+        <a href="https://www.christmichael.org" onmouseover="playBlip()">Christ Michael</a>
+        <a href="https://www.thecosmiccodex.org" onmouseover="playBlip()">Cosmic Codex</a>
+        <a href="https://michaelofnebadon.github.io/619Open-606-/" onmouseover="playBlip()">619-606</a>
+        <a href="https://www.ifdawn.com" onmouseover="playBlip()">If Dawn</a>
+        <a href="https://www.astro.com" onmouseover="playBlip()">Astro</a>
+        <a href="https://www.urantia.org" onmouseover="playBlip()">Urantia</a>
+    </nav>
 
-<nav>
-  <a href="https://www.sentinelcodex.org">Sentinel Codex</a>
-  <a href="https://www.christmichael.org">Christ Michael</a>
-  <a href="https://www.thecosmiccodex.org">Cosmic Codex</a>
-  <a href="https://michaelofnebadon.github.io/619Open-606-/">619–606</a>
-  <a href="https://www.urantia.org">Urantia</a>
-</nav>
-
-<main>
-
-<header>
-  <div class="sigil">Ɱ</div>
-  <h1>SENTINEL CODEX</h1>
-  <p>CONSTITUTIONAL ENGINE · FROZEN VERSION 1.0</p>
-</header>
-
-<div class="toggle">
-  <button onclick="toggleMode()">TOGGLE ACADEMIC / SYMBOLIC VIEW</button>
-</div>
-
-<div id="symbolic">
-  <section class="section">
-    <h2>SYMBOLIC MAPPING</h2>
-    <div class="horsemen">
-      <div class="horse"><b>[.]</b>Authority Constraint</div>
-      <div class="horse"><b>[/]</b>Restart Coherence</div>
-      <div class="horse"><b>[|]</b>Boundary Defense</div>
-      <div class="horse"><b>[=]</b>Opposition Resolution</div>
+    <div class="trinity-frame">
+        <div class="sovereign-pulse">Ɱ</div>
+        <h2 style="color: var(--gold); letter-spacing: 10px; margin-top: 15px;">ARC ANGEL SENTINEL</h2>
     </div>
-  </section>
-</div>
 
-<div id="academic" class="hidden">
-  <section class="section">
-    <h2>INTERPRETIVE NOTE</h2>
-    <p>
-      All symbols are analytical devices only.
-      No symbolic structure implies authority, hierarchy,
-      or metaphysical mandate.
-    </p>
-  </section>
-</div>
+    <div class="horse-grid">
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[.]</span>10. CONQUEST</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[/]</span>23. DEATH</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[|]</span>24. PESTILENCE</div>
+        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[=]</span>25. WAR</div>
+    </div>
 
-<section class="section">
-  <h2>THE 25 RULES</h2>
-  <div class="rules">
-    <!-- Rules 1–25 -->
-    <div class="rule"><span>1.</span> Coherence Check — A system is meaningful only if internally coherent.</div>
-    <div class="rule"><span>2.</span> Authority Boundary — No internal state grants authority over external reality.</div>
-    <div class="rule"><span>3.</span> Model–Reality Distinction — Representations are not the thing represented.</div>
-    <div class="rule"><span>4.</span> Perception increases responsibility.</div>
-    <div class="rule"><span>5.</span> Information increase requires regulation increase.</div>
-    <div class="rule"><span>6.</span> Multiple inputs require integration.</div>
-    <div class="rule"><span>7.</span> Action requires completion conditions.</div>
-    <div class="rule"><span>8.</span> Completion criteria precede execution.</div>
-    <div class="rule"><span>9.</span> Restraint is functional.</div>
-    <div class="rule"><span>10.</span> Authority is legitimate only when constrained.</div>
-    <div class="rule"><span>11.</span> Ethical power includes restraint.</div>
-    <div class="rule"><span>12.</span> Responsibility scales with capacity.</div>
-    <div class="rule"><span>13.</span> Open systems require boundaries.</div>
-    <div class="rule"><span>14.</span> Stability precedes expansion.</div>
-    <div class="rule"><span>15.</span> Integration precedes transformation.</div>
-    <div class="rule"><span>16.</span> Configurations are non-interchangeable.</div>
-    <div class="rule"><span>17.</span> Uniqueness does not imply superiority.</div>
-    <div class="rule"><span>18.</span> Function replaceability does not negate value.</div>
-    <div class="rule"><span>19.</span> Uncertainty requires judgment suspension.</div>
-    <div class="rule"><span>20.</span> Waiting is an active state.</div>
-    <div class="rule"><span>21.</span> Interpretation ≠ causation.</div>
-    <div class="rule"><span>22.</span> Cycles must terminate cleanly.</div>
-    <div class="rule"><span>23.</span> Systems must restart coherently.</div>
-    <div class="rule"><span>24.</span> Unfiltered exchange triggers quarantine.</div>
-    <div class="rule"><span>25.</span> Opposition requires integration or separation.</div>
-  </div>
-</section>
+    <div id="manifesto" class="manifesto-container"></div>
 
-<section class="section">
-  <h2>ARCHIVE NOTICE</h2>
-  <div class="archive">
-    Version: Frozen v1.0<br/>
-    Status: Non-authoritative archive<br/>
-    SHA-256: [pending insertion]<br/>
-    Principle: Reality over Authority
-  </div>
-</section>
+    <script>
+        let audioCtx;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
+                osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
+                g.gain.setValueAtTime(0.012, audioCtx.currentTime);
+                osc.connect(g); g.connect(audioCtx.destination);
+                osc.start();
+            }
+        }
+        function playBlip() {
+            if (!audioCtx) return;
+            const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
+            o.type = 'triangle'; o.frequency.setValueAtTime(900, audioCtx.currentTime);
+            g.gain.setValueAtTime(0.03, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(); o.stop(audioCtx.currentTime + 0.1);
+        }
 
-</main>
+        const rulesData = [
+            { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
+            { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
+            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/" },
+            { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
+            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/cybernetics/" },
+            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/systems-theory/" },
+            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
+            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
+            { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://ctext.org/dao-de-jing" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
+            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/just-war/" },
+            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
+            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/feedback/" },
+            { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
+            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/jung/" },
+            { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
+            { t: "17. Uniqueness‑Superiority Separation: Uniqueness != superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
+            { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
+            { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
+            { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
+            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/causation/" },
+            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_shutdown" },
+            { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
+            { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
+            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
+        ];
 
-<footer>
-  <div class="mark">! ‘1ST‘</div>
-  <p>ISRAEL6544 · MATCH VERIFIED</p>
-</footer>
+        let rI = 0;
+        const manifesto = document.getElementById("manifesto");
 
+        function manifestNextRule() {
+            if (rI < rulesData.length) {
+                const block = document.createElement("div");
+                block.className = "rule-block";
+                block.innerHTML = `
+                    <div class="rule-title" id="rule-text-${rI}"></div>
+                    <a class="rule-link" href="${rulesData[rI].l}" target="_blank">→ VIEW ANCHOR</a>
+                `;
+                manifesto.appendChild(block);
+                setTimeout(() => block.classList.add("visible"), 50);
+                
+                typeInBlock(rulesData[rI].t, `rule-text-${rI}`, () => {
+                    rI++;
+                    setTimeout(manifestNextRule, 200);
+                });
+            }
+        }
+
+        function typeInBlock(text, elementId, callback) {
+            let charI = 0;
+            const el = document.getElementById(elementId);
+            function nextChar() {
+                if (charI < text.length) {
+                    el.innerHTML += text.charAt(charI);
+                    charI++;
+                    setTimeout(nextChar, 15);
+                } else { callback(); }
+            }
+            nextChar();
+        }
+
+        window.onload = manifestNextRule;
+    </script>
 </body>
 </html>
+
