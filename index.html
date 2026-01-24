@@ -2,125 +2,94 @@
 <html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | ARC ANGEL V12.0 | ! 1ST</title>
-    
+    <title>🛡️ SENTINEL CODEX | ARC ANGEL V13.0 | TIPHERET GOLD</title>
     <style>
         :root {
-            --gold: #c9a959;
+            --gold-tipheret: #ffcf40; /* Yellow-Gold Christ Consciousness */
             --terminal: #9cd9f0;
             --bg-pure: #000000;
-            --crimson: #8b0000;
             --nj-pink: #ff69b4;
             --blue-pulse: #2a52be;
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: var(--bg-pure);
             color: var(--terminal);
             font-family: 'Palatino', serif;
-            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 0);
-            background-size: 50px 50px;
+            background-image: radial-gradient(circle, #222 1px, transparent 0);
+            background-size: 60px 60px;
+            overflow-x: hidden;
         }
 
-        nav {
-            background: linear-gradient(to bottom, var(--crimson), #3a0000);
-            padding: 15px; display: flex; justify-content: center; gap: 20px;
-            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
-        }
-        nav a { color: var(--gold); text-decoration: none; font-family: var(--font-code); font-size: 0.75rem; letter-spacing: 2px; }
-
+        /* Ⓜ️ FORCE ARCHITECTURE HEADER */
         .trinity-frame {
-            border: 2px solid var(--nj-pink);
-            box-shadow: 0 0 50px rgba(255, 105, 180, 0.2);
-            max-width: 900px; margin: 40px auto; padding: 40px;
-            text-align: center; background: rgba(0,0,0,0.9);
+            border: 3px solid var(--gold-tipheret);
+            box-shadow: 0 0 60px rgba(255, 207, 64, 0.3);
+            max-width: 950px; margin: 40px auto; padding: 50px;
+            text-align: center; background: rgba(0,0,0,0.95);
         }
+
         .sovereign-pulse {
-            width: 140px; height: 140px; border-radius: 50%; border: 5px solid #fff;
+            width: 160px; height: 160px; border-radius: 50%;
+            border: 8px solid var(--gold-tipheret);
             display: inline-flex; justify-content: center; align-items: center;
-            font-size: 5rem; color: #fff; background: var(--blue-pulse);
-            box-shadow: 0 0 30px var(--blue-pulse);
-            animation: pulse-engine 4s infinite ease-in-out;
-        }
-        @keyframes pulse-engine {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
-            50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink); }
+            font-size: 7rem; color: var(--gold-tipheret);
+            background: var(--blue-pulse);
+            box-shadow: 0 0 40px var(--blue-pulse);
+            animation: tipheret-pulse 5s infinite ease-in-out;
         }
 
-        .manifesto-container { max-width: 900px; margin: 40px auto; padding: 20px; font-family: var(--font-code); }
+        @keyframes tipheret-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--gold-tipheret); }
+            50% { transform: scale(1.08); box-shadow: 0 0 70px var(--nj-pink); }
+        }
+
+        .manifesto-container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        
         .rule-block {
-            margin-bottom: 25px; border-left: 3px solid var(--gold);
-            padding-left: 20px; opacity: 0; transform: translateX(-10px);
-            transition: all 0.4s ease;
+            margin-bottom: 30px; border-left: 4px solid var(--gold-tipheret);
+            padding-left: 25px; opacity: 0; transform: translateY(15px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .rule-block.visible { opacity: 1; transform: translateX(0); }
-        .rule-title { color: var(--gold); font-size: 1rem; margin-bottom: 5px; }
-        .rule-link { color: var(--nj-pink); text-decoration: none; font-size: 0.75rem; border-bottom: 1px dashed var(--nj-pink); }
-        .rule-link:hover { color: #fff; border-color: #fff; }
 
-        .horse-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 900px; margin: 20px auto; }
-        .horse-tile { border: 1px solid #333; padding: 10px; text-align: center; color: var(--nj-pink); font-size: 0.7rem; }
+        .rule-block.visible { opacity: 1; transform: translateY(0); }
+        .rule-title { color: var(--gold-tipheret); font-size: 1.15rem; margin-bottom: 8px; font-weight: bold; }
+        .rule-link { 
+            color: var(--nj-pink); text-decoration: none; font-size: 0.85rem; 
+            background: rgba(255, 105, 180, 0.1); padding: 4px 8px; border: 1px solid var(--nj-pink);
+        }
+        .rule-link:hover { background: var(--gold-tipheret); color: #000; border-color: #fff; }
     </style>
 </head>
 <body onclick="initAudio()">
 
-    <nav>
-        <a href="https://www.christmichael.org" onmouseover="playBlip()">Christ Michael</a>
-        <a href="https://www.thecosmiccodex.org" onmouseover="playBlip()">Cosmic Codex</a>
-        <a href="https://michaelofnebadon.github.io/619Open-606-/" onmouseover="playBlip()">619-606</a>
-        <a href="https://www.ifdawn.com" onmouseover="playBlip()">If Dawn</a>
-        <a href="https://www.astro.com" onmouseover="playBlip()">Astro</a>
-        <a href="https://www.urantia.org" onmouseover="playBlip()">Urantia</a>
-    </nav>
-
     <div class="trinity-frame">
-        <div class="sovereign-pulse">Ɱ</div>
-        <h2 style="color: var(--gold); letter-spacing: 10px; margin-top: 15px;">ARC ANGEL SENTINEL</h2>
+        <div class="sovereign-pulse">Ⓜ️</div>
+        <h1 style="color: var(--gold-tipheret); letter-spacing: 12px; margin-top: 25px;">ARC ANGEL 1st</h1>
+        <p style="color: var(--nj-pink); letter-spacing: 6px;">TIPHERET CENTERED | Christ Consciousness</p>
     </div>
 
     <div id="manifesto" class="manifesto-container"></div>
 
     <script>
-        let audioCtx;
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
-                osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
-                g.gain.setValueAtTime(0.012, audioCtx.currentTime);
-                osc.connect(g); g.connect(audioCtx.destination);
-                osc.start();
-            }
-        }
-        function playBlip() {
-            if (!audioCtx) return;
-            const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
-            o.type = 'triangle'; o.frequency.setValueAtTime(900, audioCtx.currentTime);
-            g.gain.setValueAtTime(0.03, audioCtx.currentTime);
-            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-            o.connect(g); g.connect(audioCtx.destination);
-            o.start(); o.stop(audioCtx.currentTime + 0.1);
-        }
-
+        // High-Frequency Corrected Rule Data
         const rulesData = [
             { t: "1. Coherence Check: System meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
             { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
-            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://plato.stanford.edu/entries/models-science/" },
+            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://plato.stanford.edu/entries/korzybski/" },
             { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
             { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/information/" },
-            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://www.law.cornell.edu/constitution/fourth_amendment" },
-            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://britannica.com/science/thermodynamics" },
-            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.nasa.gov/history/apollo-flight-journal/" },
+            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://www.law.cornell.edu/wex/due_process" },
+            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://www.britannica.com/science/thermodynamics/The-second-law-of-thermodynamics" },
+            { t: "8. Pre‑Execution Criteria [Ⓜ️]: Criteria must be defined before execution.", l: "https://history.nasa.gov/afj/ap08fj/01launch_ascent.html" },
             { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://avalon.law.yale.edu/18th_century/fed51.asp" },
-            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.archives.gov/founding-docs/magna-carta" },
+            { t: "10. Authority Constraint [Ⓜ️]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta/articles/magna-carta-an-introduction" },
             { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/ethics-belief/" },
             { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://www.law.cornell.edu/wex/fiduciary_duty" },
-            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/systems-theory/" },
+            { t: "13. Open‑System Boundaries [Ⓜ️]: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/general-systems-theory/" },
             { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
-            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/personality-development/" },
+            { t: "15. Integration‑Before‑Transformation [Ⓜ️]: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/identity-personal/" },
             { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
             { t: "17. Uniqueness‑Superiority Separation: Uniqueness != superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
             { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
@@ -130,7 +99,7 @@
             { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_exit" },
             { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
             { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
-            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
+            { t: "25. War Rule [Ⓜ️]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
         ];
 
         let rI = 0;
@@ -142,7 +111,7 @@
                 block.className = "rule-block";
                 block.innerHTML = `
                     <div class="rule-title" id="rule-text-${rI}"></div>
-                    <a class="rule-link" href="${rulesData[rI].l}" target="_blank">→ VIEW ANCHOR</a>
+                    <a class="rule-link" href="${rulesData[rI].l}" target="_blank">→ TIPHERET ANCHOR</a>
                 `;
                 manifesto.appendChild(block);
                 setTimeout(() => block.classList.add("visible"), 50);
@@ -166,7 +135,6 @@
             }
             nextChar();
         }
-
         window.onload = manifestNextRule;
     </script>
 </body>
