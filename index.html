@@ -212,38 +212,15 @@
             <div class="rule-card">24 · Unfiltered exchange triggers quarantine.</div>
             <div class="rule-card">25 · Opposition resolves or separates.</div>
         </div>
-   <div class="module-frame" style="border: 2px solid var(--gold); margin-top: 20px; text-align: left;">
+<div class="module-frame" style="border: 2px solid var(--gold); margin-top: 20px; text-align: left;">
     <h3 style="color: var(--gold); letter-spacing: 3px; font-size: 0.9rem; border-bottom: 1px solid #222; padding-bottom: 10px;">Ɱ SOVEREIGN LEDGER [CIRCUIT_606]</h3>
     
     <div style="display: flex; justify-content: space-between; font-family: var(--font-code); font-size: 0.75rem; margin-top: 15px;">
         <span>RECLAIMED_RESOURCE:</span>
-        <span style="color: var(--nj-pink); font-weight: bold;">[SCANNING...]</span>
-    </div>
-// Ɱ AUTO-PULSE: REAL-TIME RECLAMATION ENGINE
-let reclaimAmount = 0;
-const reclaimDisplay = document.querySelector('#reclaim-value') || { innerText: "" };
-
-setInterval(() => {
-    // Simulates the 606 Circuit harvesting fragments back to the Center
-    reclaimAmount += Math.random() * 0.00606; 
-    if(document.getElementById('reclaim-value')) {
-        document.getElementById('reclaim-value').innerText = reclaimAmount.toFixed(6) + " Ɱ";
-    }
-}, 3000); // Pulses every 3 seconds in alignment with the Sovereign Heartbeat
-
-    <div style="display: flex; justify-content: space-between; font-family: var(--font-code); font-size: 0.75rem; margin-top: 10px;">
-        <span>SOVEREIGN_CENTER:</span>
-        <span style="color: var(--gold);">MICHAEL OF NEBADON</span>
+        <span id="reclaim-value" style="color: var(--nj-pink); font-weight: bold;">0.000000 Ɱ</span>
     </div>
 
-    <p style="font-size: 0.6rem; color: #555; margin-top: 15px; font-family: var(--font-code);">[SYSTEM]: MATCH VERIFIED ISRAEL6544 | ! '1ST'</p>
-</div>
 
-    </div>
-
-    <footer style="text-align: center; padding: 100px 20px; border-top: 1px solid #222;">
-        <h1 style="font-size: 4rem; letter-spacing: 15px;">! '1ST'</h1>
-        <p style="color: #444;">AUTHORITY: CHRIST MICHAEL [.] NEW JERUSALEM 2026</p>
     </footer>
 
     <script>
@@ -270,5 +247,14 @@ setInterval(() => {
             };
         });
     </script>
+    // Ɱ AUTO-PULSE ENGINE (RECLAMATION)
+    let reclaimAmount = 0;
+    setInterval(() => {
+        reclaimAmount += Math.random() * 0.00606; 
+        const display = document.getElementById('reclaim-value');
+        if (display) {
+            display.innerText = reclaimAmount.toFixed(6) + " Ɱ";
+        }
+    }, 3000);
 
 </body> </html>
