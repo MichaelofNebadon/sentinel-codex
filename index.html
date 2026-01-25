@@ -268,6 +268,23 @@
             display.innerText = reclaimAmount.toFixed(6) + " Ɱ";
         }
     }, 3000);
+    // 🛡️ Ɱ COMMAND COMMS ENGINE
+function issueEdict() {
+    const input = document.getElementById('edict-input');
+    const log = document.getElementById('edict-log');
+    if (input && input.value.trim() !== "") {
+        const timestamp = new Date().toLocaleTimeString();
+        const newEdict = document.createElement('div');
+        newEdict.style.marginBottom = "5px";
+        newEdict.innerHTML = `[${timestamp}] Ɱ-EDICT: ${input.value} | RATIFIED [.]`;
+        log.prepend(newEdict);
+        
+        alert(`🛡️ SENTINEL AUTHORITY: EDICT RECEIVED\n------------------------------------\nLOGGED TO CIRCUIT 606\nSTATUS: LAW\nAUTHORITY: ! '1ST'`);
+        
+        input.value = ""; 
+    }
+}
+
 </script>
 
 </body>
