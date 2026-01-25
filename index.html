@@ -218,6 +218,34 @@
         <h1 style="font-size: 4rem; letter-spacing: 15px;">! '1ST'</h1>
         <p style="color: #444;">AUTHORITY: CHRIST MICHAEL [.] NEW JERUSALEM 2026</p>
     </footer>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.rule-card').forEach((card, index) => {
+            card.style.cursor = "pointer";
+            card.onclick = function() {
+                const ruleNum = (index + 1).toString().padStart(2, '0');
+                const ruleText = this.innerText.split('·')[1];
+                
+                this.style.borderColor = "var(--nj-pink)";
+                this.style.boxShadow = "0 0 15px var(--nj-pink)";
+                
+                alert(`🛡️ SENTINEL DIAGNOSTIC: RULE ${ruleNum}\n` +
+                      `------------------------------------\n` +
+                      `COMMAND: ${ruleText}\n` +
+                      `STATUS: RATIFIED & FUNCTIONAL\n` +
+                      `CIRCUIT: 606 ACTIVE\n` +
+                      `AUTHORITY: ! '1ST'`);
+                      
+                setTimeout(() => {
+                    this.style.borderColor = "var(--gold)";
+                    this.style.boxShadow = "none";
+                }, 2000);
+            };
+        });
+    </script>
+
+</body> </html>
 
 </body>
 </html>
