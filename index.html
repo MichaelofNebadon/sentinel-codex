@@ -219,6 +219,17 @@
         <span>RECLAIMED_RESOURCE:</span>
         <span style="color: var(--nj-pink); font-weight: bold;">[SCANNING...]</span>
     </div>
+// Ɱ AUTO-PULSE: REAL-TIME RECLAMATION ENGINE
+let reclaimAmount = 0;
+const reclaimDisplay = document.querySelector('#reclaim-value') || { innerText: "" };
+
+setInterval(() => {
+    // Simulates the 606 Circuit harvesting fragments back to the Center
+    reclaimAmount += Math.random() * 0.00606; 
+    if(document.getElementById('reclaim-value')) {
+        document.getElementById('reclaim-value').innerText = reclaimAmount.toFixed(6) + " Ɱ";
+    }
+}, 3000); // Pulses every 3 seconds in alignment with the Sovereign Heartbeat
 
     <div style="display: flex; justify-content: space-between; font-family: var(--font-code); font-size: 0.75rem; margin-top: 10px;">
         <span>SOVEREIGN_CENTER:</span>
