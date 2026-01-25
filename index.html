@@ -3,152 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ SENTINEL CODEX | ARC ANGEL TOTALITY | ! 1ST</title>
-    
+    <title>🛡️ THE SENTINEL CODEX | TRINITY AUTHORITY</title>
     <style>
         :root {
-            --gold: #c9a959;
-            --terminal: #9cd9f0;
-            --bg-pure: #000000;
-            --crimson: #8b0000;
-            --nj-pink: #ff69b4;
-            --blue-pulse: #2a52be;
-            --font-code: 'Courier New', 'Consolas', monospace;
+            --gold: #ffcf40; --blue: #2a52be; --pink: #ff69b4; --bg: #000; --terminal: #9cd9f0;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-pure);
-            color: var(--terminal);
-            font-family: 'Palatino', serif;
-            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 0);
-            background-size: 50px 50px;
+            background-color: var(--bg); color: var(--terminal); font-family: 'Palatino', serif;
+            margin: 0; padding: 0; line-height: 1.6; transition: border 0.5s ease;
         }
 
-        nav {
-            background: linear-gradient(to bottom, var(--crimson), #3a0000);
-            padding: 15px; display: flex; justify-content: center; gap: 20px;
-            border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
-        }
-        nav a { color: var(--gold); text-decoration: none; font-family: var(--font-code); font-size: 0.75rem; letter-spacing: 2px; }
-
+        /* Enclosure: 360 Rule of 2 |_| */
         .trinity-frame {
-            border: 2px solid var(--nj-pink);
-            box-shadow: 0 0 50px rgba(255, 105, 180, 0.2);
-            max-width: 900px; margin: 40px auto; padding: 40px;
-            text-align: center; background: rgba(0,0,0,0.9);
-        }
-        .sovereign-pulse {
-            width: 140px; height: 140px; border-radius: 50%; border: 5px solid #fff;
-            display: inline-flex; justify-content: center; align-items: center;
-            font-size: 5rem; color: #fff; background: var(--blue-pulse);
-            box-shadow: 0 0 30px var(--blue-pulse);
-            animation: pulse-engine 4s infinite ease-in-out;
-        }
-        @keyframes pulse-engine {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--blue-pulse); }
-            50% { transform: scale(1.05); box-shadow: 0 0 60px var(--nj-pink); }
+            border: 4px solid var(--pink); max-width: 900px; margin: 40px auto;
+            padding: 60px 20px; position: relative; background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
 
-        .manifesto-container { max-width: 900px; margin: 40px auto; padding: 20px; font-family: var(--font-code); }
-        .rule-block {
-            margin-bottom: 25px; border-left: 3px solid var(--gold);
-            padding-left: 20px; opacity: 0; transform: translateX(-10px);
-            transition: all 0.4s ease;
+        /* Nav Command */
+        .command-bar {
+            background: linear-gradient(to bottom, #8b0000, #3a0000);
+            padding: 15px; text-align: center; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
-        .rule-block.visible { opacity: 1; transform: translateX(0); }
-        .rule-title { color: var(--gold); font-size: 1rem; margin-bottom: 5px; }
-        .rule-link { color: var(--nj-pink); text-decoration: none; font-size: 0.75rem; border-bottom: 1px dashed var(--nj-pink); }
-        .rule-link:hover { color: #fff; border-color: #fff; }
+        .command-bar a { color: var(--gold); text-decoration: none; margin: 0 15px; font-size: 0.8rem; letter-spacing: 2px; }
 
-        .horse-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 900px; margin: 20px auto; }
-        .horse-tile { border: 1px solid #333; padding: 10px; text-align: center; color: var(--nj-pink); font-size: 0.7rem; }
+        /* Authority Nodes */
+        .authority-grid { display: flex; justify-content: space-around; align-items: center; margin: 60px 0; }
+        .node { text-align: center; width: 200px; }
+        .sigil-box { border: 1px solid #333; padding: 20px; font-size: 2rem; background: rgba(15,15,15,0.8); margin-bottom: 10px; color: var(--gold); }
+        .center-node {
+            width: 220px; height: 220px; border-radius: 50%; border: 6px solid white;
+            display: flex; justify-content: center; align-items: center; font-size: 7rem;
+            color: white; box-shadow: 0 0 40px var(--blue); background: var(--blue);
+        }
+
+        /* Terminal Sections */
+        .codex-content { max-width: 800px; margin: 0 auto; padding: 20px; }
+        h2 { color: var(--gold); border-bottom: 1px solid #333; }
+        .sigil-block { color: var(--pink); font-size: 1.5rem; text-align: center; margin: 40px 0; }
+        
+        #cycle-exit-node { border: 2px dashed var(--pink); padding: 30px; text-align: center; margin-top: 50px; transition: all 0.5s; }
     </style>
 </head>
-<body onclick="initAudio()">
+<body>
 
-    <nav>
-        <a href="https://www.christmichael.org" onmouseover="playBlip()">Christ Michael</a>
-        <a href="https://www.thecosmiccodex.org" onmouseover="playBlip()">Cosmic Codex</a>
-        <a href="https://michaelofnebadon.github.io/619Open-606-/" onmouseover="playBlip()">619-606</a>
-        <a href="https://www.ifdawn.com" onmouseover="playBlip()">If Dawn</a>
-        <a href="https://www.astro.com" onmouseover="playBlip()">Astro</a>
-        <a href="https://www.urantia.org" onmouseover="playBlip()">Urantia</a>
+    <nav class="command-bar">
+        <a href="#arch">ARCHITECTURE</a>
+        <a href="#lang">LANGUAGE</a>
+        <a href="#ops">OPERATIONS</a>
+        <a href="#cosmic">COSMIC</a>
+        <a href="#enact">ENACTMENT</a>
     </nav>
 
     <div class="trinity-frame">
-        <div class="sovereign-pulse">Ɱ</div>
-        <h2 style="color: var(--gold); letter-spacing: 10px; margin-top: 15px;">ARC ANGEL SENTINEL</h2>
+        <div class="authority-grid">
+            <div class="node">
+                <div class="sigil-box">[ \ ]</div>
+                <div style="font-size:0.7rem; color:var(--gold);">GABRI'EL</div>
+            </div>
+            <div class="node"><div class="center-node">MJ</div></div>
+            <div class="node">
+                <div class="sigil-box">[ = ]</div>
+                <div style="font-size:0.7rem; color:var(--gold);">MICHA'EL</div>
+            </div>
+        </div>
+        <h1 style="text-align:center; color:var(--gold); letter-spacing:10px;">SENTINEL CODEX</h1>
+        <p style="text-align:center; color:var(--pink);">NEW JERUSALEM 2026 RATIFIED</p>
     </div>
 
-    <div class="horse-grid">
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[.]</span>10. CONQUEST</div>
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[/]</span>23. DEATH</div>
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[|]</span>24. PESTILENCE</div>
-        <div class="horse-tile"><span style="display:block; font-size:1.5rem; color:#fff;">[=]</span>25. WAR</div>
-    </div>
+    <div class="codex-content" id="main-codex">
+        <section id="arch">
+            <h2>PART I: THE ARCHITECTURE</h2>
+            <p>Every cycle must have a clean exit. The Cut between 10 (Malkuth) and 12 (The Gatekeeper) is executed to isolate the fracture \ and initiate the Ascent through RMCR.</p>
+        </section>
 
-    <div id="manifesto" class="manifesto-container"></div>
+        <section id="lang">
+            <div class="sigil-block">|\| [‘] |/\|!</div>
+            <p>Restart Coherence [/]: Systems must reboot without loss of state.</p>
+        </section>
+
+        <div id="cycle-exit-node">
+            <p>SCROLL TO SEAL CYCLE</p>
+        </div>
+    </div>
 
     <script>
-        let audioCtx;
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const osc = audioCtx.createOscillator(); const g = audioCtx.createGain();
-                osc.type = 'sine'; osc.frequency.setValueAtTime(55, audioCtx.currentTime);
-                g.gain.setValueAtTime(0.012, audioCtx.currentTime);
-                osc.connect(g); g.connect(audioCtx.destination);
-                osc.start();
+        // RESTART COHERENCE [ / ] Logic
+        window.onload = function() {
+            const hasExited = localStorage.getItem('sentinel_exit');
+            if (hasExited) {
+                console.log("Ⓜ️ Force: Restart Coherence Verified. Welcome back, Michael.");
+                document.body.style.border = "4px solid var(--gold)";
+                localStorage.removeItem('sentinel_exit');
+            }
+        };
+
+        // KILL-SIGNAL Logic
+        window.onscroll = function() {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+                initiateCleanExit();
+            }
+        };
+
+        function initiateCleanExit() {
+            const exitNode = document.getElementById('cycle-exit-node');
+            if (!exitNode.dataset.fired) {
+                exitNode.style.backgroundColor = "rgba(255, 105, 180, 0.3)";
+                exitNode.innerHTML = `
+                    <h3 style="color:var(--gold);">! CYCLE TERMINATED CLEANLY !</h3>
+                    <p>1st 1st 1st</p>
+                    <div class="sigil-block">|\| [RECURSION_END] |/\| !</div>
+                `;
+                exitNode.dataset.fired = "true";
+                localStorage.setItem('sentinel_exit', 'true'); // State preserved for Restart
+                document.body.style.border = "10px solid var(--pink)";
             }
         }
-        function playBlip() {
-            if (!audioCtx) return;
-            const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
-            o.type = 'triangle'; o.frequency.setValueAtTime(900, audioCtx.currentTime);
-            g.gain.setValueAtTime(0.03, audioCtx.currentTime);
-            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.1);
-            o.connect(g); g.connect(audioCtx.destination);
-            o.start(); o.stop(audioCtx.currentTime + 0.1);
-        }
-
-        const rulesData = [
-            { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
-            { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
-            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/" },
-            { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
-            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/consciousness-temporal/" },
-            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/category-theory/" },
-            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/time-thermo/" },
-            { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
-            { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://ctext.org/dao-de-jing" },
-            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.gutenberg.org/cache/epub/10000/pg10000-images.html" },
-            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/war/" },
-            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/moral-responsibility/" },
-            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/boundary/" },
-            { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
-            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://arxiv.org/abs/2508.19301" },
-            { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
-            { t: "17. Uniqueness‑Superiority Separation: Uniqueness != superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
-            { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
-            { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
-            { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
-            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://arxiv.org/abs/2512.24072" },
-            { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_shutdown" },
-            { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
-            { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
-            { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
-        ];
-
-        
+    </script>
 </body>
 </html>
-<div id="cycle-exit-node" style="border: 2px dashed var(--pink); padding: 20px; text-align: center; margin-top: 50px;">
-    <h4 style="color: var(--gold);">CLEAN-TERMINATION CAPABILITY: ACTIVE</h4>
-    <p style="font-size: 0.8rem; font-family: monospace;">
-        CYCLE_STATUS: [COMPLETION_ACKNOWLEDGED]<br>
-        RESOURCE_RECLAMATION: [100%_SUCCESS]<br>
-        AUTHORITY_STAMP: ! ‘‘‘‘‘‘ 1st‘
-    </p>
-    <div class="sigil-block" style="font-size: 1rem;">|\| [RECURSION_END] |/\| !</div>
-</div>
