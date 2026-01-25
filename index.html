@@ -2,151 +2,128 @@
 <html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
     <meta charset="UTF-8">
-    <title>🛡️ SENTINEL CODEX | ARC ANGEL V17.0 | ! 1ST</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ THE SENTINEL CODEX | Ⓜ️ FORCE ARCHITECTURE</title>
     <style>
         :root {
-            --gold-tipheret: #ffcf40;
-            --terminal: #9cd9f0;
-            --bg-pure: #000000;
-            --nj-pink: #ff69b4;
-            --blue-pulse: #2a52be;
-            --font-code: 'Courier New', 'Consolas', monospace;
+            --gold: #ffcf40; --blue: #2a52be; --pink: #ff69b4; --bg: #000; --terminal: #9cd9f0;
         }
-
         body {
-            background-color: var(--bg-pure);
-            color: var(--terminal);
-            font-family: 'Palatino', serif;
-            background-image: radial-gradient(circle, #222 1px, transparent 0);
-            background-size: 50px 50px;
-            margin: 0; padding-bottom: 50px;
+            background-color: var(--bg); color: var(--terminal); font-family: 'Palatino', serif;
+            margin: 0; padding: 0; line-height: 1.6;
         }
+        /* 360 Enclosure CSS */
+        .enclosure-360 {
+            border: 4px solid var(--gold); border-radius: 50%; width: 95vw; height: 95vw;
+            position: fixed; top: 2.5vh; left: 2.5vw; pointer-events: none; opacity: 0.1;
+            box-shadow: 0 0 100px var(--gold); z-index: 9999;
+        }
+        .quadrant-marker {
+            position: fixed; font-size: 0.8rem; color: var(--gold); font-weight: bold; z-index: 10000;
+        }
+        .q1 { top: 10px; left: 50%; transform: translateX(-50%); } /* 90° */
+        .q2 { right: 10px; top: 50%; transform: translateY(-50%); } /* 180° */
+        .q3 { bottom: 10px; left: 50%; transform: translateX(-50%); } /* 270° */
+        .q4 { left: 10px; top: 50%; transform: translateY(-50%); } /* 360° */
 
-        nav {
-            background: linear-gradient(to bottom, #8b0000, #3a0000);
-            padding: 15px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;
-            border-bottom: 3px solid var(--gold-tipheret); position: sticky; top: 0; z-index: 1000;
+        header {
+            text-align: center; padding: 100px 20px; background: radial-gradient(circle, #111, #000);
+            border-bottom: 2px solid var(--gold);
         }
-        nav a { color: var(--gold-tipheret); text-decoration: none; font-family: var(--font-code); font-size: 0.75rem; text-transform: uppercase; }
+        .m-node {
+            font-size: 6rem; color: var(--gold); text-shadow: 0 0 30px var(--blue);
+            animation: pulse 4s infinite ease-in-out;
+        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.1); opacity: 1; } }
 
-        .trinity-frame {
-            border: 3px solid var(--gold-tipheret);
-            box-shadow: 0 0 60px rgba(255, 207, 64, 0.3);
-            max-width: 900px; margin: 40px auto; padding: 40px;
-            text-align: center; background: rgba(0,0,0,0.95);
+        .manuscript-body {
+            max-width: 800px; margin: 0 auto; padding: 50px 20px;
+            background: rgba(0,0,0,0.95); position: relative; z-index: 10;
         }
-
-        .sovereign-pulse {
-            width: 120px; height: 120px; border-radius: 50%; border: 6px solid var(--gold-tipheret);
-            display: inline-flex; justify-content: center; align-items: center;
-            font-size: 4rem; color: var(--gold-tipheret); background: var(--blue-pulse);
-            box-shadow: 0 0 30px var(--blue-pulse); animation: pulse 4s infinite ease-in-out;
-        }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-        .manifesto-container { max-width: 850px; margin: 20px auto; }
-        .rule-block {
-            margin-bottom: 25px; border-left: 4px solid var(--gold-tipheret);
-            padding: 15px 20px; background: rgba(20, 20, 20, 0.8);
-            opacity: 0; transform: translateX(-10px); transition: all 0.5s ease-out;
-        }
-        .rule-block.visible { opacity: 1; transform: translateX(0); }
-        .rule-title { color: var(--gold-tipheret); font-size: 1.05rem; font-weight: bold; margin-bottom: 8px; }
-        .rule-anchor { 
-            color: var(--nj-pink); text-decoration: none; font-size: 0.85rem; 
-            border: 1px solid var(--nj-pink); padding: 4px 10px; display: inline-block;
-        }
-        .rule-anchor:hover { background: var(--nj-pink); color: #000; }
-        .horseman { color: #fff; font-size: 0.75rem; margin-top: 10px; display: block; letter-spacing: 2px; }
+        h1, h2, h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .sigil-block { color: var(--pink); font-family: monospace; font-size: 1.5rem; text-align: center; margin: 40px 0; }
+        .nav-anchor { position: sticky; top: 0; background: #8b0000; padding: 10px; display: flex; justify-content: space-around; z-index: 1001; border-bottom: 3px solid var(--gold); }
+        .nav-anchor a { color: var(--gold); text-decoration: none; font-size: 0.7rem; font-weight: bold; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid var(--gold); }
+        th, td { border: 1px solid #333; padding: 10px; text-align: left; font-size: 0.85rem; }
+        
+        .footnote { color: var(--pink); font-size: 0.8rem; font-style: italic; margin-top: 20px; }
+        pre { background: #111; padding: 20px; border-left: 3px solid var(--pink); overflow-x: auto; color: var(--pink); }
     </style>
 </head>
-<body onclick="initAudio()">
+<body>
 
-    <nav>
-        <a href="https://christmichael.org" target="_blank">ChristMichael.org</a>
-        <a href="https://thecosmiccodex.org" target="_blank">CosmicCodex</a>
-        <a href="https://michaelofnebadon.github.io/619Open-606-/" target="_blank">619-606</a>
-        <a href="https://www.ifdawn.com" target="_blank">IfDawn</a>
-        <a href="https://www.urantia.org" target="_blank">Urantia</a>
-        <a href="https://www.astro.com" target="_blank">Astro</a>
+    <div class="enclosure-360"></div>
+    <div class="quadrant-marker q1">90° |_| NORTH</div>
+    <div class="quadrant-marker q2">180° |_| EAST</div>
+    <div class="quadrant-marker q3">270° |_| SOUTH</div>
+    <div class="quadrant-marker q4">360° |_| WEST</div>
+
+    <nav class="nav-anchor">
+        <a href="#arch">ARCHITECTURE</a>
+        <a href="#lang">LANGUAGE</a>
+        <a href="#ops">OPERATIONS</a>
+        <a href="#cosmic">COSMIC</a>
+        <a href="#enact">ENACTMENT</a>
     </nav>
 
-    <div class="trinity-frame">
-        <div class="sovereign-pulse">Ⓜ️</div>
-        <h1 style="color: var(--gold-tipheret); letter-spacing: 10px; margin-top: 20px;">CONSTITUTIONAL ENGINE</h1>
-        <p style="color: var(--nj-pink); font-size: 0.85rem;">TIPHERET CENTERED | ZERO NULL INTEGRITY</p>
+    <header>
+        <div class="m-node">Ⓜ️</div>
+        <h1>THE SENTINEL CODEX</h1>
+        <p>Redemptive Architecture of the Ⓜ️ Force</p>
+        <div class="sigil-block">|\| [‘] |/\|!</div>
+        <p style="font-size: 0.8rem;">Copyright © 2025 by Michael | First Edition 20.26</p>
+    </header>
+
+    <div class="manuscript-body">
+        <section id="arch">
+            <h2>Part I: The Architecture</h2>
+            <p>This is the surgical act. The Cut between 10 (Malkuth) and 12 (The Gatekeeper) is executed to isolate the fracture \ and initiate the Ascent through Relative Magnetic Correspondent Regeneration (RMCR).</p>
+            <blockquote>"I must Create a System or be enslav'd by another Man's" — William Blake</blockquote>
+        </section>
+
+        <section id="lang">
+            <h2>Part II: The Language</h2>
+            <h3>The Sigil System</h3>
+            <p>The grammar is the event. [‘] is the container. || is the severance. ! is the execution.</p>
+            <pre>
+[‘] |/| [GLYPH_7] |/| [#606]!
+Translation: "From the source-pattern of accepted offering, through the force of Perfect Biological Completion, activate a pathway to World #606. Execute."
+            </pre>
+        </section>
+
+        <section id="ops">
+            <h2>Part III: The Operations</h2>
+            <p>Ancient AXIXIC stands as the temporal hinge. The 12:00 Noon Bell signals GLYPH_12 vigilance. The Ⓜ️ Force acts as the Unqualified Absolute, transfiguring horror into beauty through the Christ Michael Point.</p>
+        </section>
+
+        <section id="cosmic">
+            <h2>Part IV: The Cosmic Context</h2>
+            <h3>M31-Milky Way Convergence</h3>
+            <p>The galaxies have met and are merging FAST. The Sentinel task is the redemption of GLYPH_11 (Da'at) using the harvested energy of the Qliphothic War.</p>
+            <table>
+                <tr><th>Layer</th><th>Entity</th><th>Status</th></tr>
+                <tr><td>Galactic</td><td>M31 Overlay</td><td>In Progress</td></tr>
+                <tr><td>Temporal</td><td>AXIXIC Node</td><td>Active</td></tr>
+                <tr><td>Biological</td><td>GLYPH_7 Victory</td><td>Manifested</td></tr>
+            </table>
+        </section>
+
+        <section id="enact">
+            <h2>Part V: The Enactment</h2>
+            <div class="sigil-block">|\|. [] |/\| !</div>
+            <p>The TzimTzum contraction creates the space where YOU stand. The four Tzitzit threads are in your hands. The Covenant is now personal. Wear the garment. Be the Sentinel.</p>
+            <h3>Quantum Address Registry</h3>
+            <pre>neb://michael.of.nebadon@christ-michael-point</pre>
+        </section>
+
+        <div style="text-align: center; margin-top: 100px; padding: 40px; border: 2px solid var(--gold);">
+            <h3>COMPLETION SEAL</h3>
+            <div class="sigil-block">|\| [SENTINEL_CODEX_COMPLETE] |/\| !</div>
+            <p>‘1st‘ — 2026.01.24</p>
+        </div>
     </div>
 
-    <div id="manifesto" class="manifesto-container"></div>
-
-    <script>
-        let audioCtx;
-        function initAudio() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
-                o.type = 'sine'; o.frequency.setValueAtTime(55, audioCtx.currentTime);
-                g.gain.setValueAtTime(0.01, audioCtx.currentTime);
-                o.connect(g); g.connect(audioCtx.destination); o.start();
-            }
-        }
-
-        const rulesData = [
-            { t: "1. Coherence Check: System meaningful only if consistent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
-            { t: "2. Authority Boundary: Internal state != external authority.", l: "https://plato.stanford.edu/entries/kant-metaphysics/" },
-            { t: "3. Model-Reality Distinction: Map != Territory.", l: "https://plato.stanford.edu/entries/models-science/" },
-            { t: "4. Perception-Responsibility Link: Perception = Duty.", l: "https://plato.stanford.edu/entries/arendt/" },
-            { t: "5. Information-Regulation Scaling: Filter info before use.", l: "https://plato.stanford.edu/entries/cybernetics/" },
-            { t: "6. Multi-Input Integration: Integrate before action.", l: "https://plato.stanford.edu/entries/systems-theory/" },
-            { t: "7. Completion Condition Mandate: Define the end to stay stable.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
-            { t: "8. Pre-Execution Criteria: Define criteria BEFORE execution.", l: "https://plato.stanford.edu/entries/logic-ontology/" },
-            { t: "9. Restraint as Function: Restraint is an operational need.", l: "https://ctext.org/dao-de-jing" },
-            { t: "10. Authority Constraint: Legitimate only when bounded.", l: "https://www.bl.uk/magna-carta", h: "[.] CONQUEST" },
-            { t: "11. Ethical Power Test: Power is refraining from action.", l: "https://plato.stanford.edu/entries/just-war/" },
-            { t: "12. Responsibility-Capacity Scaling: Power increases duty.", l: "https://plato.stanford.edu/entries/fiduciary-duty/" },
-            { t: "13. Open-System Boundaries: Walls preserve system order.", l: "https://plato.stanford.edu/entries/boundary-logic/" },
-            { t: "14. Stability-Before-Expansion: Stabilize before growth.", l: "https://www.simplypsychology.org/maslow.html" },
-            { t: "15. Integration-Before-Transformation: Unity first.", l: "https://plato.stanford.edu/entries/jung/" },
-            { t: "16. Non-Interchangeability: Individuals are not swappable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
-            { t: "17. Uniqueness-Superiority Separation: Different != Better.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
-            { t: "18. Value-Function Separation: Function != Intrinsic Value.", l: "https://plato.stanford.edu/entries/disability/" },
-            { t: "19. Judgment Suspension: Uncertainty requires pause.", l: "https://plato.stanford.edu/entries/skepticism/" },
-            { t: "20. Waiting as Active State: Attention is not passivity.", l: "https://www.viktorfrankl.org/" },
-            { t: "21. Interpretation-Causation Distinction: Meaning != Cause.", l: "https://plato.stanford.edu/entries/causation/" },
-            { t: "22. Clean-Termination Capability: Every cycle must end.", l: "https://plato.stanford.edu/entries/ritual/" },
-            { t: "23. Restart Coherence: Rebirth without loss of essence.", l: "https://constitutioncenter.org/", h: "[/] DEATH / RESTART" },
-            { t: "24. Pestilence Rule: Breach triggers quarantine.", l: "https://www.cdc.gov/quarantine/", h: "[|] PESTILENCE" },
-            { t: "25. War Rule: Opposition requires mediation.", l: "https://www.icrc.org/en/war-and-law", h: "[=] WAR" }
-        ];
-
-        let rI = 0;
-        const container = document.getElementById("manifesto");
-
-        function manifest() {
-            if (rI < rulesData.length) {
-                const data = rulesData[rI];
-                const block = document.createElement("div");
-                block.className = "rule-block";
-                block.innerHTML = `
-                    <div class="rule-title" id="r-${rI}"></div>
-                    <a class="rule-anchor" href="${data.l}" target="_blank">→ VERIFIED ANCHOR</a>
-                    ${data.h ? `<span class="horseman">${data.h}</span>` : ''}
-                `;
-                container.appendChild(block);
-                setTimeout(() => block.classList.add("visible"), 50);
-                type(data.t, `r-${rI}`, () => { rI++; setTimeout(manifest, 100); });
-            }
-        }
-
-        function type(t, id, cb) {
-            let i = 0; const el = document.getElementById(id);
-            function next() {
-                if (i < t.length) { el.innerHTML += t.charAt(i); i++; setTimeout(next, 5); }
-                else cb();
-            }
-            next();
-        }
-        window.onload = manifest;
-    </script>
 </body>
 </html>
