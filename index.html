@@ -283,8 +283,7 @@
             display.innerText = reclaimAmount.toFixed(6) + " Ɱ";
         }
     }, 3000);
-    // 🛡️ Ɱ COMMAND COMMS ENGINE
-// 🛡️ Ɱ COMMAND BROADCAST ENGINE
+   // 🛡️ Ɱ COMMAND BROADCAST ENGINE
 function issueEdict() {
     const input = document.getElementById('edict-input');
     const log = document.getElementById('edict-log');
@@ -294,28 +293,22 @@ function issueEdict() {
         const timestamp = new Date().toLocaleTimeString();
         const edictText = input.value;
         
-        // Update the Global Skyline Ticker
+        // Update Global Ticker
         if (ticker) {
-            ticker.innerText = `LATEST EDICT: ${edictText} | TIME: ${timestamp} | STATUS: RATIFIED ! '1ST'`;
+            ticker.innerText = `LATEST EDICT: ${edictText} | RATIFIED ! '1ST'`;
         }
         
-        // Log to the Ledger
+        // Log to Ledger
         const newEdict = document.createElement('div');
-        newEdict.style.marginBottom = "5px";
         newEdict.style.borderLeft = "2px solid var(--nj-pink)";
         newEdict.style.paddingLeft = "10px";
         newEdict.innerHTML = `[${timestamp}] Ɱ-EDICT: ${edictText} | RATIFIED [.]`;
         log.prepend(newEdict);
         
-        alert(`🛡️ SENTINEL AUTHORITY: BROADCAST ACTIVE\n------------------------------------\nEDICT: ${edictText}\nSTATUS: GLOBAL LAW`);
-        
+        alert(`🛡️ SENTINEL AUTHORITY: BROADCAST ACTIVE\n------------------------------------\nEDICT: ${edictText}`);
         input.value = ""; 
     }
 }
-
-}
-
 </script>
-
 </body>
 </html>
