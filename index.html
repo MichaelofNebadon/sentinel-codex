@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🛡️ SENTINEL CODEX | THRONE COMMAND | ISRAEL6544</title>
     
-    <style>
+    <style> 
         :root {
             --gold: #c9a959;
             --terminal: #9cd9f0;
@@ -17,26 +17,16 @@
             --font-code: 'Courier New', 'Consolas', monospace;
         }
 
-        body {
-            body {
-    background-color: var(--bg-pure);
+        body {    background-color: var(--bg-pure);
     color: var(--terminal);
     font-family: var(--font-main);
     margin: 0;
     background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
     background-size: 40px 40px;
     overflow-x: hidden;
-}
 
-</style>
 
-            background-color: var(--bg-pure);
-            color: var(--terminal);
-            font-family: var(--font-main);
-            margin: 0;
-            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
-            background-size: 40px 40px;
-            overflow-x: hidden;
+
         }
 
         /* 🏛️ HIGH-FIDELITY HEADER */
@@ -147,6 +137,31 @@
     </style>
 </head>
 <body>
+   <div id="sovereign-broadcast" style="width: 100%; background: var(--nj-pink); color: #000; padding: 10px 0; font-family: var(--font-code); font-weight: bold; overflow: hidden; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #000;">
+    <div id="ticker-content" style="white-space: nowrap; display: inline-block; padding-left: 100%; animation: ticker 40s linear infinite;">
+        RATIFIED EDICT: ⭐🐊🌹Ⓜ️✅ | CIRCUIT 606 ACTIVE | RECLAMATION IN PROGRESS | AUTHORITY: ! '1ST'
+    </div>
+</div>
+
+<style>
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+</style>
+ 
+<div id="sovereign-broadcast" style="width: 100%; background: var(--nj-pink); color: #000; padding: 10px 0; font-family: var(--font-code); font-weight: bold; overflow: hidden; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #000;">
+    <div id="ticker-content" style="white-space: nowrap; display: inline-block; padding-left: 100%; animation: ticker 40s linear infinite;">
+        RATIFIED EDICT: ⭐🐊🌹Ⓜ️✅ | CIRCUIT 606 ACTIVE | RECLAMATION IN PROGRESS | AUTHORITY: ! '1ST'
+    </div>
+</div>
+
+<style>
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+</style>
 
     <div class="top-verify">ISRAEL6544 MATCH VERIFIED — CIRCUIT 606 OPEN</div>
 
@@ -281,20 +296,35 @@
         }
     }, 3000);
     // 🛡️ Ɱ COMMAND COMMS ENGINE
+// 🛡️ Ɱ COMMAND BROADCAST ENGINE
 function issueEdict() {
     const input = document.getElementById('edict-input');
     const log = document.getElementById('edict-log');
+    const ticker = document.getElementById('ticker-content');
+    
     if (input && input.value.trim() !== "") {
         const timestamp = new Date().toLocaleTimeString();
+        const edictText = input.value;
+        
+        // Update the Global Skyline Ticker
+        if (ticker) {
+            ticker.innerText = `LATEST EDICT: ${edictText} | TIME: ${timestamp} | STATUS: RATIFIED ! '1ST'`;
+        }
+        
+        // Log to the Ledger
         const newEdict = document.createElement('div');
         newEdict.style.marginBottom = "5px";
-        newEdict.innerHTML = `[${timestamp}] Ɱ-EDICT: ${input.value} | RATIFIED [.]`;
+        newEdict.style.borderLeft = "2px solid var(--nj-pink)";
+        newEdict.style.paddingLeft = "10px";
+        newEdict.innerHTML = `[${timestamp}] Ɱ-EDICT: ${edictText} | RATIFIED [.]`;
         log.prepend(newEdict);
         
-        alert(`🛡️ SENTINEL AUTHORITY: EDICT RECEIVED\n------------------------------------\nLOGGED TO CIRCUIT 606\nSTATUS: LAW\nAUTHORITY: ! '1ST'`);
+        alert(`🛡️ SENTINEL AUTHORITY: BROADCAST ACTIVE\n------------------------------------\nEDICT: ${edictText}\nSTATUS: GLOBAL LAW`);
         
         input.value = ""; 
     }
+}
+
 }
 
 </script>
