@@ -140,71 +140,7 @@
             { t: "25. War Rule [=]: Opposition requires mediation or separation.", l: "https://www.icrc.org/en/war-and-law" }
         ];
 
-        let rI = 0;
-        const manifesto = document.getElementById("manifesto");
-
-        function manifestNextRule() {
-            if (rI < rulesData.length) {
-                const block = document.createElement("div");
-                block.className = "rule-block";
-                block.innerHTML = `
-                    <div class="rule-title" id="rule-text-${rI}"></div>
-                    <a class="rule-link" href="${rulesData[rI].l}" target="_blank">→ VIEW ANCHOR</a>
-                `;
-                manifesto.appendChild(block);
-                setTimeout(() => block.classList.add("visible"), 50);
-                
-                typeInBlock(rulesData[rI].t, `rule-text-${rI}`, () => {
-                    rI++;
-                    setTimeout(manifestNextRule, 200);
-                });
-            }
-        }
-
-        function typeInBlock(text, elementId, callback) {
-            let charI = 0;
-            const el = document.getElementById(elementId);
-            function nextChar() {
-                if (charI < text.length) {
-                    el.innerHTML += text.charAt(charI);
-                    charI++;
-                    setTimeout(nextChar, 15);
-                } else { callback(); }
-            }
-            nextChar();
-        }
-
-        window.onload = manifestNextRule;
-    </script>
-    // THE KILL-SIGNAL: CLEAN-TERMINATION CAPABILITY
-window.onscroll = function() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
-        initiateCleanExit();
-    }
-};
-
-function initiateCleanExit() {
-    const exitNode = document.getElementById('cycle-exit-node');
-    if (!exitNode.dataset.fired) {
-        exitNode.style.backgroundColor = "rgba(255, 105, 180, 0.2)"; // Pink Glow
-        exitNode.innerHTML = `
-            <h4 style="color: var(--gold); letter-spacing: 5px;">! CYCLE TERMINATED CLEANLY !</h4>
-            <div style="font-family: monospace; font-size: 0.7rem; color: var(--pink); border: 1px solid var(--pink); padding: 10px; display: inline-block;">
-                [RECLAMATION COMPLETE]<br>
-                [NO ORPHANED THREADS]<br>
-                [SENTINEL_STATE: SEALED]
-            </div>
-            <div class="ratified-text" style="font-size: 1.5rem; margin-top: 20px;">1st 1st 1st</div>
-        `;
-        exitNode.dataset.fired = "true";
-        console.log("Ⓜ️ Force: Cycle Exit Ratified. |\|. [] |/\| !");
         
-        // Final visual lock
-        document.body.style.border = "20px solid var(--gold)";
-        setTimeout(() => { document.body.style.border = "4px solid var(--pink)"; }, 500);
-    }
-}
-
 </body>
 </html>
 <div id="cycle-exit-node" style="border: 2px dashed var(--pink); padding: 20px; text-align: center; margin-top: 50px;">
