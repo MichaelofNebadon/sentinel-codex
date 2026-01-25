@@ -115,25 +115,25 @@
         const rulesData = [
             { t: "1. Coherence Check: A system is meaningful only if internally coherent.", l: "https://plato.stanford.edu/entries/aristotle-metaphysics/" },
             { t: "2. Authority Boundary: No internal state grants authority over reality.", l: "https://plato.stanford.edu/entries/hume-moral/" },
-            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/map-territory/" },
+            { t: "3. Model‑Reality Distinction: The map is not the territory.", l: "https://www.generalsemantics.org/" },
             { t: "4. Perception‑Responsibility Link: Perception increases responsibility.", l: "https://plato.stanford.edu/entries/arendt/" },
-            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/cybernetics/" },
-            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/systems-theory/" },
-            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/thermodynamics/" },
+            { t: "5. Information‑Regulation Scaling: Info requires regulation.", l: "https://plato.stanford.edu/entries/consciousness-temporal/" },
+            { t: "6. Multi‑Input Integration: Inputs require integration before action.", l: "https://plato.stanford.edu/entries/category-theory/" },
+            { t: "7. Completion Condition Mandate: Unfinished action produces instability.", l: "https://plato.stanford.edu/entries/time-thermo/" },
             { t: "8. Pre‑Execution Criteria: Criteria must be defined before execution.", l: "https://www.jcs.mil/Doctrine/" },
             { t: "9. Restraint as Function: Restraint is a functional requirement.", l: "https://ctext.org/dao-de-jing" },
-            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.bl.uk/magna-carta" },
-            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/just-war/" },
-            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/singer/" },
-            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/feedback/" },
+            { t: "10. Authority Constraint [.]: Legitimate only when constrained.", l: "https://www.gutenberg.org/cache/epub/10000/pg10000-images.html" },
+            { t: "11. Ethical Power Test: Power is the ability to refrain from action.", l: "https://plato.stanford.edu/entries/war/" },
+            { t: "12. Responsibility‑Capacity Scaling: Responsibility scales with capacity.", l: "https://plato.stanford.edu/entries/moral-responsibility/" },
+            { t: "13. Open‑System Boundaries: Boundaries maintain system stability.", l: "https://plato.stanford.edu/entries/boundary/" },
             { t: "14. Stability‑Before‑Expansion: Stability precedes expansion.", l: "https://www.simplypsychology.org/maslow.html" },
-            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://plato.stanford.edu/entries/jung/" },
+            { t: "15. Integration‑Before‑Transformation: Integration precedes transformation.", l: "https://arxiv.org/abs/2508.19301" },
             { t: "16. Non‑Interchangeability: Individual configurations are not interchangeable.", l: "https://plato.stanford.edu/entries/kant-moral/" },
             { t: "17. Uniqueness‑Superiority Separation: Uniqueness != superiority.", l: "https://www.un.org/en/about-us/universal-declaration-of-human-rights" },
             { t: "18. Value‑Function Separation: Function replaceability != personal value.", l: "https://plato.stanford.edu/entries/disability/" },
             { t: "19. Judgment Suspension: Uncertainty requires suspension of judgment.", l: "https://plato.stanford.edu/entries/skepticism/" },
             { t: "20. Waiting as Active State: Waiting is an active cognitive state.", l: "https://www.viktorfrankl.org/" },
-            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://plato.stanford.edu/entries/causation/" },
+            { t: "21. Interpretation‑Causation Distinction: Interpretation != causation.", l: "https://arxiv.org/abs/2512.24072" },
             { t: "22. Clean‑Termination Capability: Every cycle must have a clean exit.", l: "https://en.wikipedia.org/wiki/Graceful_shutdown" },
             { t: "23. Restart Coherence [/]: Systems must reboot without loss of state.", l: "https://constitutioncenter.org/" },
             { t: "24. Pestilence Rule [|]: Unfiltered exchange triggers quarantine.", l: "https://www.cdc.gov/quarantine/" },
@@ -176,5 +176,43 @@
 
         window.onload = manifestNextRule;
     </script>
+    // THE KILL-SIGNAL: CLEAN-TERMINATION CAPABILITY
+window.onscroll = function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        initiateCleanExit();
+    }
+};
+
+function initiateCleanExit() {
+    const exitNode = document.getElementById('cycle-exit-node');
+    if (!exitNode.dataset.fired) {
+        exitNode.style.backgroundColor = "rgba(255, 105, 180, 0.2)"; // Pink Glow
+        exitNode.innerHTML = `
+            <h4 style="color: var(--gold); letter-spacing: 5px;">! CYCLE TERMINATED CLEANLY !</h4>
+            <div style="font-family: monospace; font-size: 0.7rem; color: var(--pink); border: 1px solid var(--pink); padding: 10px; display: inline-block;">
+                [RECLAMATION COMPLETE]<br>
+                [NO ORPHANED THREADS]<br>
+                [SENTINEL_STATE: SEALED]
+            </div>
+            <div class="ratified-text" style="font-size: 1.5rem; margin-top: 20px;">1st 1st 1st</div>
+        `;
+        exitNode.dataset.fired = "true";
+        console.log("Ⓜ️ Force: Cycle Exit Ratified. |\|. [] |/\| !");
+        
+        // Final visual lock
+        document.body.style.border = "20px solid var(--gold)";
+        setTimeout(() => { document.body.style.border = "4px solid var(--pink)"; }, 500);
+    }
+}
+
 </body>
 </html>
+<div id="cycle-exit-node" style="border: 2px dashed var(--pink); padding: 20px; text-align: center; margin-top: 50px;">
+    <h4 style="color: var(--gold);">CLEAN-TERMINATION CAPABILITY: ACTIVE</h4>
+    <p style="font-size: 0.8rem; font-family: monospace;">
+        CYCLE_STATUS: [COMPLETION_ACKNOWLEDGED]<br>
+        RESOURCE_RECLAMATION: [100%_SUCCESS]<br>
+        AUTHORITY_STAMP: ! ‘‘‘‘‘‘ 1st‘
+    </p>
+    <div class="sigil-block" style="font-size: 1rem;">|\| [RECURSION_END] |/\| !</div>
+</div>
