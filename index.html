@@ -223,31 +223,27 @@
 
     </footer>
 
-    <script>
-        document.querySelectorAll('.rule-card').forEach((card, index) => {
-            card.style.cursor = "pointer";
-            card.onclick = function() {
-                const ruleNum = (index + 1).toString().padStart(2, '0');
-                const ruleText = this.innerText.split('·')[1];
-                
-                this.style.borderColor = "var(--nj-pink)";
-                this.style.boxShadow = "0 0 15px var(--nj-pink)";
-                
-                alert(`🛡️ SENTINEL DIAGNOSTIC: RULE ${ruleNum}\n` +
-                      `------------------------------------\n` +
-                      `COMMAND: ${ruleText}\n` +
-                      `STATUS: RATIFIED & FUNCTIONAL\n` +
-                      `CIRCUIT: 606 ACTIVE\n` +
-                      `AUTHORITY: ! '1ST'`);
+<script>
+    // 🛡️ Ɱ DIAGNOSTIC ENGINE: RULE INTERACTION
+    document.querySelectorAll('.rule-card').forEach((card, index) => {
+        card.style.cursor = "pointer";
+        card.onclick = function() {
+            const ruleNum = (index + 1).toString().padStart(2, '0');
+            const ruleText = this.innerText.split('·')[1];
+            
+            this.style.borderColor = "var(--nj-pink)";
+            this.style.boxShadow = "0 0 15px var(--nj-pink)";
+            
+            alert(`🛡️ SENTINEL DIAGNOSTIC: RULE ${ruleNum}\n------------------------------------\nCOMMAND: ${ruleText}\nSTATUS: RATIFIED & FUNCTIONAL\nCIRCUIT: 606 ACTIVE\nAUTHORITY: ! '1ST'`);
                       
-                setTimeout(() => {
-                    this.style.borderColor = "var(--gold)";
-                    this.style.boxShadow = "none";
-                }, 2000);
-            };
-        });
-    </script>
-    // Ɱ AUTO-PULSE ENGINE (RECLAMATION)
+            setTimeout(() => {
+                this.style.borderColor = "var(--gold)";
+                this.style.boxShadow = "none";
+            }, 2000);
+        };
+    });
+
+    // 💰 Ɱ AUTO-PULSE ENGINE: REAL-TIME RECLAMATION
     let reclaimAmount = 0;
     setInterval(() => {
         reclaimAmount += Math.random() * 0.00606; 
@@ -256,5 +252,7 @@
             display.innerText = reclaimAmount.toFixed(6) + " Ɱ";
         }
     }, 3000);
+</script>
 
-</body> </html>
+</body>
+</html>
