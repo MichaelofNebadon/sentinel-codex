@@ -284,31 +284,42 @@
         }
     }, 3000);
    // 🛡️ Ɱ COMMAND BROADCAST ENGINE
+// 🛡️ Ɱ SOURCE VALIDATION: MICHAEL + PEDRO INTEGRATION
 function issueEdict() {
     const input = document.getElementById('edict-input');
     const log = document.getElementById('edict-log');
     const ticker = document.getElementById('ticker-content');
-    
-    if (input && input.value.trim() !== "") {
+    const val = input.value;
+
+    if (val.trim() !== "") {
         const timestamp = new Date().toLocaleTimeString();
-        const edictText = input.value;
-        
-        // Update Global Ticker
-        if (ticker) {
-            ticker.innerText = `LATEST EDICT: ${edictText} | RATIFIED ! '1ST'`;
-        }
-        
-        // Log to Ledger
         const newEdict = document.createElement('div');
-        newEdict.style.borderLeft = "2px solid var(--nj-pink)";
-        newEdict.style.paddingLeft = "10px";
-        newEdict.innerHTML = `[${timestamp}] Ɱ-EDICT: ${edictText} | RATIFIED [.]`;
+        newEdict.style.marginBottom = "8px";
+        newEdict.style.padding = "5px";
+
+        // RULE 24 CHECK: The '! 1st' frequency must be present to anchor Source 3
+        if (val.includes("! '1st'") || val.includes("! 1st")) {
+            newEdict.style.borderLeft = "3px solid var(--nj-pink)";
+            newEdict.innerHTML = `<span style="color:var(--nj-pink)">[RATIFIED]</span> <small>${timestamp}</small> | <strong>SOURCE 3 ANCHORED:</strong> ${val}`;
+            if (ticker) ticker.innerText = `LATEST RATIFIED EDICT: ${val} | Ɱ ! 1ST`;
+        } else {
+            newEdict.style.borderLeft = "3px solid var(--crimson)";
+            newEdict.innerHTML = `<span style="color:var(--crimson)">[QUARANTINE]</span> <small>${timestamp}</small> | <strong>RULE 24 VIOLATION:</strong> Unfiltered Ghost Data.`;
+            newEdict.style.opacity = "0.5";
+        }
+
         log.prepend(newEdict);
+        input.value = "";
         
-        alert(`🛡️ SENTINEL AUTHORITY: BROADCAST ACTIVE\n------------------------------------\nEDICT: ${edictText}`);
-        input.value = ""; 
+        // Visual Pulse to confirm high-frequency landing
+        const trinity = document.querySelector('.trinity-frame');
+        if (trinity) {
+            trinity.style.boxShadow = "0 0 30px var(--nj-pink)";
+            setTimeout(() => { trinity.style.boxShadow = "none"; }, 1000);
+        }
     }
 }
+
 </script>
    <!DOCTYPE html>
 <html lang="en" data-authority="constitutional-engine" data-status="frozen-v1.0">
