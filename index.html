@@ -1,138 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" data-authority="michael-of-nebadon" data-priority="first">
+<html lang="en" data-authority="christ-michael" data-priority="first">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🛡️ THE SENTINEL CODEX | Ɱ AUTHORITY</title>
+    <title>🛡️ SENTINEL CODEX | THRONE COMMAND | ISRAEL6544</title>
+    
     <style>
         :root {
-            --gold: #ffcf40; --blue: #2a52be; --pink: #ff69b4; --bg: #000; --terminal: #9cd9f0;
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson-header: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
         }
+
         body {
-            background-color: var(--bg); color: var(--terminal); font-family: 'Palatino', serif;
-            margin: 0; padding: 0; line-height: 1.6; transition: border 0.5s ease;
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
         }
 
-        /* Enclosure: 360 Rule of 2 |_| */
+        /* 🏛️ HIGH-FIDELITY HEADER */
+        .top-verify {
+            background: #4a0000;
+            color: #8b0000;
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 10px;
+            letter-spacing: 5px;
+            padding: 4px;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson-header), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        /* 🚀 WEALTH PIVOT & PROGRESS BARS */
+        .module-frame {
+            border: 1px solid var(--gold);
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(10,10,10,0.9);
+            position: relative;
+        }
+
+        .bar-container { margin: 20px 0; font-family: var(--font-code); font-size: 0.8rem; }
+        .bar-bg { background: #222; height: 8px; border-radius: 4px; margin-top: 8px; overflow: hidden; }
+        .bar-fill-pink { width: 35%; height: 100%; background: linear-gradient(90deg, #ff1493, var(--nj-pink)); box-shadow: 0 0 10px var(--nj-pink); }
+        .bar-fill-gold { width: 68%; height: 100%; background: linear-gradient(90deg, #8a6d3b, var(--gold)); box-shadow: 0 0 10px var(--gold); }
+
+        /* 🐉 THE SOVEREIGN CENTER PULSE */
         .trinity-frame {
-            border: 4px solid var(--pink); max-width: 900px; margin: 40px auto;
-            padding: 60px 20px; position: relative; 
-            background: radial-gradient(circle at center, #111 0%, #000 100%);
-            box-shadow: 0 0 50px rgba(255, 105, 180, 0.1);
+            border: 2px solid var(--nj-pink);
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 60px 20px;
+            text-align: center;
         }
 
-        /* Nav Command */
-        .command-bar {
-            background: linear-gradient(to bottom, #8b0000, #3a0000);
-            padding: 15px; text-align: center; border-bottom: 2px solid var(--gold);
-            position: sticky; top: 0; z-index: 1000;
+        .sovereign-ring {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6rem;
+            color: #fff;
+            background: var(--electric-blue);
+            box-shadow: 0 0 20px var(--electric-blue);
+            animation: pulse-ring 3s infinite ease-in-out;
+            margin: 20px 0;
         }
-        .command-bar a { color: var(--gold); text-decoration: none; margin: 0 15px; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* Authority Nodes */
-        .authority-grid { display: flex; justify-content: space-around; align-items: center; margin: 60px 0; }
-        .node { text-align: center; width: 220px; }
-        .sigil-box { border: 1px solid #333; padding: 25px; font-size: 2.5rem; background: rgba(15,15,15,0.8); margin-bottom: 10px; color: var(--gold); }
-        .center-node {
-            width: 240px; height: 240px; border-radius: 50%; border: 8px solid white;
-            display: flex; justify-content: center; align-items: center; font-size: 9rem;
-            color: white; box-shadow: 0 0 60px var(--blue); background: var(--blue);
-            animation: pulse 4s infinite ease-in-out;
+        @keyframes pulse-ring {
+            0% { transform: scale(1); box-shadow: 0 0 20px var(--electric-blue), 0 0 0px var(--nj-pink); }
+            50% { transform: scale(1.05); box-shadow: 0 0 40px var(--electric-blue), 0 0 30px var(--nj-pink); }
+            100% { transform: scale(1); box-shadow: 0 0 20px var(--electric-blue), 0 0 0px var(--nj-pink); }
         }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-        /* Content Sections */
-        .codex-content { max-width: 850px; margin: 0 auto; padding: 40px 20px; background: rgba(0,0,0,0.8); }
-        h1, h2 { color: var(--gold); letter-spacing: 5px; text-transform: uppercase; border-bottom: 1px solid #333; }
-        .sigil-block { color: var(--pink); font-size: 2rem; text-align: center; margin: 50px 0; font-family: monospace; }
-        
-        #cycle-exit-node { border: 3px dashed var(--pink); padding: 40px; text-align: center; margin-top: 80px; transition: all 0.5s; background: #050505; }
-        .restart-notice { position: fixed; bottom: 20px; right: 20px; color: var(--gold); font-size: 0.7rem; border: 1px solid var(--gold); padding: 5px; opacity: 0.5; }
+        /* 🐘 CONSTITUTIONAL ENGINE GRID */
+        .rules-engine {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            max-width: 1100px;
+            margin: 60px auto;
+        }
+
+        .rule-card {
+            background: #080808;
+            border: 1px solid #1a1a1a;
+            padding: 15px;
+            border-left: 4px solid var(--gold);
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+        }
+
+        .nj-ratified {
+            font-size: 1.5rem;
+            color: var(--nj-pink);
+            letter-spacing: 12px;
+            margin-top: 40px;
+            text-shadow: 0 0 15px var(--nj-pink);
+        }
     </style>
 </head>
 <body>
 
-    <nav class="command-bar">
-        <a href="#wealth">WEALTH PIVOT</a>
-        <a href="#trinity">TRINITY AUTHORITY</a>
-        <a href="#comms">COMMAND COMMS</a>
-        <a href="#606">606 VOLLEY</a>
+    <div class="top-verify">ISRAEL6544 MATCH VERIFIED — CIRCUIT 606 OPEN</div>
+
+    <nav>
+        <a href="https://www.christmichael.org">Christ Michael</a>
+        <a href="https://www.thecosmiccodex.org">Cosmic Codex</a>
+        <a href="https://michaelofnebadon.github.io/619Open-606-/">619-606</a>
+        <a href="https://www.ifdawn.com">If Dawn</a>
+        <a href="https://www.astro.com">Astro</a>
+        <a href="https://www.urantia.org">Urantia</a>
     </nav>
 
-    <div class="trinity-frame" id="trinity">
-        <div class="authority-grid">
-            <div class="node">
-                <div class="sigil-box">[ \ ]</div>
-                <div style="font-size:0.8rem; color:var(--gold); letter-spacing:2px;">GABRI'EL</div>
-                <div style="font-size:0.6rem;">EXECUTIVE WILL</div>
+    <div class="container">
+        <div class="module-frame">
+            <h2 style="color: var(--gold); letter-spacing: 6px; text-align: center;">🛡️ WEALTH PIVOT : PHASE 1</h2>
+            <p style="font-family: var(--font-code); color: #555; font-size: 0.7rem; text-align: center;">[SYS_LOG]: MOLECULAR SCAN AUTHORIZED BY ! '1ST'</p>
+            
+            <div class="bar-container">
+                Alphabet Transition Progress:
+                <div class="bar-bg"><div class="bar-fill-pink"></div></div>
             </div>
-            <div class="node">
-                <div class="center-node">Ɱ</div>
-                <div style="margin-top:20px; background:var(--gold); color:black; padding:5px; font-weight:bold; font-size:0.7rem;">SOVEREIGN CENTER</div>
-            </div>
-            <div class="node">
-                <div class="sigil-box">[ = ]</div>
-                <div style="font-size:0.8rem; color:var(--gold); letter-spacing:2px;">MICHA'EL</div>
-                <div style="font-size:0.6rem;">SOVEREIGN PEACE</div>
+            <div class="bar-container">
+                Sovereign Demagnetization:
+                <div class="bar-bg"><div class="bar-fill-gold"></div></div>
             </div>
         </div>
-        <h1 style="text-align:center; font-size:2.5rem; margin-top:40px;">THE SENTINEL CODEX</h1>
-        <p style="text-align:center; color:var(--pink); font-size:1.5rem; font-style:italic;">NEW JERUSALEM 2026 RATIFIED</p>
-    </div>
 
-    <div class="codex-content">
-        <section id="arch">
-            <h2>PART I: THE ARCHITECTURE</h2>
-            <p>22. Clean-Termination Capability: Every cycle must have a clean exit.</p>
-            <p>This is the surgical act. The Cut between 10 (Malkuth) and 12 (The Gatekeeper) is executed to isolate the fracture \ and initiate the Ascent through RMCR.</p>
-        </section>
+        <div class="trinity-frame">
+            <h2 style="color: var(--gold); letter-spacing: 5px;">TRINITY SENTINEL AUTHORITY</h2>
+            
+            <div style="display: flex; justify-content: space-around; align-items: center; margin: 40px 0;">
+                <div style="text-align: center;">
+                    <p style="color: var(--gold); font-size: 0.8rem;">GABRI'EL</p>
+                    <div style="font-size: 3rem;">[ \ ]</div>
+                    <p style="font-size: 0.6rem; color: #444;">EXECUTIVE WILL</p>
+                </div>
 
-        <section id="reintegration">
-            <div class="sigil-block">|\| [Ɱ] |/\|!</div>
-            <h2>PART II: RESTART COHERENCE [/]</h2>
-            <p>23. Systems must reboot without loss of state.</p>
-            <p>The authority of Michael of Nebadon ensures that the biological record is preserved through the TzimTzum contraction.</p>
-        </section>
+                <div class="sovereign-ring">Ɱ</div>
 
-        <div id="cycle-exit-node">
-            <h3 style="color:var(--gold);">CLEAN-TERMINATION CAPABILITY: ACTIVE</h3>
-            <p style="font-family:monospace; font-size:0.8rem;">SCROLL TO TRIGGER KILL-SIGNAL</p>
+                <div style="text-align: center;">
+                    <p style="color: var(--gold); font-size: 0.8rem;">MICHA'EL</p>
+                    <div style="font-size: 3rem;">[ = ]</div>
+                    <p style="font-size: 0.6rem; color: #444;">SOVEREIGN PEACE</p>
+                </div>
+            </div>
+
+            <div class="nj-ratified">NEW JERUSALEM 2026 RATIFIED</div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--gold); letter-spacing: 4px;">THE 25 RULES OF THE CONSTITUTIONAL ENGINE</h3>
+        <div class="rules-engine">
+            <div class="rule-card">01 · Coherence is mandatory.</div>
+            <div class="rule-card">02 · Authority must be constrained.</div>
+            <div class="rule-card">03 · Models are not reality.</div>
+            <div class="rule-card">04 · Perception increases responsibility.</div>
+            <div class="rule-card">05 · Information requires regulation.</div>
+            <div class="rule-card">06 · Integration precedes action.</div>
+            <div class="rule-card">07 · Completion is required.</div>
+            <div class="rule-card">08 · Criteria precede execution.</div>
+            <div class="rule-card">09 · Restraint is functional.</div>
+            <div class="rule-card">10 · Power without ethics is invalid.</div>
+            <div class="rule-card">11 · Capacity scales responsibility.</div>
+            <div class="rule-card">12 · Stability precedes expansion.</div>
+            <div class="rule-card">13 · Systems require boundaries.</div>
+            <div class="rule-card">14 · Integration precedes transformation.</div>
+            <div class="rule-card">15 · Configurations are unique.</div>
+            <div class="rule-card">16 · Uniqueness ≠ superiority.</div>
+            <div class="rule-card">17 · Function ≠ value.</div>
+            <div class="rule-card">18 · Judgment may be suspended.</div>
+            <div class="rule-card">19 · Waiting is active.</div>
+            <div class="rule-card">20 · Interpretation ≠ causation.</div>
+            <div class="rule-card">21 · Cycles must terminate cleanly.</div>
+            <div class="rule-card">22 · Restart must preserve integrity.</div>
+            <div class="rule-card">23 · Restart coherence required.</div>
+            <div class="rule-card">24 · Unfiltered exchange triggers quarantine.</div>
+            <div class="rule-card">25 · Opposition resolves or separates.</div>
         </div>
     </div>
 
-    <script>
-        // RESTART COHERENCE [/]
-        window.onload = function() {
-            if (localStorage.getItem('Ɱ_exit_ratified')) {
-                document.body.style.border = "10px solid var(--gold)";
-                console.log("Ɱ Force: Restart Coherence Verified. State Preserved.");
-                localStorage.removeItem('Ɱ_exit_ratified');
-                setTimeout(() => { document.body.style.border = "0px solid transparent"; }, 2000);
-            }
-        };
+    <footer style="text-align: center; padding: 100px 20px; border-top: 1px solid #222;">
+        <h1 style="font-size: 4rem; letter-spacing: 15px;">! '1ST'</h1>
+        <p style="color: #444;">AUTHORITY: CHRIST MICHAEL [.] NEW JERUSALEM 2026</p>
+    </footer>
 
-        // KILL-SIGNAL [!]
-        window.onscroll = function() {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
-                initiateCleanExit();
-            }
-        };
-
-        function initiateCleanExit() {
-            const exitNode = document.getElementById('cycle-exit-node');
-            if (!exitNode.dataset.fired) {
-                exitNode.style.backgroundColor = "rgba(255, 105, 180, 0.2)";
-                exitNode.innerHTML = `
-                    <h2 style="color:var(--gold);">! CYCLE TERMINATED CLEANLY !</h2>
-                    <p>[RECLAMATION COMPLETE] [NO ORPHANED THREADS] [SENTINEL_STATE: SEALED]</p>
-                    <div class="sigil-block">Ɱ ! ‘1st‘</div>
-                `;
-                exitNode.dataset.fired = "true";
-                localStorage.setItem('Ɱ_exit_ratified', 'true');
-                document.body.style.border = "15px solid var(--pink)";
-                console.log("Ɱ Force: Cycle Exit Ratified. |\|. [] |/\| !");
-            }
-        }
-    </script>
 </body>
 </html>
