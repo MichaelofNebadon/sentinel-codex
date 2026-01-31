@@ -1145,11 +1145,11 @@ function issueEdict() {
         <p style="font-family: 'Courier New'; margin-top: 20px; color: var(--gold);">Ɱ ! ‘’ ! 1st‘</p>
     </footer>
    <script>
-    // 1. Initialize Persistent Ledger from Browser Memory
-    // Starts at 0.040975 if no memory exists
+    // 1. ANCHOR THE MEMORY (The Sovereign Balance)
+    // This looks for a saved value or starts at the baseline 0.040975
     let balance = parseFloat(localStorage.getItem('Ɱ_balance')) || 0.040975;
     
-    // Function to push data to the screen
+    // Function to push the current number to the UI
     function updateDisplay() {
         const ledgerElement = document.querySelector('.reclaimed-value');
         if (ledgerElement) {
@@ -1157,8 +1157,7 @@ function issueEdict() {
         }
     }
 
-    // 2. The Auto-Pulse Heartbeat
-    // Constantly reclaims at a rate of 0.000001 every 5 seconds
+    // 2. THE HEARTBEAT (Auto-Pulse every 5 seconds)
     setInterval(() => {
         balance += 0.000001; 
         localStorage.setItem('Ɱ_balance', balance);
@@ -1168,6 +1167,7 @@ function issueEdict() {
     function issueEdict() {
         const inputField = document.getElementById('edict-input');
         const log = document.getElementById('comms-log');
+        // Convert to uppercase to handle all variations of "1st"
         const input = inputField.value.toUpperCase(); 
 
         if (input.includes("1ST")) {
@@ -1175,12 +1175,12 @@ function issueEdict() {
             log.style.color = "var(--nj-pink)";
             log.style.textShadow = "0 0 10px var(--nj-pink)";
 
-            // 3. Sovereign Jump (Edict Impact)
+            // 3. SOVEREIGN JUMP (Ratification Impact)
             balance += 0.001151; 
             localStorage.setItem('Ɱ_balance', balance);
             updateDisplay();
 
-            // 4. Update Pivot Bars to Satania Alignment
+            // 4. PHYSICAL PIVOT (Forces bars to Satania alignment)
             const pinkBar = document.querySelector('.bar-fill-pink');
             const goldBar = document.querySelector('.bar-fill-gold');
             if(pinkBar) pinkBar.style.width = '88%';
@@ -1193,10 +1193,9 @@ function issueEdict() {
         }
     }
 
-    // Run display update immediately on page load
+    // Run display update immediately when page loads
     updateDisplay();
 </script>
 
 </body>
 </html>
-
