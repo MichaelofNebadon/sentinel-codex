@@ -1145,17 +1145,15 @@ function issueEdict() {
         <p style="font-family: 'Courier New'; margin-top: 20px; color: var(--gold);">Ɱ ! ‘’ ! 1st‘</p>
     </footer>
    <script>
-    // 1. ANCHOR THE MEMORY (Local Storage Persistence)
-    let balance = parseFloat(localStorage.getItem('Ɱ_balance')) || 0.040975;
+    // 1. ANCHOR THE MEMORY
+    let balance = parseFloat(localStorage.getItem('Ɱ_balance')) || 0.192895;
     let transitionWidth = localStorage.getItem('pivot_pink') || '35%';
     let demagnetWidth = localStorage.getItem('pivot_gold') || '68%';
 
     function updateUI() {
-        // TARGETING BY ID: Matching your ISRAEL6544 structure
         const ledger = document.getElementById('reclaim-value');
         if (ledger) ledger.innerText = balance.toFixed(6) + " Ɱ";
         
-        // TARGETING BY CLASS: Matching your CSS progress bars
         const pinkBar = document.querySelector('.bar-fill-pink');
         const goldBar = document.querySelector('.bar-fill-gold');
         if (pinkBar) pinkBar.style.width = transitionWidth;
@@ -1164,46 +1162,41 @@ function issueEdict() {
 
     function issueEdict() {
         const inputField = document.getElementById('edict-input');
-        const log = document.getElementById('edict-log'); // Using the correct Log ID
-        const val = inputField.value;
+        const log = document.getElementById('edict-log');
+        const originalText = inputField.value; // Capture the full intent
+        const val = originalText.toUpperCase();
 
-        // SOVEREIGN FREQUENCY CHECK
-        if (val.includes("1st") || val.includes("1ST") || val.includes("! 1st")) {
-            // RATIFY VALUES
+        if (val.includes("1ST")) {
             balance += 0.001151;
             transitionWidth = '88%';
             demagnetWidth = '100%';
 
-            // LOCK TO DISK (The "Hamster Wheel" Fix)
             localStorage.setItem('Ɱ_balance', balance);
             localStorage.setItem('pivot_pink', transitionWidth);
             localStorage.setItem('pivot_gold', demagnetWidth);
 
-            // LOG THE RATIFICATION
             if (log) {
                 const timestamp = new Date().toLocaleTimeString();
                 const newEntry = document.createElement('div');
-                newEntry.innerHTML = `<span style="color:var(--nj-pink)">[RATIFIED]</span> <small>${timestamp}</small> | Ɱ +0.001151`;
+                // Restoring the "Functionality of Before": Putting your words back in the log
+                newEntry.style.fontFamily = "'Courier New', monospace";
+                newEntry.innerHTML = `<span style="color:var(--nj-pink)">[RATIFIED]</span> <small>${timestamp}</small> | EDICT: "${originalText}" | Ɱ +0.001151`;
                 log.prepend(newEntry);
             }
 
             updateUI();
             inputField.value = ''; 
         } else {
-            // QUARANTINE IF FREQUENCY IS WRONG
             if (log) {
                 const timestamp = new Date().toLocaleTimeString();
                 const newEntry = document.createElement('div');
+                newEntry.style.fontFamily = "'Courier New', monospace";
                 newEntry.style.opacity = '0.5';
-                newEntry.innerHTML = `<span style="color:#FF4500">[QUARANTINE]</span> <small>${timestamp}</small> | NO FREQUENCY`;
+                newEntry.innerHTML = `<span style="color:#FF4500">[QUARANTINE]</span> <small>${timestamp}</small> | INVALID FREQUENCY: "${originalText}"`;
                 log.prepend(newEntry);
             }
         }
     }
 
-    // INITIALIZE STATE ON LOAD
     updateUI();
 </script>
-
-</body>
-</html>
