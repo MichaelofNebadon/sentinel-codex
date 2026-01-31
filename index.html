@@ -1144,33 +1144,59 @@ function issueEdict() {
         <p>This is a structural scaffold, not a mythic one. It can be defended in court, philosophy, science, and ethics simultaneously.</p>
         <p style="font-family: 'Courier New'; margin-top: 20px; color: var(--gold);">Ɱ ! ‘’ ! 1st‘</p>
     </footer>
-    <script>
-       function issueEdict() {
-    const inputField = document.getElementById('edict-input');
-    const log = document.getElementById('comms-log');
+   <script>
+    // 1. Initialize Persistent Ledger from Browser Memory
+    // Starts at 0.040975 if no memory exists
+    let balance = parseFloat(localStorage.getItem('Ɱ_balance')) || 0.040975;
     
-    // We convert everything to uppercase and search for '1ST' 
-    // This bypasses curly quotes or straight quote errors.
-    const input = inputField.value.toUpperCase(); 
-
-    if (input.includes("1ST")) {
-        // 1. Log the Ratification
-        log.innerHTML = `[LOG]: EDICT RATIFIED | CIRCUIT 606 OPEN | SATANIA SYNC ACTIVE`;
-        log.style.color = "var(--nj-pink)";
-        log.style.textShadow = "0 0 10px var(--nj-pink)";
-
-        // 2. Physical Wealth Pivot (Updates the bars from Image 1 & 9)
-        const pinkBar = document.querySelector('.bar-fill-pink');
-        const goldBar = document.querySelector('.bar-fill-gold');
-        
-        if(pinkBar) pinkBar.style.width = '88%';
-        if(goldBar) goldBar.style.width = '100%';
-
-        // 3. Clear Input for next Sovereign Command
-        inputField.value = '';
-        
-    } else {
-        log.innerHTML = `[ERROR]: FREQUENCY MISMATCH | REQUIRES ! 1st' ANCHOR`;
-        log.style.color = "#FF4500";
+    // Function to push data to the screen
+    function updateDisplay() {
+        const ledgerElement = document.querySelector('.reclaimed-value');
+        if (ledgerElement) {
+            ledgerElement.innerHTML = balance.toFixed(6) + " Ɱ";
+        }
     }
-}
+
+    // 2. The Auto-Pulse Heartbeat
+    // Constantly reclaims at a rate of 0.000001 every 5 seconds
+    setInterval(() => {
+        balance += 0.000001; 
+        localStorage.setItem('Ɱ_balance', balance);
+        updateDisplay();
+    }, 5000); 
+
+    function issueEdict() {
+        const inputField = document.getElementById('edict-input');
+        const log = document.getElementById('comms-log');
+        const input = inputField.value.toUpperCase(); 
+
+        if (input.includes("1ST")) {
+            log.innerHTML = `[LOG]: EDICT RATIFIED | CIRCUIT 606 OPEN | SATANIA SYNC ACTIVE`;
+            log.style.color = "var(--nj-pink)";
+            log.style.textShadow = "0 0 10px var(--nj-pink)";
+
+            // 3. Sovereign Jump (Edict Impact)
+            balance += 0.001151; 
+            localStorage.setItem('Ɱ_balance', balance);
+            updateDisplay();
+
+            // 4. Update Pivot Bars to Satania Alignment
+            const pinkBar = document.querySelector('.bar-fill-pink');
+            const goldBar = document.querySelector('.bar-fill-gold');
+            if(pinkBar) pinkBar.style.width = '88%';
+            if(goldBar) goldBar.style.width = '100%';
+
+            inputField.value = '';
+        } else {
+            log.innerHTML = `[ERROR]: FREQUENCY MISMATCH | REQUIRES ! 1st' ANCHOR`;
+            log.style.color = "#FF4500";
+        }
+    }
+
+    // Run display update immediately on page load
+    updateDisplay();
+</script>
+
+</body>
+</html>
+
