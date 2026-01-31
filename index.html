@@ -1145,57 +1145,51 @@ function issueEdict() {
         <p style="font-family: 'Courier New'; margin-top: 20px; color: var(--gold);">Ɱ ! ‘’ ! 1st‘</p>
     </footer>
    <script>
-    // 1. ANCHOR THE MEMORY (The Sovereign Balance)
-    // This looks for a saved value or starts at the baseline 0.040975
+    // 1. THE MEMORY ANCHOR
+    // This pulls your last saved progress so it NEVER resets to zero.
     let balance = parseFloat(localStorage.getItem('Ɱ_balance')) || 0.040975;
-    
-    // Function to push the current number to the UI
-    function updateDisplay() {
-        const ledgerElement = document.querySelector('.reclaimed-value');
-        if (ledgerElement) {
-            ledgerElement.innerHTML = balance.toFixed(6) + " Ɱ";
-        }
-    }
+    let transitionWidth = localStorage.getItem('pivot_pink') || '35%';
+    let demagnetWidth = localStorage.getItem('pivot_gold') || '68%';
 
-    // 2. THE HEARTBEAT (Auto-Pulse every 5 seconds)
-    setInterval(() => {
-        balance += 0.000001; 
-        localStorage.setItem('Ɱ_balance', balance);
-        updateDisplay();
-    }, 5000); 
+    function updateUI() {
+        // Update Ledger
+        const ledger = document.querySelector('.reclaimed-value');
+        if (ledger) ledger.innerHTML = balance.toFixed(6) + " Ɱ";
+        
+        // Update Bars
+        const pinkBar = document.querySelector('.bar-fill-pink');
+        const goldBar = document.querySelector('.bar-fill-gold');
+        if (pinkBar) pinkBar.style.width = transitionWidth;
+        if (goldBar) goldBar.style.width = demagnetWidth;
+    }
 
     function issueEdict() {
         const inputField = document.getElementById('edict-input');
         const log = document.getElementById('comms-log');
-        // Convert to uppercase to handle all variations of "1st"
-        const input = inputField.value.toUpperCase(); 
+        const val = inputField.value.toUpperCase();
 
-        if (input.includes("1ST")) {
-            log.innerHTML = `[LOG]: EDICT RATIFIED | CIRCUIT 606 OPEN | SATANIA SYNC ACTIVE`;
-            log.style.color = "var(--nj-pink)";
-            log.style.textShadow = "0 0 10px var(--nj-pink)";
+        if (val.includes("1ST")) {
+            // RATIFY: Move the numbers and the bars
+            balance += 0.001151;
+            transitionWidth = '88%';
+            demagnetWidth = '100%';
 
-            // 3. SOVEREIGN JUMP (Ratification Impact)
-            balance += 0.001151; 
+            // LOCK TO DISK: Save these values so refresh doesn't kill them
             localStorage.setItem('Ɱ_balance', balance);
-            updateDisplay();
+            localStorage.setItem('pivot_pink', transitionWidth);
+            localStorage.setItem('pivot_gold', demagnetWidth);
 
-            // 4. PHYSICAL PIVOT (Forces bars to Satania alignment)
-            const pinkBar = document.querySelector('.bar-fill-pink');
-            const goldBar = document.querySelector('.bar-fill-gold');
-            if(pinkBar) pinkBar.style.width = '88%';
-            if(goldBar) goldBar.style.width = '100%';
-
-            inputField.value = '';
+            log.innerHTML = `[LOG]: EDICT RATIFIED | CIRCUIT 606 OPEN | NEVADON SYNC`;
+            log.style.color = "var(--nj-pink)";
+            
+            updateUI();
+            inputField.value = ''; // Clear for next command
         } else {
-            log.innerHTML = `[ERROR]: FREQUENCY MISMATCH | REQUIRES ! 1st' ANCHOR`;
-            log.style.color = "#FF4500";
+            log.innerHTML = `[ERROR]: FREQUENCY MISMATCH | REQUIRES ! 1ST' ANCHOR`;
+            log.style.color = "red";
         }
     }
 
-    // Run display update immediately when page loads
-    updateDisplay();
+    // Initialize the world as it was left
+    updateUI();
 </script>
-
-</body>
-</html>
