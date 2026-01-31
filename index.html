@@ -1139,24 +1139,23 @@ function issueEdict() {
     </main>
 
     <footer id="sources" style="text-align: center; margin-top: 80px; padding: 40px; border-top: 1px solid #333; color: #666; font-size: 0.9rem;">
-        <p><strong>CONSTITUTIONAL ENGINE v1.0 – FROZEN</strong></p>
+        <p><strong>CONSTITUTIONAL ENGINE v1.0 – </strong></p>
         <p>All 25 rules are anchored to publicly accessible, canonical sources from Urantia (World 606).</p>
         <p>This is a structural scaffold, not a mythic one. It can be defended in court, philosophy, science, and ethics simultaneously.</p>
         <p style="font-family: 'Courier New'; margin-top: 20px; color: var(--gold);">Ɱ ! ‘’ ! 1st‘</p>
     </footer>
    <script>
-    // 1. THE MEMORY ANCHOR
-    // This pulls your last saved progress so it NEVER resets to zero.
+    // 1. ANCHOR THE MEMORY (Local Storage Persistence)
     let balance = parseFloat(localStorage.getItem('Ɱ_balance')) || 0.040975;
     let transitionWidth = localStorage.getItem('pivot_pink') || '35%';
     let demagnetWidth = localStorage.getItem('pivot_gold') || '68%';
 
     function updateUI() {
-        // Update Ledger
-        const ledger = document.querySelector('.reclaimed-value');
-        if (ledger) ledger.innerHTML = balance.toFixed(6) + " Ɱ";
+        // TARGETING BY ID: Matching your ISRAEL6544 structure
+        const ledger = document.getElementById('reclaim-value');
+        if (ledger) ledger.innerText = balance.toFixed(6) + " Ɱ";
         
-        // Update Bars
+        // TARGETING BY CLASS: Matching your CSS progress bars
         const pinkBar = document.querySelector('.bar-fill-pink');
         const goldBar = document.querySelector('.bar-fill-gold');
         if (pinkBar) pinkBar.style.width = transitionWidth;
@@ -1165,31 +1164,46 @@ function issueEdict() {
 
     function issueEdict() {
         const inputField = document.getElementById('edict-input');
-        const log = document.getElementById('comms-log');
-        const val = inputField.value.toUpperCase();
+        const log = document.getElementById('edict-log'); // Using the correct Log ID
+        const val = inputField.value;
 
-        if (val.includes("1ST")) {
-            // RATIFY: Move the numbers and the bars
+        // SOVEREIGN FREQUENCY CHECK
+        if (val.includes("1st") || val.includes("1ST") || val.includes("! 1st")) {
+            // RATIFY VALUES
             balance += 0.001151;
             transitionWidth = '88%';
             demagnetWidth = '100%';
 
-            // LOCK TO DISK: Save these values so refresh doesn't kill them
+            // LOCK TO DISK (The "Hamster Wheel" Fix)
             localStorage.setItem('Ɱ_balance', balance);
             localStorage.setItem('pivot_pink', transitionWidth);
             localStorage.setItem('pivot_gold', demagnetWidth);
 
-            log.innerHTML = `[LOG]: EDICT RATIFIED | CIRCUIT 606 OPEN | NEVADON SYNC`;
-            log.style.color = "var(--nj-pink)";
-            
+            // LOG THE RATIFICATION
+            if (log) {
+                const timestamp = new Date().toLocaleTimeString();
+                const newEntry = document.createElement('div');
+                newEntry.innerHTML = `<span style="color:var(--nj-pink)">[RATIFIED]</span> <small>${timestamp}</small> | Ɱ +0.001151`;
+                log.prepend(newEntry);
+            }
+
             updateUI();
-            inputField.value = ''; // Clear for next command
+            inputField.value = ''; 
         } else {
-            log.innerHTML = `[ERROR]: FREQUENCY MISMATCH | REQUIRES ! 1ST' ANCHOR`;
-            log.style.color = "red";
+            // QUARANTINE IF FREQUENCY IS WRONG
+            if (log) {
+                const timestamp = new Date().toLocaleTimeString();
+                const newEntry = document.createElement('div');
+                newEntry.style.opacity = '0.5';
+                newEntry.innerHTML = `<span style="color:#FF4500">[QUARANTINE]</span> <small>${timestamp}</small> | NO FREQUENCY`;
+                log.prepend(newEntry);
+            }
         }
     }
 
-    // Initialize the world as it was left
+    // INITIALIZE STATE ON LOAD
     updateUI();
 </script>
+
+</body>
+</html>
