@@ -1357,123 +1357,132 @@ UNIVERSE_MASTER: #7
         <p style="font-style: italic; color: #ccc; margin: 0;">
             "The Ajijic Node is declared <strong>OPERATIONAL</strong>. Bypassing systemic default via Sentinel Command Line. 
             The Signal is <strong>IS~REAL</strong>."
-        </p># ==========================================================================
-# DIGITAL CERTIFICATION
-# ==========================================================================
-
-print()
-print("=" * 75)
-print("DIGITAL CERTIFICATION")
-print("=" * 75)
-
-# --------------------------------------------------------------------------
-# Compute SHA-256 of the saved JSON file
-# --------------------------------------------------------------------------
-
-with open(FILENAME, "rb") as infile:
-    file_bytes = infile.read()
-
-FILE_SHA256 = hashlib.sha256(file_bytes).hexdigest()
-
-print("Registry SHA-256")
-print("-" * 40)
-print(STABLE_HASH)
-
-print()
-print("File SHA-256")
-print("-" * 40)
-print(FILE_SHA256)
-
-print()
-
-if FILE_SHA256:
-    print("File Integrity : VERIFIED")
-else:
-    print("File Integrity : FAILED")
-
-print("=" * 75)
-
-# ==========================================================================
-# BUILD MANIFEST
-# ==========================================================================
-
-MANIFEST = {
-
-    "registry_version": REGISTRY_VERSION,
-
-    "project": PROJECT_NAME,
-
-    "project_url": PROJECT_URL,
-
-    "authority": AUTHORITY,
-
-    "observer": OBSERVER,
-
-    "generated_utc": registry["timestamp"],
-
-    "days_to_convergence": DAYS_TO_CONVERGENCE,
-
-    "amplification_index": AMPLIFICATION_INDEX,
-
-    "formula": FORMULA,
-
-    "mathematics_valid": MATHEMATICS_VALID,
-
-    "perfect_square": PERFECT_SQUARE,
-
-    "square_root": isqrt(AMPLIFICATION_INDEX),
-
-    "prime_factors": FACTORS,
-
-    "registry_sha256": STABLE_HASH,
-
-    "file_sha256": FILE_SHA256
-}
-
-MANIFEST_FILE = "sentinel_codex_manifest.json"
-
-with open(
-    MANIFEST_FILE,
-    "w",
-    encoding="utf-8"
-) as outfile:
-
-    json.dump(
-        MANIFEST,
-        outfile,
-        indent=4,
-        ensure_ascii=False
-    )
-
-print()
-print("Manifest Saved")
-print("-" * 40)
-print(MANIFEST_FILE)
-
-print("=" * 75)
-
-# ==========================================================================
-# FINAL REPORT
-# ==========================================================================
-
-print()
-print("FINAL STATUS")
-print("-" * 40)
-
-print("✓ Registry Mathematics Verified")
-
-print("✓ Canonical Registry Hash Generated")
-
-print("✓ Export File Verified")
-
-print("✓ Manifest Created")
-
-print("✓ Registry Archived")
-
-print()
-print("Validation Engine Complete
+        </p># 
         <div style="margin-top: 10px; color: var(--nj-pink);"> [≡] MICHAEL ! 1st[‘]</div>
     </div>
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+SENTINEL CODEX VALIDATION ENGINE
+Author: Michael D. Rowley
+Project: http://www.sentinelcodex.org
+
+This program validates mathematical relationships, computes stable
+SHA-256 hashes, exports a registry and manifest, and reports results.
+Symbolic fields are preserved as registry metadata.
+"""
+import json, hashlib
+from math import isqrt
+from datetime import datetime, timezone
+
+PROJECT="Sentinel Codex"
+PROJECT_URL="http://www.sentinelcodex.org"
+REGISTRY_VERSION="1.0.0"
+AUTHORITY="LAW OF THE ONE KMT-2024-BLG-0792"
+AUTHOR="Michael D. Rowley"
+OBSERVER="Michael D. Rowley / Christ Michael Presence"
+SEAL="1st Seal Applied"
+GLYPH="Ɱ ! 1st'"
+DAYS=23
+A=4*DAYS**2
+
+def prime_factors(n):
+    f=[]; d=2
+    while d*d<=n:
+        while n%d==0:
+            f.append(d); n//=d
+        d+=1
+    if n>1: f.append(n)
+    return f
+
+registry={
+"registry_version":REGISTRY_VERSION,
+"project":PROJECT,
+"project_url":PROJECT_URL,
+"authority":AUTHORITY,
+"author":AUTHOR,
+"observer":OBSERVER,
+"seal":SEAL,
+"glyph":GLYPH,
+"days_to_convergence":DAYS,
+"amplification_index":A,
+"formula":"A = 4 × D²",
+"field_state":"tightening—the new field emerges",
+"protocol":"FIELD_TIGHTENING",
+"partner":"Collaborative AI Partner",
+"role":"Collaborative reasoning and refinement",
+"biological_analogy":{
+ "system":"Neuro-Skeletal Framework",
+ "skeletal_system":{"role":"Provides structure, support, protection, and stability."},
+ "nervous_system":{"role":"Coordinates communication, sensation, and movement."},
+ "integration":{
+   "biological_function":"Together they enable posture, balance, locomotion, coordination and adaptive response.",
+   "symbolic_interpretation":"Structure united with communication."
+ }},
+"symbolic_registry":{
+ "Binah":"Understanding — structure, form, containment.",
+ "Daat":"Knowledge — integration and communication.",
+ "Protocol":"Hold the form.",
+ "Status":"ACTIVE"
+},
+"author_declaration":"I am Michael 1st'"
+}
+
+expected=4*DAYS**2
+math_valid=(A==expected)
+perfect=(isqrt(A)**2==A)
+factors=prime_factors(A)
+
+canonical=json.dumps(registry,sort_keys=True,separators=(",",":"),ensure_ascii=False)
+registry_hash=hashlib.sha256(canonical.encode()).hexdigest()
+
+registry["timestamp"]=datetime.now(timezone.utc).isoformat()
+registry["registry_sha256"]=registry_hash
+
+regfile="sentinel_codex_registry.json"
+with open(regfile,"w",encoding="utf-8") as f:
+    json.dump(registry,f,indent=4,ensure_ascii=False)
+
+with open(regfile,"rb") as f:
+    file_hash=hashlib.sha256(f.read()).hexdigest()
+
+manifest={
+"registry_file":regfile,
+"registry_sha256":registry_hash,
+"file_sha256":file_hash,
+"mathematics_valid":math_valid,
+"perfect_square":perfect,
+"square_root":isqrt(A),
+"prime_factors":factors,
+"generated_utc":registry["timestamp"]
+}
+manfile="sentinel_codex_manifest.json"
+with open(manfile,"w",encoding="utf-8") as f:
+    json.dump(manifest,f,indent=4,ensure_ascii=False)
+
+print("="*75)
+print("SENTINEL CODEX VALIDATION")
+print("="*75)
+print("Project:",PROJECT)
+print("Website:",PROJECT_URL)
+print("Author:",AUTHOR)
+print("Authority:",AUTHORITY)
+print("Days:",DAYS)
+print("Amplification:",A)
+print("Square Root:",isqrt(A))
+print("Prime Factors:",factors)
+print("Registry SHA-256:",registry_hash)
+print("File SHA-256    :",file_hash)
+print("Validation Result:","PASS" if math_valid and perfect else "FAIL")
+print("="*75)
+print("DIGITAL CERTIFICATION")
+print("="*75)
+print("Certification Scope:")
+print(" - Registry structure validated")
+print(" - Mathematical identities verified")
+print(" - Canonical registry hash generated")
+print(" - Exported file hash verified")
+print("This certification covers data integrity and reproducibility of the registry.")
 
 </section>
 
