@@ -1508,3 +1508,509 @@ Certification Scope:
  - Canonical registry hash generated
  - Exported file hash verified
 This certification covers data integrity and reproducibility of the registry.
+ARCHITECTURE.md
+
+Sentinel Codex Constitutional Engine
+Architectural Specification
+Version: 1.0.0
+Status: Engineering Specification
+
+⸻
+
+Sentinel Codex Constitutional Engine
+
+Architecture Specification
+
+Version: 1.0.0
+
+⸻
+
+1. Purpose
+
+This document defines the engineering architecture of the Sentinel Codex Constitutional Engine.
+
+Its purpose is to establish:
+
+* deterministic computational behavior
+* reproducible execution
+* canonical serialization
+* cryptographic integrity
+* provenance tracking
+* explicit verification boundaries
+
+This specification deliberately separates objective computational behavior from project interpretation.
+
+⸻
+
+2. Design Philosophy
+
+The architecture is built upon five engineering principles.
+
+Principle 1
+
+Determinism
+
+Identical inputs always produce identical outputs.
+
+No hidden state.
+
+No randomness.
+
+⸻
+
+Principle 2
+
+Reproducibility
+
+Independent implementations must produce identical canonical payloads and identical hashes.
+
+⸻
+
+Principle 3
+
+Integrity
+
+Every artifact is cryptographically verifiable.
+
+Both payload and complete document possess independent integrity guarantees.
+
+⸻
+
+Principle 4
+
+Separation of Concerns
+
+The system separates
+
+* computation
+* integrity
+* provenance
+* interpretation
+
+into independent architectural layers.
+
+⸻
+
+Principle 5
+
+Explicit Verification Boundaries
+
+Software only verifies what software can objectively verify.
+
+Interpretation remains outside computational proof.
+
+⸻
+
+3. Architectural Overview
+
+                     APPLICATION LAYER
+                             │
+                             ▼
+                  PROJECT INTERPRETATION
+                             │
+────────────────────────────────────────────────────
+                     INTEGRITY ENVELOPE
+────────────────────────────────────────────────────
+      Payload Hash
+      Envelope Hash
+      Verification
+      Provenance
+────────────────────────────────────────────────────
+              CANONICAL SERIALIZATION
+────────────────────────────────────────────────────
+        DETERMINISTIC COMPUTATIONAL ENGINE
+────────────────────────────────────────────────────
+             MATHEMATICAL MODEL
+
+⸻
+
+4. Layer Definitions
+
+Layer 1
+
+Mathematical Model
+
+Purpose
+
+Defines deterministic mathematical rules.
+
+Examples
+
+* numerical algorithms
+* countdown formulas
+* sine map
+* matrix operations
+* symbolic encodings
+
+This layer contains no metadata.
+
+⸻
+
+Layer 2
+
+Deterministic Computational Engine
+
+Purpose
+
+Executes the mathematical model.
+
+Responsibilities
+
+* deterministic execution
+* parameter evaluation
+* numerical computation
+* serialization preparation
+
+⸻
+
+Layer 3
+
+Canonical Serialization
+
+Purpose
+
+Transforms computational results into a deterministic byte stream.
+
+Canonicalization Profile
+
+GE-CANONICAL-1.0
+
+Properties
+
+* UTF-8 encoding
+* lexicographic key ordering
+* no insignificant whitespace
+* RFC 8785 compatible number formatting
+
+Every implementation must produce identical serialized bytes.
+
+⸻
+
+Layer 4
+
+Integrity Envelope
+
+Purpose
+
+Provides cryptographic verification.
+
+Contains
+
+* payload hash
+* envelope hash
+* verification results
+* provenance metadata
+
+⸻
+
+Layer 5
+
+Project Interpretation
+
+Purpose
+
+Contains project-specific documentation.
+
+Examples
+
+* symbolic terminology
+* historical references
+* narrative descriptions
+* conceptual frameworks
+
+This layer is intentionally excluded from computational verification.
+
+⸻
+
+5. Deterministic Computational Engine
+
+The engine performs deterministic numerical computation.
+
+Responsibilities include
+
+* mathematical transformations
+* parameter evaluation
+* symbolic encoding
+* arithmetic utilities
+* reproducible execution
+
+The engine never performs probabilistic inference.
+
+⸻
+
+6. Project Design Inspirations
+
+The following systems serve as project-defined design inspirations.
+
+They are not independently validated by the software.
+
+Inspiration	Role
+DMITRY I	Foundational numerical architecture
+Sefi	Structural encoding framework
+Aja	Generative numerical framework
+Vedic Numerology	Historical inspiration
+Mesopotamian Sexagesimal	Historical base-60 inspiration
+
+These influence project organization only.
+
+⸻
+
+7. Canonical Serialization
+
+Profile
+
+GE-CANONICAL-1.0
+
+Requirements
+
+Character Encoding
+
+UTF-8
+
+Object Keys
+
+Lexicographic ordering
+
+Whitespace
+
+None
+
+Floating Point
+
+RFC 8785 compatible
+
+Arrays
+
+Preserve original order
+
+Null
+
+Explicit
+
+No implementation-defined formatting is permitted.
+
+⸻
+
+8. Integrity Model
+
+Two independent hashes are maintained.
+
+Payload Hash
+
+Scope
+
+canonical(payload)
+
+Purpose
+
+Verifies deterministic computational content.
+
+⸻
+
+Envelope Hash
+
+Scope
+
+canonical(document)
+
+Purpose
+
+Verifies the complete serialized artifact.
+
+⸻
+
+9. Verification Workflow
+
+Step 1
+
+Canonicalize payload
+
+↓
+
+Step 2
+
+Compute SHA-256(payload)
+
+↓
+
+Step 3
+
+Compare Payload Hash
+
+↓
+
+Step 4
+
+Canonicalize document
+
+↓
+
+Step 5
+
+Compute SHA-256(document)
+
+↓
+
+Step 6
+
+Compare Envelope Hash
+
+↓
+
+Step 7
+
+Generate Verification Report
+
+↓
+
+PASS / FAIL
+
+⸻
+
+10. Provenance Model
+
+Each artifact records its execution environment.
+
+Example
+
+{
+  "provenance": {
+    "software_version": "2.1.0",
+    "python_version": "3.13.0",
+    "operating_system": "POSIX / Unix Kernel",
+    "builder_identity": "HighProvenanceManifestCrawler",
+    "git_commit": "...",
+    "execution_timestamp_utc": "..."
+  }
+}
+
+Purpose
+
+Independent reproducibility.
+
+⸻
+
+11. Validation Scope
+
+The software verifies
+
+* deterministic computation
+* mathematical consistency
+* canonical serialization
+* SHA-256 integrity
+* provenance consistency
+* reproducible execution
+
+The software does not verify
+
+* symbolic interpretations
+* theological claims
+* metaphysical assertions
+* historical conclusions
+* predictions about external reality
+
+⸻
+
+12. Repository Structure
+
+registry_root/
+│
+├── artifacts/
+│
+├── schemas/
+│
+├── reports/
+│
+├── manifests/
+│
+├── logs/
+│
+└── registry.json
+
+⸻
+
+13. Conformance Requirements
+
+A conforming implementation shall
+
+✓ implement GE-CANONICAL-1.0
+
+✓ produce identical payload hashes
+
+✓ produce identical envelope hashes
+
+✓ implement deterministic computation
+
+✓ produce reproducible execution
+
+✓ preserve provenance metadata
+
+✓ report verification independently for payload and envelope
+
+⸻
+
+14. Security Model
+
+Integrity guarantees
+
+* SHA-256 payload integrity
+* SHA-256 document integrity
+* deterministic serialization
+* immutable provenance
+* append-only registry
+
+The system does not claim
+
+* confidentiality
+* authentication
+* authorization
+* network security
+
+These are external responsibilities.
+
+⸻
+
+15. Versioning
+
+Semantic Versioning
+
+MAJOR.MINOR.PATCH
+
+Major
+
+Breaking architectural changes
+
+Minor
+
+Backward-compatible feature additions
+
+Patch
+
+Corrections without behavioral changes
+
+⸻
+
+16. Engineering Principles
+
+The architecture adheres to
+
+* Determinism
+* Reproducibility
+* Auditability
+* Separation of Concerns
+* Explicit Verification Boundaries
+* Independent Integrity Guarantees
+* Canonical Serialization
+* Immutable Provenance
+
+⸻
+
+17. Conformance Statement
+
+The Sentinel Codex Constitutional Engine provides deterministic computation, canonical serialization, cryptographic integrity verification, and provenance tracking.
+
+Its verification scope is explicitly limited to objectively reproducible computational artifacts.
+
+Project-specific symbolic frameworks, historical inspirations, and interpretive descriptions are maintained as documentation and are intentionally outside the scope of automated verification.
+
+This separation defines the system’s architectural verification boundary and provides a clear basis for independent implementation, reproducibility, and auditability.
