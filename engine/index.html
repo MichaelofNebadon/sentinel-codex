@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-authority="deterministic-engine" data-status="frozen-v1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ DETERMINISTIC ENGINE | SENTINEL CODEX | GE-CANONICAL-1.0</title>
+
+    <style>
+        :root {
+            --gold: #c9a959;
+            --terminal: #9cd9f0;
+            --bg-pure: #000000;
+            --crimson: #8b0000;
+            --nj-pink: #ff69b4;
+            --electric-blue: #2a52be;
+            --font-main: 'Palatino', 'Georgia', serif;
+            --font-code: 'Courier New', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--terminal);
+            font-family: var(--font-main);
+            margin: 0;
+            background-image: radial-gradient(circle at 2px 2px, #1a1a1a 1px, transparent 0);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* 🏛️ HEADER */
+        .top-verify {
+            background: #4a0000;
+            color: #8b0000;
+            text-align: center;
+            font-family: var(--font-code);
+            font-size: 10px;
+            letter-spacing: 5px;
+            padding: 4px;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        nav {
+            background: linear-gradient(to bottom, var(--crimson), #4a0000);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            border-bottom: 2px solid var(--gold);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #fff; text-shadow: 0 0 10px var(--gold); }
+
+        /* 🎯 CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ⚙️ SYSTEM HEADER */
+        .system-header {
+            text-align: center;
+            border-bottom: 3px double var(--gold);
+            padding-bottom: 30px;
+            margin-bottom: 50px;
+        }
+
+        .system-title {
+            color: var(--gold);
+            font-size: 2.5rem;
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+            font-family: var(--font-main);
+        }
+
+        .system-subtitle {
+            color: var(--nj-pink);
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* 📜 MODULE FRAMES */
+        .module-frame {
+            border: 1px solid var(--gold);
+            background: rgba(10,10,10,0.9);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 2px;
+        }
+
+        .module-title {
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-family: var(--font-code);
+            text-transform: uppercase;
+        }
+
+        /* 📐 EQUATION DISPLAY */
+        .equation {
+            text-align: center;
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--gold);
+            margin: 20px 0;
+        }
+
+        .equation-main {
+            font-family: var(--font-code);
+            font-size: 2.5rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .equation-note {
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--terminal);
+        }
+
+        /* 📊 TABLE */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+
+        .data-table th {
+            color: var(--gold);
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        .data-table td {
+            padding: 10px;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--terminal);
+        }
+
+        .data-table tr:hover {
+            background: rgba(201, 169, 89, 0.05);
+        }
+
+        /* ✅ STATUS INDICATORS */
+        .status-pass {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .status-fail {
+            color: var(--crimson);
+            font-weight: bold;
+        }
+
+        /* 🔐 SEALS */
+        .seal-block {
+            text-align: center;
+            padding: 40px 20px;
+            border: 2px solid var(--gold);
+            background: rgba(212, 175, 55, 0.03);
+            margin: 40px 0;
+        }
+
+        .seal-glyph {
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .seal-signature {
+            font-size: 1rem;
+            color: var(--nj-pink);
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .seal-status {
+            font-size: 0.75rem;
+            color: #555;
+            font-family: var(--font-code);
+            letter-spacing: 2px;
+        }
+
+        /* 📥 DOWNLOAD LINKS */
+        .download-link {
+            display: inline-block;
+            color: var(--nj-pink);
+            text-decoration: none;
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            padding: 12px 20px;
+            border: 1px solid var(--nj-pink);
+            margin: 10px 5px;
+            transition: 0.3s;
+        }
+
+        .download-link:hover {
+            background: var(--nj-pink);
+            color: #000;
+            box-shadow: 0 0 15px var(--nj-pink);
+        }
+
+        /* 🔗 BACK LINK */
+        .back-link {
+            text-align: center;
+            margin: 60px 0 40px 0;
+            font-family: var(--font-code);
+        }
+
+        .back-link a {
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+        }
+
+        .back-link a:hover {
+            color: var(--nj-pink);
+            text-shadow: 0 0 10px var(--nj-pink);
+        }
+
+        /* 📦 CODE BLOCK */
+        .code-block {
+            background: #050505;
+            border-left: 3px solid var(--electric-blue);
+            padding: 20px;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            color: var(--terminal);
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP VERIFY BAR -->
+    <div class="top-verify">DETERMINISTIC ENGINE | GE-CANONICAL-1.0 | CTS v2.0</div>
+
+    <!-- NAV BAR -->
+    <nav>
+        <a href="/">← Sentinel Codex</a>
+        <a href="#invariant">Mathematical Invariant</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#compliance">CTS v2.0 Compliance</a>
+        <a href="#downloads">Downloads</a>
+        <a href="https://www.christmichael.org" style="color: var(--nj-pink); font-weight: bold;">[ THE BOOK → ]</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SYSTEM HEADER                                                 -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <header class="system-header">
+            <h1 class="system-title">DETERMINISTIC ENGINE</h1>
+            <p class="system-subtitle">The Mathematical Verification Layer</p>
+            <p style="color: var(--terminal); font-family: var(--font-code); font-size: 0.85rem; margin-top: 20px; max-width: 750px; margin-left: auto; margin-right: auto;">
+                Deterministic computation · Canonical serialization · Cryptographic integrity · Provenance tracking · Explicit verification boundaries
+            </p>
+        </header>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- THE MATHEMATICAL INVARIANT                                    -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section class="module-frame" id="invariant">
+            <h2 class="module-title">📐 The Mathematical Invariant</h2>
+            <p>The engine verifies one deterministic relation across all inputs.</p>
+
+            <div class="equation">
+                <div class="equation-main">A = 4 × D²</div>
+                <div class="equation-note">
+                    <strong>D</strong> — Countdown days (positive integer ≥ 1)<br>
+                    <strong>A</strong> — Amplification index in Hz (positive integer)
+                </div>
+            </div>
+
+            <h3 style="color: var(--gold); font-family: var(--font-code); font-size: 0.85rem; letter-spacing: 2px; margin-top: 30px;">VERIFIED EXAMPLES</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Day (D)</th>
+                        <th>Computation</th>
+                        <th>Amplification (A)</th>
+                        <th>Square Root</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8</td>
+                        <td>4 × 8²</td>
+                        <td>256</td>
+                        <td>16</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>4 × 9²</td>
+                        <td>324</td>
+                        <td>18</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>4 × 10²</td>
+                        <td>400</td>
+                        <td>20</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>4 × 11²</td>
+                        <td>484</td>
+                        <td>22</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>4 × 23²</td>
+                        <td>2116</td>
+                        <td>46</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- ARCHITECTURE                                                  -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section class="module-frame" id="architecture">
+            <h2 class="module-title">🏛️ Architecture</h2>
+            <p>The system maintains strict separation between layers.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Layer</th>
+                        <th>Component</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mathematical Model</td>
+                        <td>Defines deterministic mathematical rules</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Deterministic Computational Engine</td>
+                        <td>Executes the mathematical model</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Canonical Serialization (GE-CANONICAL-1.0)</td>
+                        <td>Transforms results into deterministic byte stream</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Integrity Envelope</td>
+                        <td>Cryptographic verification via SHA-256</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Project Interpretation</td>
+                        <td>Symbolic frameworks (outside computational verification)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: var(--gold); font-family: var(--font-code); font-size: 0.85rem; letter-spacing: 2px; margin-top: 30px;">THE FIVE ENGINEERING PRINCIPLES</h3>
+            <ol style="color: var(--terminal); font-family: var(--font-code); font-size: 0.85rem; line-height: 2;">
+                <li><strong>Determinism</strong> — Identical inputs always produce identical outputs</li>
+                <li><strong>Reproducibility</strong> — Independent implementations produce identical hashes</li>
+                <li><strong>Integrity</strong> — Every artifact cryptographically verifiable</li>
+                <li><strong>Separation of Concerns</strong> — Computation, integrity, provenance, interpretation held distinct</li>
+                <li><strong>Explicit Verification Boundaries</strong> — Software verifies only what software can objectively verify</li>
+            </ol>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- CTS v2.0 COMPLIANCE                                           -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section class="module-frame" id="compliance">
+            <h2 class="module-title">✅ CTS v2.0 Compliance</h2>
+            <p>The Compliance Test Suite v2.0 validates the following vectors.</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Vector</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CTS-V1</td>
+                        <td>Payload Determinism</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>CTS-V2</td>
+                        <td>Boundary Isolation</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>CTS-V3</td>
+                        <td>Canonicalization Invariance</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>CTS-V4</td>
+                        <td>Schema Compliance</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td>CTS-V5</td>
+                        <td>Property-Based Testing</td>
+                        <td><span class="status-pass">✅ PASS</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: var(--gold); font-family: var(--font-code); font-size: 0.85rem; letter-spacing: 2px; margin-top: 30px;">VERIFICATION BOUNDARY</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Verified by Software</th>
+                        <th>Outside Software Verification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deterministic computation</td>
+                        <td>Symbolic interpretations</td>
+                    </tr>
+                    <tr>
+                        <td>Mathematical consistency</td>
+                        <td>Theological or metaphysical claims</td>
+                    </tr>
+                    <tr>
+                        <td>Canonical serialization</td>
+                        <td>Historical conclusions</td>
+                    </tr>
+                    <tr>
+                        <td>SHA-256 integrity</td>
+                        <td>Constitutional rules interpretation</td>
+                    </tr>
+                    <tr>
+                        <td>Schema compliance</td>
+                        <td>Sovereign authority claims</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- VALIDATION RUN                                                -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section class="module-frame">
+            <h2 class="module-title">🖥️ Validation Run — Day 23</h2>
+
+            <div class="code-block">=======================================================================
+SENTINEL CODEX VALIDATION
+=======================================================================
+Project:            Sentinel Codex
+Website:            http://www.sentinelcodex.org
+Author:             Michael D. Rowley
+Authority:          LAW OF THE ONE KMT-2024-BLG-0792
+Days:               23
+Amplification:      2116
+Square Root:        46
+Prime Factors:      [2, 2, 23, 23]
+Registry SHA-256:   dbc368c2aa43fcae5d1bb5ae42bf6bbf13e5b870edb8c4861f4773736190f8a7
+File SHA-256:       9230765bb8431a2176ead22e6bc3bc33e33854bbaaffb6c62a39c2bdf83cd656
+Validation Result:  PASS
+=======================================================================
+DIGITAL CERTIFICATION
+=======================================================================
+Certification Scope:
+  - Registry structure validated
+  - Mathematical identities verified
+  - Canonical registry hash generated
+  - Exported file hash verified
+
+This certification covers data integrity and reproducibility of the registry.
+=======================================================================</div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- DOWNLOADS                                                     -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section class="module-frame" id="downloads">
+            <h2 class="module-title">📥 Downloads</h2>
+            <p>Source files and specifications.</p>
+
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="engine.py" class="download-link" download>⬇ engine.py</a>
+                <a href="sentinel_codex_registry.json" class="download-link" download>⬇ registry.json</a>
+                <a href="sentinel_codex_manifest.json" class="download-link" download>⬇ manifest.json</a>
+                <a href="ARCHITECTURE.md" class="download-link" download>⬇ ARCHITECTURE.md</a>
+                <a href="CANONICALIZATION.md" class="download-link" download>⬇ CANONICALIZATION.md</a>
+                <a href="CTS.md" class="download-link" download>⬇ CTS.md</a>
+            </div>
+
+            <p style="font-family: var(--font-code); font-size: 0.75rem; color: #666; margin-top: 25px; text-align: center;">
+                Files are hosted at the repository root of <code>/engine/</code>. Download links resolve to <code>sentinelcodex.org/engine/&lt;filename&gt;</code>.
+            </p>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- THE CANONICAL SEAL                                            -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <div class="seal-block">
+            <div class="seal-glyph">Ɱ ! 1st' ! `Ⓜ️` ! '1st</div>
+            <div class="seal-signature">Michael [\] ['] ! '1st</div>
+            <div class="seal-status">1ST SEAL HELD</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- BACK LINK                                                     -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <div class="back-link">
+            <a href="/">← Return to Sentinel Codex</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
